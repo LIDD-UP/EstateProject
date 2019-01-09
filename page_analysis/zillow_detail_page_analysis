@@ -1,30 +1,123 @@
 {
 	"data": {
 		"property": {
-			"id": "UHJvcGVydHk6MjA4NjQ2NDg2OA==",
+			"id": "UHJvcGVydHk6MjA4NjQ1OTAyOA==",
 			"isZillowOwned": false,
-			"enhancedBrokerImageUrl": "https://photos.zillowstatic.com/l_c/ISibgf1v867xpx1000000000.jpg",
-			"streetAddress": "0 Sugar Loaf Hill Rd",
-			"city": "Deatsville",
-			"state": "AL",
-			"zipcode": "36022",
-			"mlsid": "445487",
+			"enhancedBrokerImageUrl": null,
+			"streetAddress": "25 Overlook Dr",
+			"city": "Mastic",
+			"state": "NY",
+			"zipcode": "11950",
+			"mlsid": "3091587",
 			"homeStatus": "FOR_SALE",
-			"zpid": 2086464868,
-			"latitude": 32.700483,
-			"longitude": -86.355655,
+			"zpid": 2086459028,
+			"latitude": 40.795083,
+			"longitude": -72.837699,
 			"countyFIPS": null,
 			"parcelId": "",
 			"homeFacts": {
 				"aboveFactsAndFeaturesCategories": null,
-				"atAGlanceFacts": null,
+				"atAGlanceFacts": [{
+					"factLabel": "Type",
+					"factValue": "Single Family"
+				}, {
+					"factLabel": "Year Built",
+					"factValue": "1985"
+				}, {
+					"factLabel": "Heating",
+					"factValue": "Other"
+				}, {
+					"factLabel": "Cooling",
+					"factValue": null
+				}, {
+					"factLabel": "Parking",
+					"factValue": "No Data"
+				}, {
+					"factLabel": "Lot",
+					"factValue": "0.46 acres"
+				}, {
+					"factLabel": "Days on Zillow",
+					"factValue": "Less than 1 day"
+				}, {
+					"factLabel": "Price/sqft",
+					"factValue": "$129"
+				}, {
+					"factLabel": "Saves",
+					"factValue": "No Data"
+				}],
 				"categoryDetails": [{
-					"categoryGroupName": "Building",
+					"categoryGroupName": "Interior Features",
 					"categories": [{
-						"categoryName": "Size",
+						"categoryName": "Bedrooms",
 						"categoryFacts": [{
-							"factLabel": "Number Of Lots",
+							"factLabel": "Beds",
+							"factValue": "4"
+						}]
+					}, {
+						"categoryName": "Bathrooms",
+						"categoryFacts": [{
+							"factLabel": "Baths",
+							"factValue": "3 full, 1 half"
+						}]
+					}, {
+						"categoryName": "Kitchen",
+						"categoryFacts": [{
+							"factLabel": "Eat In Kitchen",
+							"factValue": "Y"
+						}, {
+							"factLabel": "# Kitchens",
 							"factValue": "1"
+						}]
+					}, {
+						"categoryName": "Other Rooms",
+						"categoryFacts": [{
+							"factLabel": "Den/Family Room",
+							"factValue": "Y"
+						}, {
+							"factLabel": "Office",
+							"factValue": "Y"
+						}]
+					}, {
+						"categoryName": "Heating and Cooling",
+						"categoryFacts": [{
+							"factLabel": "Heating",
+							"factValue": "Other"
+						}, {
+							"factLabel": "Fuel",
+							"factValue": "Oil"
+						}]
+					}, {
+						"categoryName": "Appliances",
+						"categoryFacts": [{
+							"factLabel": "Appliances included",
+							"factValue": "Refrigerator"
+						}]
+					}, {
+						"categoryName": "Flooring",
+						"categoryFacts": [{
+							"factLabel": "Floor size",
+							"factValue": "1,970 sqft"
+						}, {
+							"factLabel": "Wood Floors",
+							"factValue": "Y"
+						}]
+					}, {
+						"categoryName": "Other Interior Features",
+						"categoryFacts": [{
+							"factLabel": "# Fireplaces",
+							"factValue": "0"
+						}, {
+							"factLabel": "Skylight",
+							"factValue": "0"
+						}]
+					}]
+				}, {
+					"categoryGroupName": "Spaces and Amenities",
+					"categories": [{
+						"categoryName": "Spaces",
+						"categoryFacts": [{
+							"factLabel": null,
+							"factValue": "Pool"
 						}]
 					}]
 				}, {
@@ -32,14 +125,20 @@
 					"categories": [{
 						"categoryName": "Type and Style",
 						"categoryFacts": [{
+							"factLabel": "Structure type",
+							"factValue": "Colonial"
+						}, {
 							"factLabel": null,
-							"factValue": "Vacant Land"
+							"factValue": "Single Family"
 						}, {
-							"factLabel": "Property Type",
-							"factValue": "Lots/Acreage & Farms"
-						}, {
-							"factLabel": "Property Sub Type",
-							"factValue": "Acreage"
+							"factLabel": "Detached/Attached",
+							"factValue": "Det"
+						}]
+					}, {
+						"categoryName": "Dates",
+						"categoryFacts": [{
+							"factLabel": null,
+							"factValue": "Built in 1985"
 						}]
 					}, {
 						"categoryName": "Other Construction Features",
@@ -51,52 +150,49 @@
 				}, {
 					"categoryGroupName": "Exterior Features",
 					"categories": [{
-						"categoryName": "Yard",
+						"categoryName": "Driveway and Sidewalk",
 						"categoryFacts": [{
-							"factLabel": "Vegetation",
-							"factValue": "Wooded, HardWoods, Softwoods/Pines"
+							"factLabel": "Driveway",
+							"factValue": "Pvt"
+						}]
+					}, {
+						"categoryName": "Water",
+						"categoryFacts": [{
+							"factLabel": null,
+							"factValue": "Pool"
+						}, {
+							"factLabel": null,
+							"factValue": "Waterfront"
+						}, {
+							"factLabel": "Water",
+							"factValue": "Public"
+						}]
+					}, {
+						"categoryName": "View Type",
+						"categoryFacts": [{
+							"factLabel": "View",
+							"factValue": "Water"
 						}]
 					}, {
 						"categoryName": "Lot",
 						"categoryFacts": [{
 							"factLabel": "Lot",
-							"factValue": "17.12 acres"
-						}]
-					}, {
-						"categoryName": "Other Exterior Features",
-						"categoryFacts": [{
-							"factLabel": "Improvement",
-							"factValue": "Lake"
+							"factValue": "0.46 acres"
 						}]
 					}]
 				}, {
 					"categoryGroupName": "Community and Neighborhood",
 					"categories": [{
-						"categoryName": "Schools",
+						"categoryName": "Location",
 						"categoryFacts": [{
-							"factLabel": "Elementary school",
-							"factValue": "Holtville Elementary School"
-						}, {
-							"factLabel": "Middle school",
-							"factValue": "Holtville Middle School"
-						}, {
-							"factLabel": "High school",
-							"factValue": "Holtville High School"
+							"factLabel": "County",
+							"factValue": "Suffolk"
 						}]
 					}, {
-						"categoryName": "Transportation",
+						"categoryName": "Schools",
 						"categoryFacts": [{
-							"factLabel": "Frontage Access",
-							"factValue": "Gravel/Chert"
-						}]
-					}]
-				}, {
-					"categoryGroupName": "Utilities",
-					"categories": [{
-						"categoryName": "",
-						"categoryFacts": [{
-							"factLabel": "Utilities Available",
-							"factValue": "Electricity, Telephone, Water"
+							"factLabel": "School district",
+							"factValue": "William Floyd"
 						}]
 					}]
 				}, {
@@ -105,7 +201,7 @@
 						"categoryName": "",
 						"categoryFacts": [{
 							"factLabel": "MLS #",
-							"factValue": "445487"
+							"factValue": "3091587"
 						}]
 					}]
 				}, {
@@ -113,11 +209,17 @@
 					"categories": [{
 						"categoryName": "",
 						"categoryFacts": [{
-							"factLabel": "Zoning",
-							"factValue": "Not Zoned"
+							"factLabel": "Price/sqft",
+							"factValue": "$129"
 						}, {
-							"factLabel": "Information",
-							"factValue": "Appraisal"
+							"factLabel": "Picture",
+							"factValue": "Y"
+						}, {
+							"factLabel": "Zone",
+							"factValue": "25"
+						}, {
+							"factLabel": "Foreclose?",
+							"factValue": "Y"
 						}]
 					}]
 				}, {
@@ -129,7 +231,7 @@
 							"factValue": "Less than 1"
 						}, {
 							"factLabel": "Views since listing",
-							"factValue": "25"
+							"factValue": "3"
 						}, {
 							"factLabel": null,
 							"factValue": "0 shoppers saved this home"
@@ -138,47 +240,50 @@
 				}]
 			},
 			"adTargets": {
-				"zip": "36022",
-				"aamgnrc1": "0 Sugar Loaf Hill Rd",
-				"mlat": "32.700483",
-				"bd": "0",
-				"fsbid": "14641",
-				"z_listing_image_url": "https://photos.zillowstatic.com/p_d/ISy7of15gk0k8a0000000000.jpg",
-				"zusr": "true",
-				"city": "Deatsville",
-				"proptp": "lot",
+				"aamgnrc1": "25 Overlook Dr",
+				"bd": "4",
+				"fsbid": "13869",
+				"city": "Mastic",
+				"proptp": "sfh",
 				"vers": "ADS_Tagless:Casale_On,SHO_MOBILE_WEB_NAV_ADS:AFTER_2ND,SHO_ADS_AND_TRACKING_PIXELS:CONTROL,SRP_DESKTOP_ADS_VARIANTS:VARIANT_B,SHO_DESKTOP_EXPOSED_FILTERS:CONTROL,SRP_MWEB_ADS_VARIANTS:VARIANT_B,SHO_DESKTOP_NAV_AD_LOAD_ORDER:EARLIER_AD_REQUEST,SHO_NAV_AD_BACKGROUND:GRAY,HDP_NativePhotoplayer:ON,HDP_FAF_TELECOM:CONTROL,HDP_CONTENT_REGROUP:CONTROL,HDP_AD_BELOW_MODULES:ON_ABOVE_CONTACT_MID_RENDER,HDP_SERVICE_FSBA:REACT_HDP,HDP_SERVICE_FSBA_MOBILE:ON,HDP_SERVICE_NFS:CONTROL",
-				"pid": "2086464868",
-				"lot": "9",
-				"listtp": "buy_agent",
+				"pid": "2086459028",
+				"lot": "3",
+				"listtp": "buy_foreclosure",
 				"zguidh": "-8324190897995903245",
-				"premieragent": "no",
-				"price": "270000",
-				"dma": "14",
+				"sqftrange": "1500-1999",
+				"price": "255000",
+				"sqft": "1970",
 				"posting_url": "",
-				"state": "AL",
-				"mlong": "-86.355655",
-				"pis": "10",
-				"cnty": "Elmore",
-				"prange": "250-299k"
+				"state": "NY",
+				"mlong": "-72.837699",
+				"pis": "16",
+				"cnty": "Suffolk",
+				"prange": "250-299k",
+				"zip": "11950",
+				"mlat": "40.795083",
+				"z_listing_image_url": "https://photos.zillowstatic.com/p_d/ISyf6jequ0rgye0000000000.jpg",
+				"zusr": "true",
+				"yrblt": "1980-1989",
+				"premieragent": "no",
+				"dma": "43"
 			},
 			"solarPotential": null,
 			"address": {
-				"streetAddress": "0 Sugar Loaf Hill Rd",
-				"state": "AL",
-				"city": "Deatsville",
-				"zipcode": "36022",
+				"streetAddress": "25 Overlook Dr",
+				"state": "NY",
+				"city": "Mastic",
+				"zipcode": "11950",
 				"neighborhood": null,
 				"community": null,
 				"subdivision": null,
 				"unitPrefix": null,
 				"unitNumber": null
 			},
-			"hdpUrl": "/homedetails/0-Sugar-Loaf-Hill-Rd-Deatsville-AL-36022/2086464868_zpid/",
+			"hdpUrl": "/homedetails/25-Overlook-Dr-Mastic-NY-11950/2086459028_zpid/",
 			"listing_sub_type": {
 				"is_newHome": false,
 				"is_foreclosure": false,
-				"is_bankOwned": false,
+				"is_bankOwned": true,
 				"is_FSBO": false,
 				"is_FSBA": true,
 				"is_comingSoon": false,
@@ -187,120 +292,140 @@
 			},
 			"nearbyCities": [{
 				"regionUrl": {
-					"path": "/coosada-al/"
+					"path": "/coram-ny/"
 				},
-				"name": "Coosada",
+				"name": "Coram",
 				"body": {
-					"city": "Coosada",
-					"state": "AL"
+					"city": "Coram",
+					"state": "NY"
 				}
 			}, {
 				"regionUrl": {
-					"path": "/deatsville-al/"
+					"path": "/east-northport-ny/"
 				},
-				"name": "Deatsville",
+				"name": "East Northport",
 				"body": {
-					"city": "Deatsville",
-					"state": "AL"
+					"city": "East Northport",
+					"state": "NY"
 				}
 			}, {
 				"regionUrl": {
-					"path": "/eclectic-al/"
+					"path": "/farmingdale-ny/"
 				},
-				"name": "Eclectic",
+				"name": "Farmingdale",
 				"body": {
-					"city": "Eclectic",
-					"state": "AL"
+					"city": "Farmingdale",
+					"state": "NY"
 				}
 			}, {
 				"regionUrl": {
-					"path": "/elmore-al/"
+					"path": "/huntington-ny/"
 				},
-				"name": "Elmore",
+				"name": "Huntington",
 				"body": {
-					"city": "Elmore",
-					"state": "AL"
+					"city": "Huntington",
+					"state": "NY"
 				}
 			}, {
 				"regionUrl": {
-					"path": "/equality-al/"
+					"path": "/islip-ny/"
 				},
-				"name": "Equality",
+				"name": "Islip",
 				"body": {
-					"city": "Equality",
-					"state": "AL"
+					"city": "Islip",
+					"state": "NY"
 				}
 			}, {
 				"regionUrl": {
-					"path": "/millbrook-al/"
+					"path": "/lindenhurst-ny/"
 				},
-				"name": "Millbrook",
+				"name": "Lindenhurst",
 				"body": {
-					"city": "Millbrook",
-					"state": "AL"
+					"city": "Lindenhurst",
+					"state": "NY"
 				}
 			}, {
 				"regionUrl": {
-					"path": "/prattville-al/"
+					"path": "/patchogue-ny/"
 				},
-				"name": "Prattville",
+				"name": "Patchogue",
 				"body": {
-					"city": "Prattville",
-					"state": "AL"
+					"city": "Patchogue",
+					"state": "NY"
 				}
 			}, {
 				"regionUrl": {
-					"path": "/tallassee-al/"
+					"path": "/ronkonkoma-ny/"
 				},
-				"name": "Tallassee",
+				"name": "Ronkonkoma",
 				"body": {
-					"city": "Tallassee",
-					"state": "AL"
+					"city": "Ronkonkoma",
+					"state": "NY"
 				}
 			}, {
 				"regionUrl": {
-					"path": "/titus-al/"
+					"path": "/smithtown-ny/"
 				},
-				"name": "Titus",
+				"name": "Smithtown",
 				"body": {
-					"city": "Titus",
-					"state": "AL"
+					"city": "Smithtown",
+					"state": "NY"
 				}
 			}, {
 				"regionUrl": {
-					"path": "/wetumpka-al/"
+					"path": "/west-babylon-ny/"
 				},
-				"name": "Wetumpka",
+				"name": "West Babylon",
 				"body": {
-					"city": "Wetumpka",
-					"state": "AL"
+					"city": "West Babylon",
+					"state": "NY"
 				}
 			}],
 			"nearbyNeighborhoods": null,
 			"country": "USA",
 			"nearbyZipcodes": [{
 				"regionUrl": {
-					"path": "/deatsville-al-36022/"
+					"path": "/ny-11708/"
 				},
-				"name": "36022",
+				"name": "11708",
 				"body": {
-					"zipcode": "36022",
-					"city": "Deatsville",
-					"state": "AL"
+					"zipcode": "11708",
+					"city": null,
+					"state": "NY"
+				}
+			}, {
+				"regionUrl": {
+					"path": "/ny-11750/"
+				},
+				"name": "11750",
+				"body": {
+					"zipcode": "11750",
+					"city": null,
+					"state": "NY"
+				}
+			}, {
+				"regionUrl": {
+					"path": "/mastic-ny-11950/"
+				},
+				"name": "11950",
+				"body": {
+					"zipcode": "11950",
+					"city": "Mastic",
+					"state": "NY"
 				}
 			}],
 			"citySearchUrl": {
-				"text": "Homes in Deatsville",
-				"path": "/deatsville-al/"
+				"text": "Homes in Mastic",
+				"path": "/mastic-ny/"
 			},
 			"zipcodeSearchUrl": {
-				"path": "/deatsville-al-36022/"
+				"path": "/mastic-ny-11950/"
 			},
 			"apartmentsForRentInZipcodeSearchUrl": {
-				"path": "/deatsville-al-36022/apartments/"
+				"path": "/mastic-ny-11950/apartments/"
 			},
 			"housesForRentInZipcodeSearchUrl": {
-				"path": "/deatsville-al-36022/rent-houses/"
+				"path": "/mastic-ny-11950/rent-houses/"
 			},
 			"listingSource": null,
 			"listingAccount": null,
@@ -309,13 +434,13 @@
 			"listingOwnerConfigIDs": null,
 			"postingPresentationTypes": null,
 			"isInstantOfferEnabled": false,
-			"yearBuilt": null,
-			"livingArea": null,
-			"bathrooms": null,
-			"bedrooms": null,
-			"homeType": "LOT",
+			"yearBuilt": 1985,
+			"livingArea": 1970,
+			"bathrooms": 4,
+			"bedrooms": 4,
+			"homeType": "SINGLE_FAMILY",
 			"zestimate": null,
-			"price": 270000,
+			"price": 255000,
 			"rentZestimate": null,
 			"forecast": null,
 			"zestimateMinus30": null,
@@ -325,151 +450,28 @@
 			"restimateLowPercent": null,
 			"restimateHighPercent": null,
 			"parentRegion": {
-				"name": "36022"
+				"name": "11950"
 			},
 			"thumb": [{
-				"url": "https://photos.zillowstatic.com/p_a/ISy7of15gk0k8a0000000000.jpg"
+				"url": "https://photos.zillowstatic.com/p_a/ISyf6jequ0rgye0000000000.jpg"
 			}],
 			"nearbyHomes": [{
-				"latitude": 32.700483,
-				"longitude": -86.355655,
-				"daysOnZillow": null,
+				"latitude": 40.795083,
+				"longitude": -72.837699,
+				"daysOnZillow": 5957,
 				"homeStatus": "OTHER",
 				"photoCount": null,
-				"zpid": 102373,
-				"hdpUrl": "/homedetails/111-Sugar-Loaf-Hill-Rd-Deatsville-AL-36022/102373_zpid/",
-				"bedrooms": null,
-				"bathrooms": 2,
-				"livingArea": 1116,
-				"price": 89920,
-				"address": {
-					"city": "DEATSVILLE",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "111 Sugar Loaf Hill Rd"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": false
-				},
-				"isNonOwnerOccupied": true,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://maps.googleapis.com/maps/api/staticmap?center=32.700483,-86.355655&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=kmvMz0-D7ezMD2fGeOvnp3YHis4="
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.700483,-86.355655&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=Ts9dPnaE4lCdKXUByfAFnfwnn38=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.700483,-86.355655&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=8X-xOjvnycmoLKwUjHvRqi5z8h8=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.700483,-86.355655&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=XhFgOQFArtPUBk8smDiM3nD5t6g=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.698934,
-				"longitude": -86.355397,
-				"daysOnZillow": null,
-				"homeStatus": "OTHER",
-				"photoCount": null,
-				"zpid": 243911006,
-				"hdpUrl": "/homedetails/Rural-Deatsville-AL-36022/243911006_zpid/",
-				"bedrooms": 0,
-				"bathrooms": null,
+				"zpid": 59529488,
+				"hdpUrl": "/homedetails/25-Overlook-Dr-4-Mastic-NY-11950/59529488_zpid/",
+				"bedrooms": 4,
+				"bathrooms": 4,
 				"livingArea": null,
-				"price": 5100,
+				"price": 380652,
 				"address": {
-					"city": "Deatsville",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "Rural"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": false
-				},
-				"isNonOwnerOccupied": true,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://maps.googleapis.com/maps/api/staticmap?center=32.698934,-86.355397&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=7zQyl8hF9Pv4EcBspLBS3vhZTeE="
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.698934,-86.355397&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=qXyf4uspSMReJrKFxYxEzhLqtZA=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.698934,-86.355397&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=BmgqOOmThXmElnEOiiLInDUFi7U=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.698934,-86.355397&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=1aSOpnFsZMffCky1b5LglPO8ty0=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.699226,
-				"longitude": -86.356619,
-				"daysOnZillow": null,
-				"homeStatus": "OTHER",
-				"photoCount": null,
-				"zpid": 102374,
-				"hdpUrl": "/homedetails/Rt-1-AL-36022/102374_zpid/",
-				"bedrooms": null,
-				"bathrooms": null,
-				"livingArea": null,
-				"price": 15000,
-				"address": {
-					"city": null,
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "Rt 1"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": false
-				},
-				"isNonOwnerOccupied": true,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://maps.googleapis.com/maps/api/staticmap?center=32.699226,-86.356619&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=BG1dz5EFZ6xMMYLNcf4eh48-11E="
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.699226,-86.356619&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=vJ4F3r49qZ3-3BlZMlIs8UV2lqE=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.699226,-86.356619&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=Iw0-zypYpn5SVML6M1LsVTYp6hM=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.699226,-86.356619&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=V1wTf5bz3mHgxgYUDW7Z2eNGez0=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.700192,
-				"longitude": -86.353557,
-				"daysOnZillow": null,
-				"homeStatus": "OTHER",
-				"photoCount": null,
-				"zpid": 102366,
-				"hdpUrl": "/homedetails/500-Sugar-Loaf-Hill-Rd-Deatsville-AL-36022/102366_zpid/",
-				"bedrooms": null,
-				"bathrooms": 3,
-				"livingArea": 2305,
-				"price": 312708,
-				"address": {
-					"city": "DEATSVILLE",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "500 Sugar Loaf Hill Rd"
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "25 Overlook Dr # 4"
 				},
 				"openHouseHours": null,
 				"listing_sub_type": {
@@ -485,442 +487,155 @@
 				"photos": [{
 					"width": 316,
 					"height": 234,
-					"url": "https://maps.googleapis.com/maps/api/staticmap?center=32.700192,-86.353557&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=lYmSLUwAUM8TlF5CNzXU6fgY008="
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.795083,-72.837699&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=pph1egtZcSbXwg2cnYXXJRIjvwE="
 				}],
 				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.700192,-86.353557&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=qc0qEo5vYCyA6s6opl-9YXng8rw=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.700192,-86.353557&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=R81MTqW4URZ6SUWP3nz40tw9WUI=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.700192,-86.353557&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=_Lw7UnHzlW3m8op_RCNKQyQaE0M=",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.795083,-72.837699&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=2Du9-2-mYa6J4a45BJPlWwc-9B8=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.795083,-72.837699&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=Rbqwm9iU8He_A_DH4ziU_htxm1Q=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.795083,-72.837699&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=mPkvRy9A8_KnK9dvd14F3ABS21E=",
 				"isPremierBuilder": false,
-				"state": "AL",
+				"state": "NY",
 				"isZillowOwned": false
 			}, {
-				"latitude": 32.698473,
-				"longitude": -86.356788,
-				"daysOnZillow": 7880,
+				"latitude": 40.794974,
+				"longitude": -72.837473,
+				"daysOnZillow": 179,
+				"homeStatus": "FOR_SALE",
+				"photoCount": 7,
+				"zpid": 2088644353,
+				"hdpUrl": "/homedetails/27-Overlook-Dr-Mastic-NY-11950/2088644353_zpid/",
+				"bedrooms": 3,
+				"bathrooms": 2,
+				"livingArea": 900,
+				"price": 358000,
+				"address": {
+					"city": "Mastic",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "27 Overlook Dr"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": false,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISu8ehvfwgfrbc0000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794974,-72.837473&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=kbpU9DM2XF8f_a9uP34iOD4djv0=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794974,-72.837473&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=cQXp1xyByPiwUDV_OWe67aZUgUw=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794974,-72.837473&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=vXx8Doc3mn15JIrV0_0c6A36ic0=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.794974,
+				"longitude": -72.837473,
+				"daysOnZillow": 413,
+				"homeStatus": "SOLD",
+				"photoCount": null,
+				"zpid": 59529489,
+				"hdpUrl": "/homedetails/27-Overlook-Dr-4-Mastic-NY-11950/59529489_zpid/",
+				"bedrooms": 3,
+				"bathrooms": 1,
+				"livingArea": 2100,
+				"price": 98750,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "27 Overlook Dr # 4"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": false
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.794974,-72.837473&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=u1GpXGsTiMa9j3Tg3EgKmXhqTtI="
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794974,-72.837473&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=kbpU9DM2XF8f_a9uP34iOD4djv0=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794974,-72.837473&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=cQXp1xyByPiwUDV_OWe67aZUgUw=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794974,-72.837473&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=vXx8Doc3mn15JIrV0_0c6A36ic0=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.795277,
+				"longitude": -72.838032,
+				"daysOnZillow": 686,
+				"homeStatus": "FORECLOSED",
+				"photoCount": 5,
+				"zpid": 59334682,
+				"hdpUrl": "/homedetails/19-Overlook-Dr-4-Mastic-NY-11950/59334682_zpid/",
+				"bedrooms": 6,
+				"bathrooms": null,
+				"livingArea": null,
+				"price": 264381,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "19 Overlook Dr # 4"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": false
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISe40ndssh060q0000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.795277,-72.838032&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=oeLiXtQ1zcoENFDyHVHMLjtfIZw=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.795277,-72.838032&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=B-yhIX-FTPqYg-1IVGQk5tc5VtY=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.795277,-72.838032&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=tHE9hUBl0odFr0MSVoDsHMPU9mg=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.794906,
+				"longitude": -72.837312,
+				"daysOnZillow": null,
 				"homeStatus": "OTHER",
 				"photoCount": 1,
-				"zpid": 102370,
-				"hdpUrl": "/homedetails/924-Sugar-Loaf-Hill-Rd-Deatsville-AL-36022/102370_zpid/",
-				"bedrooms": null,
-				"bathrooms": 2,
-				"livingArea": 1979,
-				"price": 239600,
-				"address": {
-					"city": "DEATSVILLE",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "924 Sugar Loaf Hill Rd"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": false
-				},
-				"isNonOwnerOccupied": false,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://photos.zillowstatic.com/p_c/ISu65i63ujzc0z.jpg"
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.698473,-86.356788&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=lt0wCIpwpInN4hJaNXxTGUNyPOk=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.698473,-86.356788&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=kCiSy8-HJTzzfkzr12mzTjCcilI=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.698473,-86.356788&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=7TzLraN1j9KDauMARv1xM9N8lFg=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.700277,
-				"longitude": -86.358094,
-				"daysOnZillow": null,
-				"homeStatus": "OTHER",
-				"photoCount": null,
-				"zpid": 102354,
-				"hdpUrl": "/homedetails/970-Sugar-Loaf-Hill-Rd-Deatsville-AL-36022/102354_zpid/",
-				"bedrooms": null,
-				"bathrooms": null,
-				"livingArea": 1440,
-				"price": 68869,
-				"address": {
-					"city": "DEATSVILLE",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "970 Sugar Loaf Hill Rd"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": false
-				},
-				"isNonOwnerOccupied": false,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://maps.googleapis.com/maps/api/staticmap?center=32.700277,-86.358094&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=EexclLAAGavzTnD8Fw49PzBVDec="
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.700277,-86.358094&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=wUgwfTP-ZvlHF6MjXAw4cfdsPGM=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.700277,-86.358094&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=AM69ro7iMsDaNjHruBklg3_hf0E=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.700277,-86.358094&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=JIOUpnBDpaeW9ys6Efo7hARjVZA=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.702163,
-				"longitude": -86.353774,
-				"daysOnZillow": 9826,
-				"homeStatus": "OTHER",
-				"photoCount": null,
-				"zpid": 102369,
-				"hdpUrl": "/homedetails/700-Sugar-Loaf-Hill-Rd-Deatsville-AL-36022/102369_zpid/",
-				"bedrooms": null,
-				"bathrooms": null,
-				"livingArea": 500,
-				"price": 147598,
-				"address": {
-					"city": "DEATSVILLE",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "700 Sugar Loaf Hill Rd"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": false
-				},
-				"isNonOwnerOccupied": false,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://maps.googleapis.com/maps/api/staticmap?center=32.702163,-86.353774&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=hg6FH0KHOln0H1E9fEdJ1kil7cI="
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.702163,-86.353774&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=6UF7yvQw27H1miYlbeTIzG7nDLA=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.702163,-86.353774&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=Fl5hHaY5Jcfc6KoyLTxRm2Ov5SM=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.702163,-86.353774&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=3-BErQNLsQrn4aiPoNPw6TKLgh4=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.698214,
-				"longitude": -86.356806,
-				"daysOnZillow": null,
-				"homeStatus": "OTHER",
-				"photoCount": null,
-				"zpid": 110553310,
-				"hdpUrl": "/homedetails/544-Sugar-Loaf-Hill-Rd-Deatsville-AL-36022/110553310_zpid/",
-				"bedrooms": null,
-				"bathrooms": 3.5,
-				"livingArea": 1925,
-				"price": 381669,
-				"address": {
-					"city": "DEATSVILLE",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "544 Sugar Loaf Hill Rd"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": false
-				},
-				"isNonOwnerOccupied": false,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://maps.googleapis.com/maps/api/staticmap?center=32.698214,-86.356806&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=v64RpmycZ-haGnkegYctjNO9SZA="
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.698214,-86.356806&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=9Y50YQ1eI0FfxgAsa-vBmRq4au0=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.698214,-86.356806&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=BoOcpgRXI3VGkU0CVaSGXp1EuM0=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.698214,-86.356806&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=iCK3Aywp8QEL6wFM6V37yZ1IoyU=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.69839,
-				"longitude": -86.357171,
-				"daysOnZillow": null,
-				"homeStatus": "OTHER",
-				"photoCount": null,
-				"zpid": 243911010,
-				"hdpUrl": "/homedetails/Rural-Deatsville-AL-36022/243911010_zpid/",
-				"bedrooms": 0,
-				"bathrooms": null,
-				"livingArea": null,
-				"price": 7110,
-				"address": {
-					"city": "Deatsville",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "Rural"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": false
-				},
-				"isNonOwnerOccupied": true,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://maps.googleapis.com/maps/api/staticmap?center=32.698390,-86.357171&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=9F6By-tZfcFPcVxrppoANB1dSTc="
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.69839,-86.357171&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=HvILq3KN81qtBaXXF0N-66eiLqM=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.69839,-86.357171&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=6jgubQe30x-X1CzY8wCTMGMF43o=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.69839,-86.357171&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=y5TEF3PwRbeKMnCEpaYtXaILeQ8=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.702705,
-				"longitude": -86.353762,
-				"daysOnZillow": 575,
-				"homeStatus": "SOLD",
-				"photoCount": 15,
-				"zpid": 102363,
-				"hdpUrl": "/homedetails/750-Sugar-Loaf-Hill-Rd-Deatsville-AL-36022/102363_zpid/",
-				"bedrooms": 3,
-				"bathrooms": 3,
-				"livingArea": 2448,
-				"price": 250000,
-				"address": {
-					"city": "DEATSVILLE",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "750 Sugar Loaf Hill Rd"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": false
-				},
-				"isNonOwnerOccupied": true,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://photos.zillowstatic.com/p_c/ISynwgsytn0a660000000000.jpg"
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.702705,-86.353762&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=zag-zmOIFw73Gbg6Co6JOuOUGzE=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.702705,-86.353762&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=SLxwtyTVoGJcL1vD1eERogO6D5o=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.702705,-86.353762&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=DK8P88L14vSU9B3XvUR4Jvj-XSs=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.700384,
-				"longitude": -86.352269,
-				"daysOnZillow": null,
-				"homeStatus": "OTHER",
-				"photoCount": null,
-				"zpid": 248611543,
-				"hdpUrl": "/homedetails/488-Sugar-Loaf-Hill-Rd-Deatsville-AL-36022/248611543_zpid/",
-				"bedrooms": 0,
-				"bathrooms": 3,
-				"livingArea": 1428,
-				"price": 292880,
-				"address": {
-					"city": "Deatsville",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "488 Sugar Loaf Hill Rd"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": false
-				},
-				"isNonOwnerOccupied": true,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://maps.googleapis.com/maps/api/staticmap?center=32.700384,-86.352269&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=AZfzBqyGXBvMNnxnmbqSVuRdYA0="
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.700384,-86.352269&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=BD-2nH25CTzsUenIrNITaHMuZYM=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.700384,-86.352269&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=2VCpbs2wifz6UFlq8ZB82gUhF3c=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.700384,-86.352269&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=c2yASlszPcHTTVjZ2BTltiSJa9E=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.700384,
-				"longitude": -86.352269,
-				"daysOnZillow": 833,
-				"homeStatus": "FOR_SALE",
-				"photoCount": 14,
-				"zpid": 102361,
-				"hdpUrl": "/homedetails/488-Sugar-Loaf-Hill-Rd-Deatsville-AL-36022/102361_zpid/",
-				"bedrooms": 4,
-				"bathrooms": 3,
-				"livingArea": 3242,
-				"price": 329000,
-				"address": {
-					"city": "DEATSVILLE",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "488 Sugar Loaf Hill Rd"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": true
-				},
-				"isNonOwnerOccupied": false,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://photos.zillowstatic.com/p_c/ISa1zgo4ovjdvw0000000000.jpg"
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.700384,-86.352269&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=BD-2nH25CTzsUenIrNITaHMuZYM=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.700384,-86.352269&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=2VCpbs2wifz6UFlq8ZB82gUhF3c=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.700384,-86.352269&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=c2yASlszPcHTTVjZ2BTltiSJa9E=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.698853,
-				"longitude": -86.352506,
-				"daysOnZillow": 200,
-				"homeStatus": "FOR_SALE",
-				"photoCount": 22,
-				"zpid": 102367,
-				"hdpUrl": "/homedetails/374-Sugar-Loaf-Hill-Rd-Deatsville-AL-36022/102367_zpid/",
+				"zpid": 59529490,
+				"hdpUrl": "/homedetails/29-Overlook-Dr-4-Mastic-NY-11950/59529490_zpid/",
 				"bedrooms": 2,
-				"bathrooms": 1,
-				"livingArea": 911,
-				"price": 209900,
-				"address": {
-					"city": "DEATSVILLE",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "374 Sugar Loaf Hill Rd"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": true
-				},
-				"isNonOwnerOccupied": true,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://photos.zillowstatic.com/p_c/IS6mgd8wewq2821000000000.jpg"
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.698853,-86.352506&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=L6XwvYhT_fuK_CQYN0VP45EMj6M=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.698853,-86.352506&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=BdwuO0JIg8uK8sPyWbUp17Pu-Zw=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.698853,-86.352506&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=ilRhZiCrjiGLKhuHxyzuCZNOROE=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.697253,
-				"longitude": -86.357612,
-				"daysOnZillow": null,
-				"homeStatus": "OTHER",
-				"photoCount": null,
-				"zpid": 243911011,
-				"hdpUrl": "/homedetails/Rural-Deatsville-AL-36022/243911011_zpid/",
-				"bedrooms": 0,
-				"bathrooms": null,
+				"bathrooms": 2,
 				"livingArea": null,
-				"price": 17140,
+				"price": 399891,
 				"address": {
-					"city": "Deatsville",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "Rural"
-				},
-				"openHouseHours": null,
-				"listing_sub_type": {
-					"is_FSBO": false,
-					"is_newHome": false,
-					"is_foreclosure": false,
-					"is_bankOwned": false,
-					"is_forAuction": false,
-					"is_comingSoon": false,
-					"is_FSBA": false
-				},
-				"isNonOwnerOccupied": true,
-				"photos": [{
-					"width": 316,
-					"height": 234,
-					"url": "https://maps.googleapis.com/maps/api/staticmap?center=32.697253,-86.357612&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=kUtQxY4TsJ1emhD745Qhrn0RMxU="
-				}],
-				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.697253,-86.357612&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=fxMnt1GPfRjJ8kszdT8WCfA3Fmc=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.697253,-86.357612&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=gXrO8bhcKgAQUj8h7ylTVaXqxtU=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.697253,-86.357612&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=Zs1LAtYPo5RvGeVL9Nu_Q334iEg=",
-				"isPremierBuilder": false,
-				"state": "AL",
-				"isZillowOwned": false
-			}, {
-				"latitude": 32.700211,
-				"longitude": -86.351612,
-				"daysOnZillow": 160,
-				"homeStatus": "RECENTLY_SOLD",
-				"photoCount": 37,
-				"zpid": 102358,
-				"hdpUrl": "/homedetails/490-Sugar-Loaf-Hill-Rd-Deatsville-AL-36022/102358_zpid/",
-				"bedrooms": 5,
-				"bathrooms": 3.5,
-				"livingArea": 4000,
-				"price": 347000,
-				"address": {
-					"city": "DEATSVILLE",
-					"state": "AL",
-					"zipcode": "36022",
-					"streetAddress": "490 Sugar Loaf Hill Rd"
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "29 Overlook Dr # 4"
 				},
 				"openHouseHours": null,
 				"listing_sub_type": {
@@ -936,69 +651,999 @@
 				"photos": [{
 					"width": 316,
 					"height": 234,
-					"url": "https://photos.zillowstatic.com/p_c/ISyr35jmhp3v1y0000000000.jpg"
+					"url": "https://photos.zillowstatic.com/p_c/ISziprcb9o2203.jpg"
 				}],
 				"currency": "USD",
-				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.700211,-86.351612&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=okMwQMf7q8TyVNOzF73BLfrulvI=",
-				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=32.700211,-86.351612&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=bPJ-lmybHO_gwYEeou3EXAfQ0h0=",
-				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.700211,-86.351612&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=DvqAN2WHJLvfuNbTnofkoyaBA9s=",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794906,-72.837312&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=JiL6T-iNME37wPriSYlPDb7T6p0=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794906,-72.837312&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=xyfqhPW6HLHDuGwQr9qrh9i4Qh4=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794906,-72.837312&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=YOGVDWfVk67KLRVZsHXM3xN18Kw=",
 				"isPremierBuilder": false,
-				"state": "AL",
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.794774,
+				"longitude": -72.838265,
+				"daysOnZillow": null,
+				"homeStatus": "OTHER",
+				"photoCount": null,
+				"zpid": 59529493,
+				"hdpUrl": "/homedetails/18-Overlook-Dr-4-Mastic-NY-11950/59529493_zpid/",
+				"bedrooms": 3,
+				"bathrooms": 1,
+				"livingArea": null,
+				"price": 192688,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "18 Overlook Dr # 4"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": false
+				},
+				"isNonOwnerOccupied": false,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.794774,-72.838265&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=qCUhSD3DkF0EJosG0qxgL1daBgw="
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794774,-72.838265&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=8rUh2Cbjo3PnretSno8AUW89G8c=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794774,-72.838265&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=jVkyrHMzCO7w6Q3pW2YzrMs82Wo=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794774,-72.838265&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=t5etTM9ZWcU_YwpoHaM8dflDzQY=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.794798,
+				"longitude": -72.83708,
+				"daysOnZillow": null,
+				"homeStatus": "OTHER",
+				"photoCount": null,
+				"zpid": 111561412,
+				"hdpUrl": "/homedetails/4-Overlook-Dr-Mastic-NY-11950/111561412_zpid/",
+				"bedrooms": null,
+				"bathrooms": null,
+				"livingArea": null,
+				"price": 33333,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "4 Overlook Dr"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": false
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.837080&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=9AA5rZmfvBE9P8TMJsIDl37LI68="
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.83708&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=OU2p6dwmmEE_3sGMVfP2H_-Ybg8=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794798,-72.83708&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=UEs-EIz40kEYP35fE7wdJQec34s=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794798,-72.83708&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=pKIlrfel0AG3cdD_EGTR8rwdgKA=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.794798,
+				"longitude": -72.83708,
+				"daysOnZillow": null,
+				"homeStatus": "OTHER",
+				"photoCount": null,
+				"zpid": 111564778,
+				"hdpUrl": "/homedetails/4-Overlook-Dr-Mastic-NY-11950/111564778_zpid/",
+				"bedrooms": null,
+				"bathrooms": null,
+				"livingArea": null,
+				"price": 2222,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "4 Overlook Dr"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": false
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.837080&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=9AA5rZmfvBE9P8TMJsIDl37LI68="
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.83708&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=OU2p6dwmmEE_3sGMVfP2H_-Ybg8=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794798,-72.83708&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=UEs-EIz40kEYP35fE7wdJQec34s=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794798,-72.83708&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=pKIlrfel0AG3cdD_EGTR8rwdgKA=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.794798,
+				"longitude": -72.83708,
+				"daysOnZillow": 706,
+				"homeStatus": "SOLD",
+				"photoCount": null,
+				"zpid": 111520217,
+				"hdpUrl": "/homedetails/4-Overlook-Dr-Mastic-NY-11950/111520217_zpid/",
+				"bedrooms": null,
+				"bathrooms": null,
+				"livingArea": null,
+				"price": 57000,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "4 Overlook Dr"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": false
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.837080&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=9AA5rZmfvBE9P8TMJsIDl37LI68="
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.83708&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=OU2p6dwmmEE_3sGMVfP2H_-Ybg8=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794798,-72.83708&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=UEs-EIz40kEYP35fE7wdJQec34s=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794798,-72.83708&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=pKIlrfel0AG3cdD_EGTR8rwdgKA=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.794798,
+				"longitude": -72.83708,
+				"daysOnZillow": null,
+				"homeStatus": "OTHER",
+				"photoCount": null,
+				"zpid": 111539683,
+				"hdpUrl": "/homedetails/4-Overlook-Dr-Mastic-NY-11950/111539683_zpid/",
+				"bedrooms": null,
+				"bathrooms": null,
+				"livingArea": null,
+				"price": 33333,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "4 Overlook Dr"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": false
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.837080&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=9AA5rZmfvBE9P8TMJsIDl37LI68="
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.83708&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=OU2p6dwmmEE_3sGMVfP2H_-Ybg8=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794798,-72.83708&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=UEs-EIz40kEYP35fE7wdJQec34s=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794798,-72.83708&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=pKIlrfel0AG3cdD_EGTR8rwdgKA=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.794798,
+				"longitude": -72.83708,
+				"daysOnZillow": null,
+				"homeStatus": "OTHER",
+				"photoCount": null,
+				"zpid": 111530790,
+				"hdpUrl": "/homedetails/4-Overlook-Dr-Mastic-NY-11950/111530790_zpid/",
+				"bedrooms": null,
+				"bathrooms": null,
+				"livingArea": null,
+				"price": 16666,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "4 Overlook Dr"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": false
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.837080&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=9AA5rZmfvBE9P8TMJsIDl37LI68="
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.83708&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=OU2p6dwmmEE_3sGMVfP2H_-Ybg8=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794798,-72.83708&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=UEs-EIz40kEYP35fE7wdJQec34s=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794798,-72.83708&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=pKIlrfel0AG3cdD_EGTR8rwdgKA=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.794798,
+				"longitude": -72.83708,
+				"daysOnZillow": null,
+				"homeStatus": "OTHER",
+				"photoCount": null,
+				"zpid": 111562281,
+				"hdpUrl": "/homedetails/4-Overlook-Dr-Mastic-NY-11950/111562281_zpid/",
+				"bedrooms": 0,
+				"bathrooms": null,
+				"livingArea": null,
+				"price": 11111,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "4 Overlook Dr"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": false
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.837080&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=9AA5rZmfvBE9P8TMJsIDl37LI68="
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.83708&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=OU2p6dwmmEE_3sGMVfP2H_-Ybg8=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794798,-72.83708&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=UEs-EIz40kEYP35fE7wdJQec34s=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794798,-72.83708&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=pKIlrfel0AG3cdD_EGTR8rwdgKA=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.794798,
+				"longitude": -72.83708,
+				"daysOnZillow": null,
+				"homeStatus": "OTHER",
+				"photoCount": null,
+				"zpid": 111552043,
+				"hdpUrl": "/homedetails/4-Overlook-Dr-Mastic-NY-11950/111552043_zpid/",
+				"bedrooms": null,
+				"bathrooms": null,
+				"livingArea": null,
+				"price": 33333,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "4 Overlook Dr"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": false
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.837080&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=9AA5rZmfvBE9P8TMJsIDl37LI68="
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.83708&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=OU2p6dwmmEE_3sGMVfP2H_-Ybg8=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794798,-72.83708&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=UEs-EIz40kEYP35fE7wdJQec34s=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794798,-72.83708&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=pKIlrfel0AG3cdD_EGTR8rwdgKA=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.794798,
+				"longitude": -72.83708,
+				"daysOnZillow": 7894,
+				"homeStatus": "OTHER",
+				"photoCount": null,
+				"zpid": 69498065,
+				"hdpUrl": "/homedetails/4-Overlook-Dr-Mastic-NY-11950/69498065_zpid/",
+				"bedrooms": 0,
+				"bathrooms": null,
+				"livingArea": null,
+				"price": 16666,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "4 Overlook Dr"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": false
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.837080&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=9AA5rZmfvBE9P8TMJsIDl37LI68="
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794798,-72.83708&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=OU2p6dwmmEE_3sGMVfP2H_-Ybg8=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794798,-72.83708&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=UEs-EIz40kEYP35fE7wdJQec34s=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794798,-72.83708&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=pKIlrfel0AG3cdD_EGTR8rwdgKA=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"latitude": 40.795489,
+				"longitude": -72.838268,
+				"daysOnZillow": 228,
+				"homeStatus": "RECENTLY_SOLD",
+				"photoCount": null,
+				"zpid": 2091182769,
+				"hdpUrl": "/homedetails/15-Overlook-Dr-Mastic-NY-11950/2091182769_zpid/",
+				"bedrooms": 4,
+				"bathrooms": 2.5,
+				"livingArea": null,
+				"price": 230000,
+				"address": {
+					"city": "Mastic",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "15 Overlook Dr"
+				},
+				"openHouseHours": null,
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": false
+				},
+				"isNonOwnerOccupied": false,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.795489,-72.838268&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=SPneqhpnViwId9wS3xmlOkfzYtg="
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.795489,-72.838268&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=dtUMDzux4ZTf6Da6T2fDnTsf1HQ=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.795489,-72.838268&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=NiSAvxgfbpmxKpneUePPjZTGosI=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.795489,-72.838268&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=WpBzJqAoAb9Iim_iki8MNvmoECY=",
+				"isPremierBuilder": false,
+				"state": "NY",
 				"isZillowOwned": false
 			}],
 			"homeValues": {
 				"region": {
-					"shortName": "36022",
-					"zindexSqFt": 90,
+					"shortName": "11950",
+					"zindexSqFt": 127,
 					"zhvi": {
-						"yoy": 6.9364161849710975,
-						"value": 185000
+						"yoy": 21.65775401069519,
+						"value": 227500
 					},
-					"link": "/deatsville-al-36022/home-values/"
+					"link": "/mastic-ny-11950/home-values/"
 				},
 				"parentRegion": {
-					"shortName": "Deatsville",
+					"shortName": "Mastic",
 					"zhvi": {
-						"yoy": 6.801152737752162,
-						"value": 185300
+						"yoy": 21.474358974358974,
+						"value": 227400
 					},
 					"regionTypeName": "city",
-					"buyerSellerIndex": null
+					"buyerSellerIndex": {
+						"value": 1.82509505703422
+					}
 				}
 			},
 			"schools": [{
-				"distance": 4.4,
-				"name": "Holtville Elementary School",
-				"rating": 7,
-				"level": "Primary",
-				"studentsPerTeacher": 15,
+				"distance": 1.2,
+				"name": "William Floyd High School",
+				"rating": 5,
+				"level": "High",
+				"studentsPerTeacher": 16,
 				"assigned": null,
-				"grades": "PK-4",
-				"link": "/deatsville-al/schools/holtville-elementary-school-82773/",
+				"grades": "9-12",
+				"link": "/mastic-beach-ny/schools/william-floyd-high-school-58240/",
 				"type": "Public",
-				"size": 677,
-				"totalCount": 2,
+				"size": 2719,
+				"totalCount": 1,
+				"isAssigned": true
+			}, {
+				"distance": 1.6,
+				"name": "William Floyd Middle School",
+				"rating": 4,
+				"level": "Middle",
+				"studentsPerTeacher": 13,
+				"assigned": null,
+				"grades": "6-8",
+				"link": "/moriches-ny/schools/william-floyd-middle-school-58357/",
+				"type": "Public",
+				"size": 1047,
+				"totalCount": 1,
+				"isAssigned": true
+			}, {
+				"distance": 1.3,
+				"name": "Nathaniel Woodhull Elementary School",
+				"rating": 3,
+				"level": "Elementary",
+				"studentsPerTeacher": 14,
+				"assigned": null,
+				"grades": "K-5",
+				"link": "/shirley-ny/schools/nathaniel-woodhull-elementary-school-58358/",
+				"type": "Public",
+				"size": 744,
+				"totalCount": 1,
 				"isAssigned": true
 			}],
 			"schoolSearchUrl": {
-				"path": "/deatsville-al/schools/"
+				"path": "/mastic-ny/schools/"
 			},
 			"hoaFee": null,
 			"propertyTaxRate": null,
 			"mortgageRates": null,
-			"desktopWebHdpImageLink": "https://photos.zillowstatic.com/p_h/ISy7of15gk0k8a0000000000.jpg",
+			"desktopWebHdpImageLink": "https://photos.zillowstatic.com/p_h/ISyf6jequ0rgye0000000000.jpg",
 			"isCurrentSignedInAgentResponsible": false,
 			"isListingClaimedByCurrentSignedInUser": false,
 			"homeTourHighlights": {
 				"agentNotes": [],
 				"isHomeTourHighlightsAllowed": false
 			},
-			"comps": [],
+			"comps": [{
+				"description": "Colonial On Large Lot, Big Rooms, Excellent Condition, Formal Dining Rm, Family Room To Deck, Private Landscaped Yard.",
+				"latitude": 40.794099,
+				"longitude": -72.840998,
+				"daysOnZillow": 88,
+				"homeStatus": "FOR_SALE",
+				"photoCount": 8,
+				"zpid": 64711967,
+				"hdpUrl": "/homedetails/23-Dover-Ave-Mastic-NY-11950/64711967_zpid/",
+				"bedrooms": 4,
+				"bathrooms": 1.5,
+				"livingArea": null,
+				"price": 289990,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "23 Dover Ave"
+				},
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": false,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISijmtm4gotk2e1000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.794099,-72.840998&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=7-s3kqmv5mjXz1o933_vtYW_VQk=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.794099,-72.840998&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=PDCw5d6jRkyWUsj64SKzua1CBQk=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.794099,-72.840998&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=kmUeh2dAsvEUuWP0Q5HqjPXXRi8=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"description": "Also For Rent To Own; Fully Renovated",
+				"latitude": 40.797823,
+				"longitude": -72.840062,
+				"daysOnZillow": 94,
+				"homeStatus": "FOR_SALE",
+				"photoCount": 10,
+				"zpid": 59334650,
+				"hdpUrl": "/homedetails/151-Shinnecock-Ave-Mastic-NY-11950/59334650_zpid/",
+				"bedrooms": 3,
+				"bathrooms": 1,
+				"livingArea": null,
+				"price": 229000,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "151 Shinnecock Ave"
+				},
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISuwgb3w7qyke61000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.797823,-72.840062&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=nqzxJNuSloSZkpchk74HmyFFz1M=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.797823,-72.840062&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=53AzTLOj3G_5wilJFQlflnVggfY=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.797823,-72.840062&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=WAcvJFux71hwfFmxQUrc3_US1zU=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"description": "3 Bedroom Ranch. Poor Condition Many Repairs Needed.",
+				"latitude": 40.799609,
+				"longitude": -72.836766,
+				"daysOnZillow": 305,
+				"homeStatus": "FOR_SALE",
+				"photoCount": 1,
+				"zpid": 59529340,
+				"hdpUrl": "/homedetails/24-Babylon-St-Mastic-NY-11950/59529340_zpid/",
+				"bedrooms": 3,
+				"bathrooms": 2,
+				"livingArea": null,
+				"price": 230000,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "24 Babylon St"
+				},
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": false,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISmepvz2agc9h70000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.799609,-72.836766&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=2_1gS3nEbgM1yJugscySaSGhIxY=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.799609,-72.836766&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=VjoYuOtdzwCiFVLuYj0mTrzzdnQ=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.799609,-72.836766&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=wTJtDx98e_1LSrky5i-ioGD7K1c=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"description": "Oversized Private Fenced Property, New Vinyl Siding, Boiler 2 Years Old..Walk To Marina. New Architectural Roof",
+				"latitude": 40.797006,
+				"longitude": -72.837458,
+				"daysOnZillow": 146,
+				"homeStatus": "FOR_SALE",
+				"photoCount": 5,
+				"zpid": 59529478,
+				"hdpUrl": "/homedetails/20-Wills-Ave-Mastic-NY-11950/59529478_zpid/",
+				"bedrooms": 3,
+				"bathrooms": 1,
+				"livingArea": 1000,
+				"price": 215990,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "20 Wills Ave"
+				},
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISq1ehwvm5zufi1000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.797006,-72.837458&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=IR1v00XJEXmyVpM6oSmW-67jWqU=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.797006,-72.837458&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=NEDQUSolldR-WS2T5kg-H4jkQAE=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.797006,-72.837458&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=7EkLyQVSOjGSwTtcZqoiQ74CdgE=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"description": "Located in the Tri-Hamlet of Mastic, this unique home is a must-see for those who need room to move and play.\r\rInside, the living spaces are vast and an open floor plan concept, offering space for relaxing and entertaining. Wood floors flow through the oversized living room and lead to a beautiful unique archway that connects the kitchen & formal dining room.\r\rThe formal dining room is also generous in size, with plenty of room for the entire extended family or guests. The home chef can whip up delights in the well-equipped kitchen.\r\rThere are three large bedrooms, including the master with a bonus space. This space has so many possibilities and could be used as a nursery, game room, lounge area or anything you desire!\r\rThis home also offers a full basement with its own entrance and yard space, making it perfect for guests, or a rental to generate extra income (with proper permits).\r\rExtra features abound and include a peerless boiler, exceptional insulation, new carpet upstairs and fresh paint. Attic for storage as well!\r\rOutside, a fully-fenced yard is perfect for the kids and family pet, while the beautiful deck and above-ground pool are a haven for family fun all summer long. This great home is conveniently located close to the Forge River Marina & is priced to sell!\r\r",
+				"latitude": 40.800975,
+				"longitude": -72.839507,
+				"daysOnZillow": 20,
+				"homeStatus": "FOR_SALE",
+				"photoCount": 35,
+				"zpid": 59526653,
+				"hdpUrl": "/homedetails/178-Patchogue-Ave-Mastic-NY-11950/59526653_zpid/",
+				"bedrooms": 4,
+				"bathrooms": 3,
+				"livingArea": 2072,
+				"price": 267650,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "178 Patchogue Ave"
+				},
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": false,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISuo27kg6rtcq80000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.800975,-72.839507&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=smeMfTxY7bINNvKdV6LX7Nok79k=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.800975,-72.839507&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=HghkwdK5CchzdJgfVOIpq0NXAfw=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.800975,-72.839507&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=LR9TaaKuXNSboL64TetpCs0pTLU=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"description": "Spacious Corner Home.",
+				"latitude": 40.801586,
+				"longitude": -72.833927,
+				"daysOnZillow": 5,
+				"homeStatus": "FOR_SALE",
+				"photoCount": 8,
+				"zpid": 59526755,
+				"hdpUrl": "/homedetails/224-Patchogue-Ave-Mastic-NY-11950/59526755_zpid/",
+				"bedrooms": 4,
+				"bathrooms": 3,
+				"livingArea": null,
+				"price": 225000,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "224 Patchogue Ave"
+				},
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISijenorrjv3x20000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.801586,-72.833927&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=hlGV70ibkFvotXvh4dt4vA0n4Nc=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.801586,-72.833927&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=ty5LI6eXsK25j8LDoWrasgSjbOI=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.801586,-72.833927&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=nwXn9Nw6Xi8DyP8qiGWPhpPcxfs=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"description": "Why Rent When You Can Own? Open and Inviting Floor Plan With Living Room and Den. Perfect For Entertaining. Lots Of Cabinets, Closets And Storage Space. Potential Main Floor Rental Income With Proper Permits. Full Basement With Outside Entrance. The Possibilities Are Endless. Come See For Yourself.",
+				"latitude": 40.800615,
+				"longitude": -72.836421,
+				"daysOnZillow": 27,
+				"homeStatus": "FOR_SALE",
+				"photoCount": null,
+				"zpid": 59526731,
+				"hdpUrl": "/homedetails/200-Moriches-Ave-Mastic-NY-11950/59526731_zpid/",
+				"bedrooms": 3,
+				"bathrooms": 2,
+				"livingArea": null,
+				"price": 215000,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "200 Moriches Ave"
+				},
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": false,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://maps.googleapis.com/maps/api/staticmap?center=40.800615,-72.836421&zoom=17&size=316x234&maptype=satellite&key=AIzaSyB27zV3MDy6oKhOscB5M44-CVmbisA-7zA&&signature=w9N3qWlqQd4qL3wtCujidZvDYjM="
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.800615,-72.836421&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=qWLxP2tR27pQijPr7l4KZ1l3owY=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.800615,-72.836421&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=RPKWS-chm2bcaDTg-s6W7B_ttTI=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.800615,-72.836421&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=MAqOv6xhRAw2bSJZkK42wcPsxcg=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"description": "Short Sale Subject To Bank Approval. Huge Property 140X100....3Br 1 And 1/2 Bath Home. Unfinished Basement But Has Framing. Basement Has A Separate Entrance.",
+				"latitude": 40.79952,
+				"longitude": -72.837573,
+				"daysOnZillow": 357,
+				"homeStatus": "FOR_SALE",
+				"photoCount": 5,
+				"zpid": 64507001,
+				"hdpUrl": "/homedetails/185-Main-Ave-Mastic-NY-11950/64507001_zpid/",
+				"bedrooms": 3,
+				"bathrooms": 1.5,
+				"livingArea": 1454,
+				"price": 180000,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "185 Main Ave"
+				},
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": false,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISalytdnke8tdw1000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.79952,-72.837573&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=3j5e_cVaO1wT0Qv50YMTl39f0f4=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.79952,-72.837573&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=p8TkpEEPY1vLJk5medxHpipAVSg=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.79952,-72.837573&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=GSYMxUxoE7ulH_0BKV1n5EIOl6g=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"description": "Cozy 2 Bedrooms, Large Lot Size House In Near Marina Dock & Water.",
+				"latitude": 40.795733,
+				"longitude": -72.833279,
+				"daysOnZillow": 126,
+				"homeStatus": "FOR_SALE",
+				"photoCount": 9,
+				"zpid": 59529578,
+				"hdpUrl": "/homedetails/76-Riviera-Dr-Mastic-NY-11950/59529578_zpid/",
+				"bedrooms": 2,
+				"bathrooms": 1,
+				"livingArea": null,
+				"price": 190000,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "76 Riviera Dr"
+				},
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISe8flhze9dsmi1000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.795733,-72.833279&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=sz9BtYG5A1pdbbKPv8y70sR6h_o=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.795733,-72.833279&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=6Q-Z5HHWNOqYrVjGDkZJdWN_yfo=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.795733,-72.833279&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=67AneIDakhJxvwdZYuVfPMp4RW0=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"description": "Seller Looking For Only Cash Offers. Incomplete Construction. Needs Kitchens And Baseboards. Everything New, Roofing, Siding, Windows, Bathrooms, Electric, Plumbing, Heating, Hwf. 8 Camera Security System. Must Sell, Seller Wants To Hear All Offers.",
+				"latitude": 40.792272,
+				"longitude": -72.847788,
+				"daysOnZillow": 20,
+				"homeStatus": "FOR_SALE",
+				"photoCount": 18,
+				"zpid": 59531957,
+				"hdpUrl": "/homedetails/34-Bullard-St-Mastic-NY-11950/59531957_zpid/",
+				"bedrooms": 6,
+				"bathrooms": 3,
+				"livingArea": 1792,
+				"price": 250000,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "34 Bullard St"
+				},
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISewhz0q9k1x021000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.792272,-72.847788&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=4pmbY_P8WG6ZUYEfgmSoOkNgObc=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.792272,-72.847788&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=WL5JmGPmL2iDaRq2bhqOIGakCZc=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.792272,-72.847788&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=hV_Xn-N7JHSeu_kxqaC8rddk2Bo=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"description": "Investor opportunity! This property is being offered at Public Auction on 01-16-2019. Visit Auction.com now to view additional photos, Property Inspection Report with title information, plat maps and interior inspection reports when available. Auction.com is the nation's leading real estate transaction platform focused exclusively on the sale of residential foreclosure and bank-owned properties. The majority of these properties are priced below market value. Don't miss this special opportunity to buy homes at wholesale prices! In addition to this property, 129 other properties are scheduled for sale at this same Foreclosure Sale. In our online auctions and live Foreclosure Sales, Auction.com currently has 14 properties scheduled for sale in Suffolk County and 1382 throughout New York. All properties and sale details can be found with a simple search at Auction.com. Create a FREE account today to find more properties like this one, save searches of properties that meet your investment criteria and have the properties you're looking for emailed directly to you when posted in an upcoming sale event. To view the complete details of this exact property, click the Auction.com link below or paste the Property ID 2688980 into the search bar at Auction.com",
+				"latitude": 40.800951,
+				"longitude": -72.833371,
+				"daysOnZillow": 21,
+				"homeStatus": "FOR_SALE",
+				"photoCount": 5,
+				"zpid": 69506914,
+				"hdpUrl": "/homedetails/224-Moriches-Ave-Mastic-NY-11950/69506914_zpid/",
+				"bedrooms": 3,
+				"bathrooms": 2,
+				"livingArea": 1168,
+				"price": 195888,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "224 Moriches Ave"
+				},
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": true,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": false,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISatkou41yn07d1000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.800951,-72.833371&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=5FnmUD72qMNh-KzPaVtiAg0skWU=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.800951,-72.833371&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=7Fvf2hgRV6Fl7MZ3I9ColQgHL3A=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.800951,-72.833371&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=ZShKeVM1ozz0as7A4uCoDFeVmJk=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}, {
+				"description": "1 Family Home with separate Legal Accessory Apt, Mint Condition. 4Br, 4Bth, 2 Zone Heating, Sec Sys, 2 Zone Cac, Mbr Suite, Pellet Stove. Rm For Pool & Bbq. Sunsetter Awning Incl. Many Extras",
+				"latitude": 40.800914,
+				"longitude": -72.843768,
+				"daysOnZillow": 270,
+				"homeStatus": "FOR_SALE",
+				"photoCount": 15,
+				"zpid": 72610952,
+				"hdpUrl": "/homedetails/139-Patchogue-Ave-Mastic-NY-11950/72610952_zpid/",
+				"bedrooms": 5,
+				"bathrooms": 4,
+				"livingArea": 2396,
+				"price": 329000,
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"zipcode": "11950",
+					"streetAddress": "139 Patchogue Ave"
+				},
+				"listing_sub_type": {
+					"is_FSBO": false,
+					"is_newHome": false,
+					"is_foreclosure": false,
+					"is_bankOwned": false,
+					"is_forAuction": false,
+					"is_comingSoon": false,
+					"is_FSBA": true
+				},
+				"isNonOwnerOccupied": true,
+				"photos": [{
+					"width": 316,
+					"height": 234,
+					"url": "https://photos.zillowstatic.com/p_c/ISiz25bh1g6bvh0000000000.jpg"
+				}],
+				"currency": "USD",
+				"googleStaticMapSignedUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.800914,-72.843768&zoom=16&size=400x215&maptype=satellite&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&scale=1&signature=zaKE1LczBT2efYMzlpAd8vA-YDs=",
+				"googleStreetViewImageSignedUrl": "https://maps.googleapis.com/maps/api/streetview?location=40.800914,-72.843768&size=400x215&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=GL_Y4NzdcMZkkuTrsFrITqjp5iE=",
+				"googleStreetViewMetadataSignedUrl": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.800914,-72.843768&key=AIzaSyDY6ZJXL8FxBWwingKLmFPJdNF4VzD3vg4&source=outdoor&signature=X5QHaAmYAdRsaHaJotaA3xSVGyU=",
+				"isPremierBuilder": false,
+				"state": "NY",
+				"isZillowOwned": false
+			}],
 			"foreclosureTypes": {
-				"isBankOwned": false,
-				"wasREO": false,
+				"isBankOwned": true,
+				"wasREO": true,
 				"isForeclosedNFS": false,
-				"isAnyForeclosure": false,
+				"isAnyForeclosure": true,
 				"isPreforeclosure": false,
 				"wasNonRetailAuction": false,
 				"wasForeclosed": false,
@@ -1021,35 +1666,35 @@
 			"foreclosureDate": null,
 			"foreclosureAmount": null,
 			"foreclosingBank": null,
-			"foreclosureJudicialType": "Non-Judicial",
+			"foreclosureJudicialType": "Judicial",
 			"festimate": null,
-			"datePosted": 1546952760000,
+			"datePosted": 1546981680000,
 			"currency": "USD",
 			"foreclosureMoreInfo": null,
 			"listingProvider": {
 				"title": "Listing Provided by",
-				"disclaimerText": null,
+				"disclaimerText": "MLS Disclaimer: Copyright MLS of Long Island. All rights reserved. Information is deemed reliable but not guaranteed.",
 				"enhancedVideoURL": null,
-				"enhancedDescriptionText": "The Listing Agent on this property is part of the CENTURY 21® System.\r\n",
+				"enhancedDescriptionText": null,
 				"showLogos": true,
 				"logos": [{
-					"src": "https://photos.zillowstatic.com/l_c/ISibgf1v867xpx1000000000.jpg",
+					"src": "https://photos.zillowstatic.com/l_c/IS521gove55vji0000000000.jpg",
 					"link": null
 				}],
 				"showNoContactInfoMessage": false,
-				"agentName": "Ralph Calloway",
-				"phoneNumber": "(334) 514-4949",
-				"agentLicenseNumber": "License #16851",
+				"agentName": "Trevor Kemp",
+				"phoneNumber": "(631) 477-6626",
+				"agentLicenseNumber": null,
 				"postingWebsiteURL": null,
-				"postingWebsiteLinkText": "CENTURY 21 Brandt Wright Realty, Inc.",
-				"postingGroupName": "CENTURY 21 Brandt Wright Realty, Inc.",
-				"sourceText": "Source: Century 21 via MLS",
+				"postingWebsiteLinkText": "East End Luxury Ltd",
+				"postingGroupName": "East End Luxury Ltd",
+				"sourceText": "Source: MLS of Long Island",
 				"isZRMSourceText": false
 			},
-			"brokerId": 14641,
+			"brokerId": 13869,
 			"isPremierBuilder": false,
 			"isCurrentSignedInUserVerifiedOwner": false,
-			"regionString": "Deatsville AL",
+			"regionString": "Mastic NY",
 			"propertyUpdatePageLink": null,
 			"moveHomeMapLocationLink": null,
 			"propertyEventLogLink": null,
@@ -1058,23 +1703,23 @@
 				"superTrafficOptimized": false,
 				"superTrafficOptimizedB": false
 			},
-			"brokerIdForTracking": "14641",
+			"brokerIdForTracking": "13869",
 			"postingUrl": "",
-			"mapHoleGoogleStaticMapUrl": "https://maps.googleapis.com/maps/api/staticmap?center=32.700483,-86.355655&zoom=13&size=302x92&maptype=roadmap&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&scale=2&signature=7D0tusvjCLb5AGaEQReNV_WpJR8=",
+			"mapHoleGoogleStaticMapUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.795083,-72.837699&zoom=13&size=302x92&maptype=roadmap&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&scale=2&signature=dIlJVXGq874JqObug8kji0Q8VLo=",
 			"tourPhotos": [{
-				"url": "https://photos.zillowstatic.com/p_d/ISy7of15gk0k8a0000000000.jpg"
+				"url": "https://photos.zillowstatic.com/p_d/ISyf6jequ0rgye0000000000.jpg"
 			}],
-			"description": "Rare find about 298 feet of deep water and pier on Lake Jordan with point, 17.12 acres of big timber, large creek with large rocks, water falls, several feet of road frontage with public water, electricity available. No restrictions known,5.7 miles from slapout in Holtville.    it is super nice and updated appraised for $270,000 on one side of the point over looking lake is a creek the other side is a slew. Great View , no you are not in Gatlinburg, but it looks like they are first cousins. Road frontage goes to center of road toward the end of the road you go through iron gate and property is straight forward to lake. Big timber with lots of hardwoods and wildlife. Golf cart roads throughout property.",
+			"description": "Waterfront Colonial On The Creek Features Kitchen, Dinning Room, Living Room, 4 Bedrooms (Master Suite Has Dressing Room And Full Bathroom), 3.5 Bathrooms, Full Basement With Sliders Leading Out To The Water.  Disclaimer: The Information Contained Herein Has Been Obtained Through Sources Deemed Reliable But Cannot Be Guaranteed As To Its Accuracy.?any Information Of Special Interest Should Be Obtained Through Independent Verification.",
 			"isUndisclosedAddress": false,
-			"lotSize": 745747,
+			"lotSize": 20037,
 			"isNonOwnerOccupied": false,
 			"dateSold": null,
 			"taxAssessedValue": null,
 			"taxAssessedYear": null,
-			"hideZestimate": true,
+			"hideZestimate": false,
 			"newConstructionType": null,
 			"comingSoonOnMarketDate": null,
-			"listingStatusChangeDate": 1546952940000,
+			"listingStatusChangeDate": 1546981680000,
 			"isPreforeclosureAuction": false,
 			"priceChange": null,
 			"datePriceChanged": null,
@@ -1088,41 +1733,98 @@
 			"whatILove": null,
 			"nearbySales": [{
 				"address": {
-					"city": "Deatsville",
-					"state": "AL",
-					"streetAddress": "85 Country Ln",
-					"zipcode": "36022"
+					"city": "MASTIC",
+					"state": "NY",
+					"streetAddress": "11 Pitts Ave",
+					"zipcode": "11950"
 				},
-				"bathrooms": null,
-				"bedrooms": null,
-				"dateSold": 1535720400000,
-				"hdpUrl": "/homedetails/85-Country-Ln-Deatsville-AL-36022/69265_zpid/",
+				"bathrooms": 4,
+				"bedrooms": 4,
+				"dateSold": 1517961600000,
+				"hdpUrl": "/homedetails/11-Pitts-Ave-Mastic-NY-11950/72617735_zpid/",
 				"homeStatus": "RECENTLY_SOLD",
-				"latitude": 32.695055,
-				"livingArea": null,
-				"longitude": -86.381451,
-				"price": 178500,
-				"zipcode": "36022",
-				"zpid": 69265,
+				"latitude": 40.795061,
+				"livingArea": 2400,
+				"longitude": -72.841049,
+				"price": 295101,
+				"zipcode": "11950",
+				"zpid": 72617735,
 				"currency": "USD"
 			}, {
 				"address": {
-					"city": "TITUS",
-					"state": "AL",
-					"streetAddress": "2242 Grays Ferry Rd",
-					"zipcode": "36080"
+					"city": "Mastic",
+					"state": "NY",
+					"streetAddress": "15 Overlook Dr",
+					"zipcode": "11950"
 				},
-				"bathrooms": 1,
-				"bedrooms": 3,
-				"dateSold": 1540818000000,
-				"hdpUrl": "/homedetails/2242-Grays-Ferry-Rd-Titus-AL-36080/103280_zpid/",
+				"bathrooms": 2.5,
+				"bedrooms": 4,
+				"dateSold": 1527249600000,
+				"hdpUrl": "/homedetails/15-Overlook-Dr-Mastic-NY-11950/2091182769_zpid/",
 				"homeStatus": "RECENTLY_SOLD",
-				"latitude": 32.713231,
-				"livingArea": 1200,
-				"longitude": -86.317725,
-				"price": 16000,
-				"zipcode": "36080",
-				"zpid": 103280,
+				"latitude": 40.795489,
+				"livingArea": null,
+				"longitude": -72.838268,
+				"price": 230000,
+				"zipcode": "11950",
+				"zpid": 2091182769,
+				"currency": "USD"
+			}, {
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"streetAddress": "183 Hampton Ave",
+					"zipcode": "11950"
+				},
+				"bathrooms": null,
+				"bedrooms": 3,
+				"dateSold": 1534118400000,
+				"hdpUrl": "/homedetails/183-Hampton-Ave-Mastic-NY-11950/59526677_zpid/",
+				"homeStatus": "RECENTLY_SOLD",
+				"latitude": 40.800279,
+				"livingArea": null,
+				"longitude": -72.83697,
+				"price": 371500,
+				"zipcode": "11950",
+				"zpid": 59526677,
+				"currency": "USD"
+			}, {
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"streetAddress": "15 Overlook Dr # 4",
+					"zipcode": "11950"
+				},
+				"bathrooms": 2.5,
+				"bedrooms": 4,
+				"dateSold": 1529452800000,
+				"hdpUrl": "/homedetails/15-Overlook-Dr-4-Mastic-NY-11950/72610752_zpid/",
+				"homeStatus": "RECENTLY_SOLD",
+				"latitude": 40.795489,
+				"livingArea": null,
+				"longitude": -72.838268,
+				"price": 230000,
+				"zipcode": "11950",
+				"zpid": 72610752,
+				"currency": "USD"
+			}, {
+				"address": {
+					"city": "MASTIC",
+					"state": "NY",
+					"streetAddress": "129 Roberts St",
+					"zipcode": "11950"
+				},
+				"bathrooms": 3,
+				"bedrooms": 3,
+				"dateSold": 1534204800000,
+				"hdpUrl": "/homedetails/129-Roberts-St-Mastic-NY-11950/59529431_zpid/",
+				"homeStatus": "RECENTLY_SOLD",
+				"latitude": 40.795337,
+				"livingArea": null,
+				"longitude": -72.843617,
+				"price": 295000,
+				"zipcode": "11950",
+				"zpid": 59529431,
 				"currency": "USD"
 			}],
 			"vrModel": {
@@ -1131,128 +1833,128 @@
 				"cdnHost": null
 			},
 			"big": [{
-				"url": "https://photos.zillowstatic.com/p_h/ISy7of15gk0k8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISyf6jequ0rgye0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISq1m3jybcsm8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISa95jcsifcf8g0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISmaaley8j9e1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISme19ucc5debf0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISivjr0s74kp8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/IS6mcqn9kzgm4f0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISe489wr4b1h1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/IS2337ule74i8g0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISaphfil3wbs8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISe8zwb68x4hbf0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/IS6y5xdl03tj1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISyfae53gr8p4f0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/IS2jf30fzn3v8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISiroouf3bwngg0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISyr3lvewukm1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/IS62xktz3pwjbf0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISucdrh8vfvx8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISalmcc9z2oqgg0000000000.jpg",
 				"width": 550
 			}],
 			"small": [{
-				"url": "https://photos.zillowstatic.com/p_c/ISy7of15gk0k8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISyf6jequ0rgye0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISq1m3jybcsm8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISa95jcsifcf8g0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISmaaley8j9e1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISme19ucc5debf0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISivjr0s74kp8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/IS6mcqn9kzgm4f0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISe489wr4b1h1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/IS2337ule74i8g0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISaphfil3wbs8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISe8zwb68x4hbf0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/IS6y5xdl03tj1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISyfae53gr8p4f0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/IS2jf30fzn3v8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISiroouf3bwngg0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISyr3lvewukm1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/IS62xktz3pwjbf0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISucdrh8vfvx8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISalmcc9z2oqgg0000000000.jpg",
 				"width": 316
 			}],
 			"photoCount": 10,
-			"streetViewMetadataUrlMediaWallLatLong": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.700483,-86.355655&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=mP19xeLghwYocW4v5f3AH_vBO5Y=",
-			"streetViewMetadataUrlMediaWallAddress": "https://maps.googleapis.com/maps/api/streetview/metadata?location=0 Sugar Loaf Hill Rd, Deatsville, AL 36022&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=UgklBM0MpSB6hqpXxStREu9pG4c=",
+			"streetViewMetadataUrlMediaWallLatLong": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.795083,-72.837699&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=KvuCA_uJrRdBIV0dQXi9r1ynGjA=",
+			"streetViewMetadataUrlMediaWallAddress": "https://maps.googleapis.com/maps/api/streetview/metadata?location=25 Overlook Dr, Mastic, NY 11950&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=OqoHrnxjHwBOP_3LTPKeLBILsuI=",
 			"hasVRModel": null,
 			"hasPublicVideo": false,
-			"streetViewTileImageUrlMediumLatLong": "https://maps.googleapis.com/maps/api/streetview?location=32.700483,-86.355655&size=400x250&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=1KMUg6o5-Jr5mZbp3rbw1hzSCcY=",
-			"streetViewTileImageUrlMediumAddress": "https://maps.googleapis.com/maps/api/streetview?location=0 Sugar Loaf Hill Rd, Deatsville, AL 36022&size=400x250&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=J0wQzN9Qd4dkMjM17PWFd6TjL4E=",
-			"streetViewTileImageUrlHalfWidthLatLong": "https://maps.googleapis.com/maps/api/streetview?location=32.700483,-86.355655&size=512x234&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=e4FtGMp-q8cdME_5kYGaqyMongY=",
-			"streetViewTileImageUrlHalfWidthAddress": "https://maps.googleapis.com/maps/api/streetview?location=0 Sugar Loaf Hill Rd, Deatsville, AL 36022&size=512x234&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=nFVQx_cCkvi8Cb590cKzvw1iN8M=",
-			"mapTileGoogleMapUrlSmall": "https://maps.googleapis.com/maps/api/staticmap?center=32.700483,-86.355655&zoom=14&size=280x208&maptype=roadmap&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&scale=2&signature=XXd7-PIpalb48v4k6KlD0II2sLM=",
-			"mapTileGoogleMapUrlFullWidthLightbox": "https://maps.googleapis.com/maps/api/staticmap?center=32.700483,-86.355655&zoom=16&size=1024x234&maptype=roadmap&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&scale=2&signature=FesDgIpmFfjNW14-o-6N20zJn80=",
-			"mapTileGoogleMapUrlFullWidthMax": "https://maps.googleapis.com/maps/api/staticmap?center=32.700483,-86.355655&zoom=16&size=1920x234&maptype=roadmap&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&scale=1&signature=oOA6-rUUGffuKRd4cKrR4u6fZVI=",
-			"streetViewMetadataUrlMapLightboxLatLong": "https://maps.googleapis.com/maps/api/streetview/metadata?location=32.700483,-86.355655&key=AIzaSyBV4lXhV-qzQOegyA3m0_AvGy9F21HIyOQ&source=outdoor&signature=6wDiSQk1cmQe93g6qJ3NJ1-VJpg=",
-			"streetViewMetadataUrlMapLightboxAddress": "https://maps.googleapis.com/maps/api/streetview/metadata?location=0 Sugar Loaf Hill Rd, Deatsville, AL 36022&key=AIzaSyBV4lXhV-qzQOegyA3m0_AvGy9F21HIyOQ&source=outdoor&signature=DBTKiBfr1qQIAsEJoXBccdis4qk=",
+			"streetViewTileImageUrlMediumLatLong": "https://maps.googleapis.com/maps/api/streetview?location=40.795083,-72.837699&size=400x250&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=NcmSL6A-4RYi6UI3le2MRu5jZ8U=",
+			"streetViewTileImageUrlMediumAddress": "https://maps.googleapis.com/maps/api/streetview?location=25 Overlook Dr, Mastic, NY 11950&size=400x250&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=-It__ttQ7Zj93UTJ0Zn5lB21JNg=",
+			"streetViewTileImageUrlHalfWidthLatLong": "https://maps.googleapis.com/maps/api/streetview?location=40.795083,-72.837699&size=512x234&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=HCW-wBUm1SFgZmqfXxjbY3reQls=",
+			"streetViewTileImageUrlHalfWidthAddress": "https://maps.googleapis.com/maps/api/streetview?location=25 Overlook Dr, Mastic, NY 11950&size=512x234&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=JC_A8XbtwVO-d_TwsZiuHctsGtA=",
+			"mapTileGoogleMapUrlSmall": "https://maps.googleapis.com/maps/api/staticmap?center=40.795083,-72.837699&zoom=14&size=280x208&maptype=roadmap&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&scale=2&signature=BRgaFiaVmHHiosPXE3qLPFhGmZM=",
+			"mapTileGoogleMapUrlFullWidthLightbox": "https://maps.googleapis.com/maps/api/staticmap?center=40.795083,-72.837699&zoom=16&size=1024x234&maptype=roadmap&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&scale=2&signature=lJq0xwlw1urj5rCAoMnd-R-rWaE=",
+			"mapTileGoogleMapUrlFullWidthMax": "https://maps.googleapis.com/maps/api/staticmap?center=40.795083,-72.837699&zoom=16&size=1920x234&maptype=roadmap&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&scale=1&signature=IIODsj8DdEqC5sz4sYgIaFBxe5Y=",
+			"streetViewMetadataUrlMapLightboxLatLong": "https://maps.googleapis.com/maps/api/streetview/metadata?location=40.795083,-72.837699&key=AIzaSyBV4lXhV-qzQOegyA3m0_AvGy9F21HIyOQ&source=outdoor&signature=hgnctjY-ZLsDP9wTOOjK_kXduCU=",
+			"streetViewMetadataUrlMapLightboxAddress": "https://maps.googleapis.com/maps/api/streetview/metadata?location=25 Overlook Dr, Mastic, NY 11950&key=AIzaSyBV4lXhV-qzQOegyA3m0_AvGy9F21HIyOQ&source=outdoor&signature=FBpkgZr-6sfenMcnok6bi5DwRdA=",
 			"hugePhotos": [{
-				"url": "https://photos.zillowstatic.com/p_f/ISy7of15gk0k8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_f/ISyf6jequ0rgye0000000000.jpg",
 				"width": 1025,
 				"height": 768,
 				"caption": ""
 			}, {
-				"url": "https://photos.zillowstatic.com/p_f/ISq1m3jybcsm8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_f/ISa95jcsifcf8g0000000000.jpg",
 				"width": 1025,
 				"height": 768,
 				"caption": ""
 			}, {
-				"url": "https://photos.zillowstatic.com/p_f/ISmaaley8j9e1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_f/ISme19ucc5debf0000000000.jpg",
 				"width": 1025,
 				"height": 768,
 				"caption": ""
 			}, {
-				"url": "https://photos.zillowstatic.com/p_f/ISivjr0s74kp8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_f/IS6mcqn9kzgm4f0000000000.jpg",
 				"width": 1025,
 				"height": 768,
 				"caption": ""
 			}, {
-				"url": "https://photos.zillowstatic.com/p_f/ISe489wr4b1h1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_f/IS2337ule74i8g0000000000.jpg",
 				"width": 1025,
 				"height": 768,
 				"caption": ""
 			}, {
-				"url": "https://photos.zillowstatic.com/p_f/ISaphfil3wbs8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_f/ISe8zwb68x4hbf0000000000.jpg",
 				"width": 1025,
 				"height": 768,
 				"caption": ""
 			}, {
-				"url": "https://photos.zillowstatic.com/p_f/IS6y5xdl03tj1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_f/ISyfae53gr8p4f0000000000.jpg",
 				"width": 1025,
 				"height": 768,
 				"caption": ""
 			}, {
-				"url": "https://photos.zillowstatic.com/p_f/IS2jf30fzn3v8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_f/ISiroouf3bwngg0000000000.jpg",
 				"width": 1025,
 				"height": 768,
 				"caption": ""
 			}, {
-				"url": "https://photos.zillowstatic.com/p_f/ISyr3lvewukm1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_f/IS62xktz3pwjbf0000000000.jpg",
 				"width": 1025,
 				"height": 768,
 				"caption": ""
 			}, {
-				"url": "https://photos.zillowstatic.com/p_f/ISucdrh8vfvx8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_f/ISalmcc9z2oqgg0000000000.jpg",
 				"width": 1025,
 				"height": 768,
 				"caption": ""
@@ -1262,94 +1964,94 @@
 				"isFSBA": true
 			},
 			"postingContact": {
-				"name": "Ralph Calloway",
+				"name": "Trevor Kemp",
 				"photo": {
-					"url": "https://photos.zillowstatic.com/h_i/ISm2c9gyoalkqn0000000000.jpg"
+					"url": "https://photos.zillowstatic.com/h_i/ISmqmxcw8g363g1000000000.jpg"
 				}
 			},
 			"primaryPublicVideo": null,
 			"lastSoldPrice": null,
 			"abbreviatedAddress": null,
 			"boroughId": null,
-			"providerListingID": "445487",
+			"providerListingID": "3091587",
 			"neighborhoodSearchUrl": null,
 			"stateSearchUrl": {
-				"path": "/al/"
+				"path": "/ny/"
 			},
 			"boroughSearchUrl": null,
 			"communityUrl": null,
 			"isRecentStatusChange": false,
-			"county": "Elmore County",
+			"county": "Suffolk County",
 			"daysOnZillow": 0,
 			"rentalApplicationsAcceptedType": "REQUEST_TO_APPLY",
-			"brokerageName": "CENTURY 21 Brandt Wright Realty, Inc.",
-			"propertyTypeDimension": "Lot",
+			"brokerageName": "East End Luxury Ltd",
+			"propertyTypeDimension": "Single Family",
 			"hdpTypeDimension": "ForSale",
-			"listingTypeDimension": "For Sale (Broker)",
+			"listingTypeDimension": "Foreclosure Explicit",
 			"featuredListingTypeDimension": "organic",
-			"brokerIdDimension": "14641",
-			"keystoneHomeStatus": "ForSale",
-			"pageUrlFragment": "ForSale",
+			"brokerIdDimension": "13869",
+			"keystoneHomeStatus": "ForSaleForeclosure",
+			"pageUrlFragment": "ForSaleForeclosure",
 			"small_photos": [{
-				"url": "https://photos.zillowstatic.com/p_c/ISy7of15gk0k8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISyf6jequ0rgye0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISq1m3jybcsm8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISa95jcsifcf8g0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISmaaley8j9e1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISme19ucc5debf0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISivjr0s74kp8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/IS6mcqn9kzgm4f0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISe489wr4b1h1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/IS2337ule74i8g0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISaphfil3wbs8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISe8zwb68x4hbf0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/IS6y5xdl03tj1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISyfae53gr8p4f0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/IS2jf30fzn3v8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISiroouf3bwngg0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISyr3lvewukm1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/IS62xktz3pwjbf0000000000.jpg",
 				"width": 316
 			}, {
-				"url": "https://photos.zillowstatic.com/p_c/ISucdrh8vfvx8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_c/ISalmcc9z2oqgg0000000000.jpg",
 				"width": 316
 			}],
 			"large_photos": [{
-				"url": "https://photos.zillowstatic.com/p_h/ISy7of15gk0k8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISyf6jequ0rgye0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISq1m3jybcsm8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISa95jcsifcf8g0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISmaaley8j9e1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISme19ucc5debf0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISivjr0s74kp8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/IS6mcqn9kzgm4f0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISe489wr4b1h1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/IS2337ule74i8g0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISaphfil3wbs8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISe8zwb68x4hbf0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/IS6y5xdl03tj1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISyfae53gr8p4f0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/IS2jf30fzn3v8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISiroouf3bwngg0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISyr3lvewukm1a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/IS62xktz3pwjbf0000000000.jpg",
 				"width": 550
 			}, {
-				"url": "https://photos.zillowstatic.com/p_h/ISucdrh8vfvx8a0000000000.jpg",
+				"url": "https://photos.zillowstatic.com/p_h/ISalmcc9z2oqgg0000000000.jpg",
 				"width": 550
 			}]
 		},
@@ -1389,13 +2091,13 @@
 				"display_options": {
 					"is_opaque_eligible": true
 				},
-				"pixel_id": "b352e1ba-6d73-4a72-97af-3da5a2e5fa4c",
+				"pixel_id": "0b45fa4b-eb9b-4ed4-bef0-c11273968617",
 				"variant": "bal",
 				"lender_details": {
 					"preapproval_info": {
-						"zipcode": "36022",
-						"state_abbr": "AL",
-						"property_value": 270000
+						"zipcode": "11950",
+						"state_abbr": "NY",
+						"property_value": 255000
 					},
 					"preapproval": {
 						"checked": false,
@@ -1414,122 +2116,148 @@
 				}],
 				"brokerage_info_must_be_shown": false,
 				"lenders_module": [{
-					"display_name": "Shelly Nickles",
+					"display_name": "Alan Diemer",
 					"phone": {
-						"areacode": "334",
-						"prefix": "399",
-						"number": "3732"
+						"areacode": "516",
+						"prefix": "967",
+						"number": "8179"
 					},
-					"nmls_license": 430123,
-					"agent_encoded_zuid": "X1-ZUyq1d7kjspma1_93ahq",
-					"lender_encoded_zuid": "X1-ZU10uhnvbjm50qx_a57uh",
+					"nmls_license": 13876,
+					"agent_encoded_zuid": "X1-ZU106ltlit0gy6h_a80zf",
+					"lender_encoded_zuid": "X1-ZUzjrtwpbrd8uh_18y6t",
 					"image_data": {
-						"url": "https://mortgageapi.zillow.com/getLenderProfileImage?lenderId=ZU10uhnvbjm50qx_a57uh&imageId=12078868c667261146a8115d13e5f4fc&treatment=36x36",
+						"url": "https://mortgageapi.zillow.com/getLenderProfileImage?lenderId=ZUzjrtwpbrd8uh_18y6t&imageId=3ff190191e40a3059f587f5d77ff2ec0&treatment=36x36",
 						"width": 36,
 						"height": 36
 					},
-					"profile_url": "/lender-profile/snickles18/"
+					"profile_url": "/lender-profile/Al-Diemer/"
+				}, {
+					"display_name": "Jeffrey Butofsky",
+					"phone": {
+						"areacode": "631",
+						"prefix": "487",
+						"number": "6058"
+					},
+					"nmls_license": 108116,
+					"agent_encoded_zuid": "X1-ZUz9hi9b69zxft_9tzap",
+					"lender_encoded_zuid": "X1-ZUykh0nim0wdmx_7rj5o",
+					"image_data": {
+						"url": "https://mortgageapi.zillow.com/getLenderProfileImage?lenderId=ZUykh0nim0wdmx_7rj5o&imageId=9b339cd164a7856b60ee6b3370ba96c0&treatment=36x36",
+						"width": 36,
+						"height": 36
+					},
+					"profile_url": "/lender-profile/JeffreyButofsky/"
 				}],
 				"contact_recipients": [{
-					"first_name": null,
-					"display_name": "Ralph Calloway",
+					"first_name": "Trevor",
+					"display_name": "Trevor Kemp",
 					"badge_type": "Listing Agent",
-					"encoded_zuid": "X1-ZUz1ci99gqj409_uwi3",
+					"write_review_url": "/reviews/write/?s=X1-ZUz260aiwrjjm1_adn9b",
 					"phone": {
-						"areacode": "334",
-						"prefix": "514",
-						"number": "4949"
+						"areacode": "631",
+						"prefix": "515",
+						"number": "0028"
 					},
+					"recent_sales": 2,
+					"rating_average": 5,
+					"encoded_zuid": "X1-ZUz260aiwrjjm1_adn9b",
+					"reviews_url": "/profile/TrevorQKemp/#reviews",
+					"has_wells_fargo_pal": false,
 					"zpro": true,
+					"services_offered": [1, 2, 4, 5],
 					"agent_reason": 3,
 					"image_data": {
-						"url": "https://photos.zillowstatic.com/h_n/ISm2c9gyoalkqn0000000000.jpg",
+						"url": "https://photos.zillowstatic.com/h_n/ISmqmxcw8g363g1000000000.jpg",
 						"width": 60,
 						"height": 60
-					}
-				}, {
-					"first_name": "Dean",
-					"display_name": "Dean Ahrendt",
-					"badge_type": "Premier Agent",
-					"write_review_url": "/reviews/write/?s=X1-ZUyq1d7kjspma1_93ahq",
-					"phone": {
-						"areacode": "334",
-						"prefix": "649",
-						"number": "6549"
 					},
-					"recent_sales": 25,
-					"rating_average": 5,
-					"encoded_zuid": "X1-ZUyq1d7kjspma1_93ahq",
-					"reviews_url": "/profile/Dean-Ahrendt/#reviews",
+					"review_count": 1,
+					"has_caliber_pal": false,
+					"profile_url": "/profile/TrevorQKemp/",
+					"has_pal": false
+				}, {
+					"first_name": "James",
+					"display_name": "James Magee",
+					"badge_type": "Premier Agent",
+					"write_review_url": "/reviews/write/?s=X1-ZU12vk568yqtc7d_8w9nd",
+					"phone": {
+						"areacode": "631",
+						"prefix": "904",
+						"number": "7350"
+					},
+					"recent_sales": 2,
+					"rating_average": 0,
+					"encoded_zuid": "X1-ZU12vk568yqtc7d_8w9nd",
+					"reviews_url": "/profile/JamesMageeC21/#reviews",
 					"has_wells_fargo_pal": false,
-					"services_offered": [1, 2, 3, 7],
+					"services_offered": [1, 2],
 					"is_remnant": false,
 					"agent_reason": 1,
 					"image_data": {
-						"url": "https://photos.zillowstatic.com/h_n/ISyrrv3rro0i141000000000.jpg",
+						"url": "https://photos.zillowstatic.com/h_n/ISqtbuab1wmo1c0000000000.jpg",
 						"width": 60,
 						"height": 60
 					},
-					"review_count": 41,
+					"review_count": 0,
 					"has_caliber_pal": false,
-					"profile_url": "/profile/Dean-Ahrendt/",
-					"has_pal": true
+					"profile_url": "/profile/JamesMageeC21/",
+					"has_pal": false
 				}, {
 					"first_name": "Gina",
-					"display_name": "Gina Buck",
+					"display_name": "Gina Walter",
 					"badge_type": "Premier Agent",
-					"write_review_url": "/reviews/write/?s=X1-ZUz4004y00qjgp_9fxlz",
+					"write_review_url": "/reviews/write/?s=X1-ZU106ltlit0gy6h_a80zf",
 					"phone": {
-						"areacode": "334",
-						"prefix": "219",
-						"number": "4579"
+						"areacode": "631",
+						"prefix": "609",
+						"number": "4467"
 					},
-					"recent_sales": 17,
+					"recent_sales": 44,
 					"rating_average": 5,
-					"encoded_zuid": "X1-ZUz4004y00qjgp_9fxlz",
-					"reviews_url": "/profile/ginabuck/#reviews",
+					"encoded_zuid": "X1-ZU106ltlit0gy6h_a80zf",
+					"reviews_url": "/profile/gggwalter5/#reviews",
 					"has_wells_fargo_pal": false,
-					"services_offered": [1, 2, 4, 33],
+					"services_offered": [1, 2, 3, 5, 33],
 					"is_remnant": false,
 					"agent_reason": 1,
 					"image_data": {
-						"url": "https://photos.zillowstatic.com/h_n/ISmy84ngcgsms20000000000.jpg",
+						"url": "https://photos.zillowstatic.com/h_n/ISirg2gzke34mn1000000000.jpg",
+						"width": 60,
+						"height": 60
+					},
+					"review_count": 29,
+					"has_caliber_pal": false,
+					"profile_url": "/profile/gggwalter5/",
+					"has_pal": true
+				}, {
+					"first_name": "Elizabeth",
+					"display_name": "Elizabeth Mattero",
+					"badge_type": "Premier Agent",
+					"write_review_url": "/reviews/write/?s=X1-ZUz9hi9b69zxft_9tzap",
+					"phone": {
+						"areacode": "631",
+						"prefix": "489",
+						"number": "8593"
+					},
+					"recent_sales": 15,
+					"rating_average": 5,
+					"encoded_zuid": "X1-ZUz9hi9b69zxft_9tzap",
+					"reviews_url": "/profile/Elizabeth-Mattero/#reviews",
+					"has_wells_fargo_pal": false,
+					"services_offered": [1, 2, 5, 6],
+					"is_remnant": false,
+					"agent_reason": 1,
+					"image_data": {
+						"url": "https://photos.zillowstatic.com/h_n/IS-1vj9agxb3qogt.jpg",
 						"width": 60,
 						"height": 60
 					},
 					"review_count": 21,
 					"has_caliber_pal": false,
-					"profile_url": "/profile/ginabuck/",
-					"has_pal": false
-				}, {
-					"first_name": "Cathy",
-					"display_name": "Cathy Thornton",
-					"badge_type": "Premier Agent",
-					"write_review_url": "/reviews/write/?s=X1-ZUzsu34q5pepe1_8clor",
-					"phone": {
-						"areacode": "334",
-						"prefix": "697",
-						"number": "4099"
-					},
-					"recent_sales": 4,
-					"rating_average": 5,
-					"encoded_zuid": "X1-ZUzsu34q5pepe1_8clor",
-					"reviews_url": "/profile/ccthornton121/#reviews",
-					"has_wells_fargo_pal": false,
-					"services_offered": [1, 2, 3, 6],
-					"is_remnant": false,
-					"agent_reason": 1,
-					"image_data": {
-						"url": "https://photos.zillowstatic.com/h_n/IS2vsxl6qf0ygd0000000000.jpg",
-						"width": 60,
-						"height": 60
-					},
-					"review_count": 8,
-					"has_caliber_pal": false,
-					"profile_url": "/profile/ccthornton121/",
-					"has_pal": false
+					"profile_url": "/profile/Elizabeth-Mattero/",
+					"has_pal": true
 				}],
-				"pixel_url": "https://www.zillowstatic.com/contact-pixel/QX25fe6HcEh5XdK0mxP51XH5yloFSZy1BshpVUu+VmimnOwlX6YSQxPa9SkctVb1Co1lkWHrQjzvB_kCftm++CKW09tH3ECsGmJy5McI31OJ66IuyOQnVyunU+TVcBp4SDqzrvvoaYcUyqSOgHKt0L7pnpPHoVdp8cVMGkz3oZ4etFftgsSyu7LX+9SHBBpiSIK4+FLWqlvC6a1x3jlIyA==",
+				"pixel_url": "https://www.zillowstatic.com/contact-pixel/5LsvvdmQlOd6SpsSFiA3QhGhXw5hbfrM8cKYPDsHV84eTfEq4ENINfmpLu1O3eT3ELqwwkbSyJP9BbffNNUhpEaEKB6gcgSZjZGnht4ED651JZuJWuVDUjL3NYQ4iG35ZJzd++LQ1uAqXJ_nPkydWE0+4vInMWldipun3MGWlAvAqqhjHylH2a1yBdNlD4n6Lj3DVMZuZtNZu2nOR+_jQQ==",
 				"info_box_visible": true,
 				"use_radios": true,
 				"title": "Contact Agent",
@@ -1559,13 +2287,13 @@
 				"cv_27": {
 					"bal_checkboxes": "0000",
 					"field_flags": "1",
-					"mortgage_flags": "1211",
-					"brokerage_product": "11",
+					"mortgage_flags": "1122",
+					"brokerage_product": "21",
 					"form_identifier": "bal4"
 				},
 				"text_area": {
 					"name": "message",
-					"value": "I am interested in 0 Sugar Loaf Hill Rd, Deatsville, AL 36022."
+					"value": "I am interested in 25 Overlook Dr, Mastic, NY 11950."
 				},
 				"contact_button_text": "Contact Agent",
 				"hidden_fields": [{
@@ -1573,10 +2301,10 @@
 					"value": "bal"
 				}, {
 					"name": "zpid",
-					"value": 2086464868
+					"value": 2086459028
 				}, {
 					"name": "mlsCode",
-					"value": "445487"
+					"value": "3091587"
 				}, {
 					"name": "onlyPreapprovalContact",
 					"value": "false"
@@ -1594,7 +2322,7 @@
 					"value": "true"
 				}, {
 					"name": "leaderboardZuids",
-					"value": "X1-ZUz1ci99gqj409_uwi3,3;X1-ZUyq1d7kjspma1_93ahq,1;X1-ZUz4004y00qjgp_9fxlz,1;X1-ZUzsu34q5pepe1_8clor,1"
+					"value": "X1-ZUz260aiwrjjm1_adn9b,3;X1-ZU12vk568yqtc7d_8w9nd,1;X1-ZU106ltlit0gy6h_a80zf,1;X1-ZUz9hi9b69zxft_9tzap,1"
 				}, {
 					"name": "isSelectListingAgent",
 					"value": "false"
@@ -1603,13 +2331,13 @@
 					"value": "MultipleContact"
 				}, {
 					"name": "ccListingAgent",
-					"value": "true"
+					"value": "false"
 				}, {
 					"name": "fpa",
-					"value": "X1-ZUyq1d7kjspma1_93ahq"
+					"value": "X1-ZU12vk568yqtc7d_8w9nd"
 				}, {
 					"name": "palZuids",
-					"value": "{\"X1-ZUz4004y00qjgp_9fxlz\": \"X1-ZUz1ci99gqj409_uwi3\", \"X1-ZUzsu34q5pepe1_8clor\": \"X1-ZUz1ci99gqj409_uwi3\", \"X1-ZUyq1d7kjspma1_93ahq\": \"X1-ZU10uhnvbjm50qx_a57uh\"}"
+					"value": "{\"X1-ZUz9hi9b69zxft_9tzap\": \"X1-ZUykh0nim0wdmx_7rj5o\", \"X1-ZU12vk568yqtc7d_8w9nd\": \"X1-ZUz1ci99gqj409_uwi3\", \"X1-ZUz260aiwrjjm1_adn9b\": \"X1-ZUz1ci99gqj409_uwi3\", \"X1-ZU106ltlit0gy6h_a80zf\": \"X1-ZUzjrtwpbrd8uh_18y6t\"}"
 				}, {
 					"name": "pcm",
 					"value": 1
@@ -1618,11 +2346,11 @@
 					"value": 1
 				}, {
 					"name": "pixelId",
-					"value": "b352e1ba-6d73-4a72-97af-3da5a2e5fa4c"
+					"value": "0b45fa4b-eb9b-4ed4-bef0-c11273968617"
 				}],
 				"tcpa": true
 			},
-			"zpid": 2086464868
+			"zpid": 2086459028
 		}
 	},
 	"errors": [{

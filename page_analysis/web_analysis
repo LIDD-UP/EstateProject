@@ -1,0 +1,209 @@
+zillow 网站分析：https://www.zillow.com/
+未登录：
+    1：首页是一个搜索页，
+    2：搜索一个地区之后url为：
+    3:搜索之后的页面打开network分析network可以看到：
+    三个有用的json数据：
+    分别是
+    这里使用的是新墨西哥的数据进行分析；（至少要分析两个州的数据进行比对）
+    1：map(地图数据json）：https://www.zillow.com/ajax/nav/UserNavAsync.htm?jsonp=YUI.Env.JSONP.yui_3_18_1_1_1546842305580_901&newaccount=0
+    2：communities(社区json数据）：https://s.zillowstatic.com/community-overlay-config/LATEST/community_config.json
+    3：房屋的json数据（但是感觉不全，需要后续分析下一页中是否存在反爬）（还有url看一下是否有规律）
+    url：
+    https://www.zillow.com/search/GetResults.htm?spt=homes&status=110001&lt=111101&ht=111111&pr=,&mp=,&bd=0%2C&ba=0%2C&sf=,&lot=0%2C&yr=,&singlestory=0&hoa=0%2C&pho=0&pets=0&parking=0&laundry=0&income-restricted=0&fr-bldg=0&condo-bldg=0&furnished-apartments=0&cheap-apartments=0&studio-apartments=0&pnd=0&red=0&zso=0&days=any&ds=all&pmf=1&pf=1&sch=100111&zoom=3&rect=-136054688,29458731,-76025391,38685509&p=1&sort=globalrelevanceex&search=map&rid=41&rt=2&listright=true&isMapSearch=1&zoom=3
+
+    4：对每一个房屋的元素进行分析：通过这个查找（.photo-cards li）发现有51个，有一个是干扰的，其余的每一个房屋有两个li；
+        所以在用这个提取房屋时需要注意；
+    5：观察GetResults.html中的list可以看到一个page:1和numpages:838
+    结果如下：
+    numFavorites: 0
+    numOriginalResults: 25
+    numPages: 838
+    numRelaxedResults: 0
+    page: 1
+    pagination: "&lt;ol class="zsg-pagination"&gt;&lt;li class="zsg-pagination_active"&gt;&lt;a&gt;1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/36.809285,-76.157227,31.503629,-136.186523_rect/3_zm/2_p/" onclick="SearchMain.changePage(2);return false;"&gt;2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/36.809285,-76.157227,31.503629,-136.186523_rect/3_zm/3_p/" onclick="SearchMain.changePage(3);return false;"&gt;3&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/36.809285,-76.157227,31.503629,-136.186523_rect/3_zm/4_p/" onclick="SearchMain.changePage(4);return false;"&gt;4&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/36.809285,-76.157227,31.503629,-136.186523_rect/3_zm/5_p/" onclick="SearchMain.changePage(5);return false;"&gt;5&lt;/a&gt;&lt;/li&gt;&lt;li class="zsg-pagination-ellipsis"&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/36.809285,-76.157227,31.503629,-136.186523_rect/3_zm/20_p/" onclick="SearchMain.changePage(20);return false;"&gt;20&lt;/a&gt;&lt;/li&gt;&lt;li class="zsg-pagination-next"&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/36.809285,-76.157227,31.503629,-136.186523_rect/3_zm/2_p/" class="on" onclick="SearchMain.changePage(2);return false;"&gt;Next&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;"
+    personalizedSearchGaDataTag: null
+    sortControlHTML: "&lt;ul id="property-sort-control" class="zsg-tabs zsg-tabs_lg"&gt;&lt;li class="zsg-tab_active sort-by-globalrelevanceex"&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/36.809285,-76.157227,31.503629,-136.186523_rect/3_zm/1_p/" data-value="globalrelevanceex"&gt;Homes for You&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/days_sort/36.809285,-76.157227,31.503629,-136.186523_rect/3_zm/1_p/" data-value="days"&gt;Newest&lt;/a&gt;&lt;/li&gt;&lt;li class="second-unselected"&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/pricea_sort/36.809285,-76.157227,31.503629,-136.186523_rect/3_zm/1_p/" data-value="pricea"&gt;Cheapest&lt;/a&gt;&lt;/li&gt;&lt;li id="property-sort-control-more-btn" class="hide"&gt;&lt;a href="#property-sort-options" class="more-btn zsg-menu-launch" data-horizontal-align="right"&gt;More&lt;/a&gt;&lt;div id="property-sort-options" class="zsg-menu"&gt;&lt;ul class="zsg-menu-linklist"&gt;&lt;li class="second-unselected"&gt;&lt;a href="#" data-value="pricea"&gt;Cheapest&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="priced"&gt;Price (High to Low)&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="beds"&gt;Bedrooms&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="baths"&gt;Bathrooms&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="size"&gt;Square Feet&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="built"&gt;Year Built&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="lot"&gt;Lot Size&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="zest"&gt;Zestimate (High to Low)&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="zesta"&gt;Zestimate (Low to High)&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;"
+    uaString: "1|25|20927"
+
+    我怀疑这个和GetResult中的地址有关联；
+
+    再来看下一页的数据：
+    点击下一页之后发现只更新了几个地址的数据，但是关于
+    buildings: []
+    communities: []
+    favorites: []
+    mapResultsMode: "MapConstants.MapResultsMode.Default"
+    nearbyBuildings: []
+    nearbyProperties: []
+    properties: []
+    regions: []
+    第二页中房屋数据没有在更新，（properties 中的数据就是房屋的数据）这里是空的，但是在第一页中里面就有数据，
+    数据总量是：是类似这样的分布；
+    [0 … 99]
+    [100 … 199]
+    [200 … 299]
+    [300 … 399]
+    [400 … 491]
+    每一页最多显示25条数据；
+    但是最上面它显示这个：21,513 homes for sale. 4,795 unmapped.
+    然后用25*838这个刚好接近21531这个数，这里可以怀疑，他的数据根本没有显示完全；（所以这种方法获取数据可能有问题；
+    6：继续分析；
+        numFavorites: 0
+        numOriginalResults: 25
+        numPages: 861
+        numRelaxedResults: 0
+        page: 2
+        pagination: "&lt;ol class="zsg-pagination"&gt;&lt;li&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/51.261915,-88.725586,13.025966,-123.706055_rect/3_zm/" onclick="SearchMain.changePage(1);return false;"&gt;1&lt;/a&gt;&lt;/li&gt;&lt;li class="zsg-pagination_active"&gt;&lt;a&gt;2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/51.261915,-88.725586,13.025966,-123.706055_rect/3_zm/3_p/" onclick="SearchMain.changePage(3);return false;"&gt;3&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/51.261915,-88.725586,13.025966,-123.706055_rect/3_zm/4_p/" onclick="SearchMain.changePage(4);return false;"&gt;4&lt;/a&gt;&lt;/li&gt;&lt;li class="zsg-pagination-ellipsis"&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/51.261915,-88.725586,13.025966,-123.706055_rect/3_zm/20_p/" onclick="SearchMain.changePage(20);return false;"&gt;20&lt;/a&gt;&lt;/li&gt;&lt;li class="zsg-pagination-next"&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/51.261915,-88.725586,13.025966,-123.706055_rect/3_zm/3_p/" class="on" onclick="SearchMain.changePage(3);return false;"&gt;Next&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;"
+        personalizedSearchGaDataTag: null
+        sortControlHTML: "&lt;ul id="property-sort-control" class="zsg-tabs zsg-tabs_lg"&gt;&lt;li class="zsg-tab_active sort-by-globalrelevanceex"&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/51.261915,-88.725586,13.025966,-123.706055_rect/3_zm/1_p/" data-value="globalrelevanceex"&gt;Homes for You&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/days_sort/51.261915,-88.725586,13.025966,-123.706055_rect/3_zm/1_p/" data-value="days"&gt;Newest&lt;/a&gt;&lt;/li&gt;&lt;li class="second-unselected"&gt;&lt;a href="/homes/for_sale/41_rid/0_singlestory/pricea_sort/51.261915,-88.725586,13.025966,-123.706055_rect/3_zm/1_p/" data-value="pricea"&gt;Cheapest&lt;/a&gt;&lt;/li&gt;&lt;li id="property-sort-control-more-btn" class="hide"&gt;&lt;a href="#property-sort-options" class="more-btn zsg-menu-launch" data-horizontal-align="right"&gt;More&lt;/a&gt;&lt;div id="property-sort-options" class="zsg-menu"&gt;&lt;ul class="zsg-menu-linklist"&gt;&lt;li class="second-unselected"&gt;&lt;a href="#" data-value="pricea"&gt;Cheapest&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="priced"&gt;Price (High to Low)&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="beds"&gt;Bedrooms&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="baths"&gt;Bathrooms&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="size"&gt;Square Feet&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="built"&gt;Year Built&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="lot"&gt;Lot Size&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="zest"&gt;Zestimate (High to Low)&lt;/a&gt;&lt;/li&gt;&lt;li class=""&gt;&lt;a href="#" data-value="zesta"&gt;Zestimate (Low to High)&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;"
+        uaString: "2|25|21513"
+
+    网址：
+    https://www.zillow.com/search/GetResults.htm?spt=homes
+    &status=110001
+    &lt=111101
+    &ht=111111
+    &pr=,
+    &mp=,
+    &bd=0%2C&ba=0%2C&sf=,
+    &lot=0%2C
+    &yr=,
+    &singlestory=0
+    &hoa=0%2C
+    &pho=0
+    &pets=0
+    &parking=0
+    &laundry=0
+    &income-restricted=0
+    &fr-bldg=0
+    &condo-bldg=0
+    &furnished-apartments=0
+    &cheap-apartments=0
+    &studio-apartments=0
+    &pnd=0
+    &red=0
+    &zso=0
+    &days=any
+    &ds=all
+    &pmf=1
+    &pf=1
+    &sch=100111
+    &zoom=3 # 缩放
+    &rect=-123706055,13025966,-88725586,51261915 # 经纬度，这里转码了
+    &p=2 (这个p可能就是页面的号数）
+    &sort=globalrelevanceex # 排序规则，这里url中出现了
+    &search=list
+    &rid=41
+    &rt=2
+    &listright=true
+    &isMapSearch=0&zoom=3
+
+
+    https://www.zillow.com/search/GetResults.htm?spt=homes&status=110001&lt=111101&ht=111111&pr=,&mp=,&bd=0%2C&ba=0%2C&sf=,&lot=0%2C&yr=,&singlestory=0&hoa=0%2C&pho=0&pets=0&parking=0&laundry=0&income-restricted=0&fr-bldg=0&condo-bldg=0&furnished-apartments=0&cheap-apartments=0&studio-apartments=0&pnd=0&red=0&zso=0&days=any&ds=all&pmf=1&pf=1&sch=100111&zoom=3&rect=-119750977,13025966,-92680664,51261915&p=21&sort=globalrelevanceex&search=list&rid=41&rt=2&listright=true&isMapSearch=0&zoom=3
+    rect=-119750977,13025966,-92680664,51261915 这条数据特别重要，不知道怎么来的；
+    json数据的获取可能有多个条件来进行约束出来的；还有page页面也是在变化的；（也就是p这个条件）
+    如果想要通过州的搜索条件来进行搜索，只能从这个方向来进行，它本身页面中的数据是没有显示完全的；
+
+   二：继续分析：分析NewYork州的数据情况是否一样；
+   NewYork州也是一样的，无法获取完整的数据，随机的，
+   https://www.zillow.com/homes/for_rent/
+   这个网址下，移动地图，显示的内容不同，而地图数据也是有的，想象能不能通过地图显示完数据；
+
+   三关于zillow网站url的分析：
+   https://www.zillow.com/homes/for_sale/NY/43_rid/1_pnd/globalrelevanceex_sort/58.608334,-62.094727,25.601902,-122.124023_rect/3_zm/
+   3_zm是地图的缩放比率
+   当移动地图是经纬度也会变化：
+
+   这个网站能够一个州一个州的搜索数据，但是数据没有显示完全，只显示了400多个；
+
+   mapped和unmapped的区别：
+   unmapped:url:https://www.zillow.com/homes/for_sale/NY/43_rid/1_pnd/globalrelevanceex_sort/47.189712,-62.62207,38.099983,-122.651367_rect/3_zm/
+                https://www.zillow.com/homes/for_sale/NY/43_rid/1_pnd/globalrelevanceex_sort/47.189712,-62.62207,38.099983,-122.651367_rect/3_zm/
+        这里也没有再向服务器请求数据，只是在内存中再读取数据；所以map和unmapped使用的是同一批数据；
+    下一页的区别：他没有再请求服务器，只是在本地使用了ajax，重内存中取数据；
+    property里面没有数据，只是多了一个list信息，显示第几页；：
+
+    可以获取全部数据的方式，取尽可能小的经纬度区间，（由于最多只能显示500条数据，而地图的最大缩放时18zm.)所以最好是通过缩放成最大18之后再变化经纬度获取数据，而且要确保显示过的面积不在显示；
+    经纬度的处理很重要，而且很难处理；
+        而且这个只能显示你查询所在州里面的房屋，其他州的房屋无法显示，所以要找一下有没有这个参数：
+
+    https://www.zillow.com/homes/for_sale/1_pnd/globalrelevanceex_sort/42.463099,-77.110751,42.462268,-77.112582_rect/18_zm/
+    (经过测试，json最多返回500条，所以，只能通过经纬度来通过移动窗格的方式获取全部的数据）
+    其实可以通过这样的方式来确定窗格：
+        获取美国经纬度范围，确定一个最小的方格范围，然后形成方格网，一个个移动方格网，获取数据，但是效率较低；
+
+    经测试发现不用通过搜索条件也能通过经纬度的移动获取数据：
+        https://www.zillow.com/homes/for_sale/globalrelevanceex_sort/44.976457,-75.569458,40.743095,-83.07312_rect/6_zm/
+        上面的地址只能获取一般的
+        加上出租之后网址变成：
+        https://www.zillow.com/homes/for_sale/42.463848,-77.109623,42.461767,-77.113287_rect/17_zm/1_fr/
+        再加上最近出售：
+        https://www.zillow.com/homes/for_sale/42.463848,-77.109623,42.461767,-77.113287_rect/17_zm/1_rs/1_fr/
+
+        1：https://www.zillow.com/homes/for_sale/globalrelevanceex_sort/44.976457,-75.569458,40.743095,-83.07312_rect/6_zm/
+        2：https://www.zillow.com/homes/for_sale/44.976456,-75.563965,40.743095,-83.067627_rect/6_zm/1_fr/
+        3：https://www.zillow.com/homes/for_sale/44.976456,-75.563965,40.743095,-83.067627_rect/6_zm/1_rs/1_fr/
+        4：https://www.zillow.com/homes/for_sale/MT/35_rid/50.099441,-100.843506,42.106374,-115.85083_rect/5_zm/1_rs/1_fr/
+            每一个州或者称为省都有一个缩写和r_id编号；
+        第三个是数据最全的网址，这时候就只需要确定经纬度窗格就可以获取数据了，
+            1：要尽量小让所有窗格中的数据量少于500条，
+            2：窗格的划分；
+        数据的获取接口：
+            获取数据的方式有两种，一种是通过标签获取，还有一种是直接获取json（json是最简单的，但是他的经纬度加密了，需要分析参数）（找到对应的js文件）
+                1：通过标签获取，费时间，小问题多，很容易被发现，
+                2：通过接口获取，就需要破解经纬度的加密方式：不一定能找到加密的js文件；
+            数据接口地址：（需要对比一下不同之处：）
+            1：https://www.zillow.com/search/GetResults.htm?spt=homes&status=111011&lt=111101&ht=111111&pr=,&mp=,&bd=0%2C&ba=0%2C&sf=,&lot=0%2C&yr=,&singlestory=0&hoa=0%2C&pho=0&pets=0&parking=0&laundry=0&income-restricted=0&fr-bldg=0&condo-bldg=0&furnished-apartments=0&cheap-apartments=0&studio-apartments=0&pnd=0&red=0&zso=0&days=any&ds=all&pmf=1&pf=1&sch=100111&zoom=9&rect=-100949250,47323930,-100011292,47460594&p=1&sort=days&search=maplist&listright=true&isMapSearch=true&zoom=9
+            2：https://www.zillow.com/search/GetResults.htm?spt=homes&status=111011&lt=111101&ht=111111&pr=,&mp=,&bd=0%2C&ba=0%2C&sf=,&lot=0%2C&yr=,&singlestory=0&hoa=0%2C&pho=0&pets=0&parking=0&laundry=0&income-restricted=0&fr-bldg=0&condo-bldg=0&furnished-apartments=0&cheap-apartments=0&studio-apartments=0&pnd=0&red=0&zso=0&days=any&ds=all&pmf=1&pf=1&sch=100111&zoom=7&rect=-102749634,47189712,-98997803,47735629&p=1&sort=days&search=maplist&listright=true&isMapSearch=true&zoom=7
+            对比两个url 发现就是rect的不同，还有zoom的不同，所以，只要能找到rect的加密方式，就很好获取数据了；
+            再找js文件的时候可以通过_rect来查找，但是也不一定对，而且对js不熟悉，导致不知道执行js文件，所以，还是很悬，
+            再把第三个万战分析了之后再来找；
+
+
+
+
+分析realtor.com网站：https://www.realtor.com/
+    这个网站一个搜索条件的数据是显示完全了，但是存在怎样确定搜索地址序列化的问题，美国的房产搜索条件混乱，有时候能用county搜索
+    但是这个县又存在问题，有时候能用city搜索，但是不能用州搜索，他的州只显示简略信息，
+
+    这个网站列表页是通过前端渲染的也就是说要拿到数据只能通过html元素获取；
+    但是房屋的详情页是通过后端渲染的，这里可以偷懒直接获取json字符串；
+
+    https://www.realtor.com/realestateandhomes-search/New-York_NY?pos=41.826987,-76.245316,41.947394,-75.949434,12&qdm=true
+    关于所有数据的获取方式：
+        1：通过搜索条件进行匹配，这样的话就必须拿到所有的城市和州对应的关系数据，因为只有城市还无法获取完整的url
+            url：
+                1：单个字母城市：https://www.realtor.com/realestateandhomes-search/Manhattan_NY
+                2：多个字母城市：https://www.realtor.com/realestateandhomes-search/New-York_NY
+                前面是城市，后面是所在的州
+        2：通过地图的经纬度来进行获取：
+            https://www.realtor.com/realestateandhomes-search/New-York_NY?pos=41.826987,-76.245316,41.947394,-75.949434,12&qdm=true
+            1：重要参数就是pos开头的四个经纬度范围参数
+            2：12&qdm=true 前面的12目前不知道是什么，但是变化之后依然能够访问网页
+            3：但是后面的参数qdm=true是必须要的，
+            4：通过经纬度返回的数据是通过一个searchResult.json返回的，再property里面，里面是对应的房屋信息；
+
+        总结两种方法：第一种需要城市对应州的信息数据方便拼接url，通过这个url获取的数据是完整的，但是列表页是后端渲染，详情页是前端渲染；
+            2：第二种方式是直接获取一个房屋信息数据，全部都在里面，具体没有全部观察；信息特别的详细，
+            1："seo_url": "/realestateandhomes-search/Montgomery_AL?pos=31.805284,-88.305471,32.119231,-85.938416,9&qdm=true",列表网站数据页面
+            2："ldpUrl": "/realestateandhomes-detail/11055-State-Highway-94_Grady_AL_36036_M87766-85605",具体详情页的数据页面；
+
+
+https://www.trulia.com
+    其实trulia只是zillow旗下的网站，也就是说，trulia可能数据不全；而且trulia网站和zillow网站有很多的相似之处：
+    但是一个最大的不同之处就是trulia的每一个搜索条件的数据是完全显示完全的；但是它有一个最多显示页数，剩下的需要改url的page页；
+    url如下：
+        https://www.trulia.com/NY/New_York/380_p/
+        但是这个不可以以州为搜索条件，搜索州的时候会出现 改州下所有的县（郡）的列表页；
+        也就是说可以从这里获取城市和州或者是city的对应关系；
+        但是这里有一个混乱的地方就是县和city的混乱关系，但是好像又是对的，
+
+        可以通过这个地址获取所有州的所有城市对应关系：
+        https://www.trulia.com/sitemap/Alaska-real-estate/
+        Alaska 是对应的州的名字；
+        这是所有州的入口地址，每个州
+        https://www.trulia.com/sitemap/
+
+
+

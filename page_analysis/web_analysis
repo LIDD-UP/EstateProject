@@ -265,3 +265,10 @@ https://www.trulia.com
 
 
 
+接下来遇到的反爬策略：
+    trulia爬取需要的头部信息：
+        1：'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+        2：'accept-language': 'zh-CN,zh;q=0.9,ja;q=0.8,',
+        3：'cache-control': 'max-age=0,',
+        这三个是必须的，少一个都会报错；
+

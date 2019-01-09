@@ -1,0 +1,25 @@
+对于trulia网站：
+    数据库表的设计：
+        1：各个州和对应缩写需要对应；为了避免和加拿大的混淆：需要再加一个country字段；（可以不要，应为美国州是固定的）
+            字段描述：
+            表名：state_code_map
+                1：state(州） （主键）（varchar（50））
+                2：abbreviation(缩写)char(2)
+                这个需要手工录入
+        2:州名和所有的城市名的结合（用于作为搜索条件）
+            字段描述：
+            表名：state_county
+                1: id(主键）
+                2：state(州） varchar(50)
+                3: county(县） varchar(50）
+                这个通过爬虫完成
+        3：县下面所有的邮编分类情况
+            字段描述：
+            表名：county_zipCode
+                1:id(主键）
+                2：county（县）varchar(50)
+                3：zipCode(邮编）char(5)
+
+        4:
+
+

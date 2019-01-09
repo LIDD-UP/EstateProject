@@ -204,6 +204,62 @@ https://www.trulia.com
         Alaska 是对应的州的名字；
         这是所有州的入口地址，每个州
         https://www.trulia.com/sitemap/
+        对于trulia的解决方案就是利用州的缩略词加上后面的county即可解决；
+
+        trulia网站网站总结：
+        列表页是可以通过接口拿到，接口为:
+        https://www.trulia.com/json/search/url/?url=https%3A%2F%2Fwww.trulia.com%2FNY%2FNew_York%2F2_p%2F
+        这个接口的加密方式很简单：（可以通过观察出来，可以通过这个尝试调试一下接口加密的js文件在哪）
+        但是列表页接口的json数据房屋信息不全，只有部分信息；
+
+        详情页的信息是没有接口的，只能通过标签获取，但是有一部分数据是通过接口传入的；
+        但是房屋信息相关的feature都是后端渲染好了之后直接返回的；所以只能通过标签获取，都在HomeDetail下面；
+        但是街道信息没有，需要在顶部标签中获取；
+
+
+
+总结：三个网站的数据返回方式以及抓取策略：
+    1：zillow.com网站：
+        列表页：通过接口显示数据，最多显示500条而且全部存在json数据里面；但是不完整；
+            /search/GetResults.htm?spt=homes&status=110001&lt=111101&ht=111111&pr=50000,&mp=199,&bd=0%2C&ba=0%2C&sf=,&lot=0%2C&yr=,&singlestory=0&hoa=0%2C&pho=0&pets=0&parking=0&laundry=0&income-restricted=0&fr-bldg=0&condo-bldg=0&furnished-apartments=0&cheap-apartments=0&studio-apartments=0&pnd=0&red=0&zso=0&days=any&ds=all&pmf=1&pf=1&sch=100111&zoom=10&rect=-86649857,32458501,-86180878,32762737&p=1&sort=days&search=map&rid=73690&rt=7&listright=true&isMapSearch=1&zoom=10 HTTP/1.1
+        详情页：也是接口显示
+            接口：https://www.zillow.com/graphql/ (是post请求的）需要加参数，而且还是加密的）
+        限制情况：
+            1：首先是数据显示最多500条
+            2：接口加密了，列表页是经纬度加密，可能还有其他加密情况
+                详情页加密是参数加密，有一个payload 参数，不知道怎么回事；
+
+        抓取策略：
+            1：首先是搜索的数据量问题，必须要缩减搜索出的数据量少于500条，
+                可以考虑邮编加上其他的一些条件，最好不要用经纬度进行缩减数据
+            2：如果能破解接口，直接就抓接口中的数据；
+                如果不能，就只能通过抓标签来抓取了（但是一个关键问题就是必须要让搜索的数据量少于500）；
+    2：realtor.com网站
+        列表页：后端渲染的数据直接返回一个页面
+        详情页：json数据串
+            详情页的url：https://www.realtor.com/realestateandhomes-detail/7-N-Vaughn-Crossing-Spur_Pike-Road_AL_36064_M86232-45854?view=qv（存在对应的关系）
+            接口：https://www.realtor.com/property-overview/M8623245854（需要破解后面的字符是怎么来的）
+        限制情况：可能会遇到referer的问题；
+        抓取策略：
+            1：通过列表页获取详情页的url
+            2：根据url转换出房屋的具体信息
+            3：这个网站的搜索条件可以根据州和county的对应关系进行搜索；（这个可以根据trulia中抓取的对应关系来进行）
+                    搜索条件网址格式：
+                        1：https://www.realtor.com/realestateandhomes-search/New-York_NY
+                        2：https://www.realtor.com/realestateandhomes-search/Montgomery_AL/pg-2
+    3：trulia.com网站
+        列表页：通过接口返回数据（是一页页返回的，如果点击下一页，就会返回下一页的所有信息）（一页显示30条信息）
+            接口：https://www.trulia.com/json/search/url/?url=https%3A%2F%2Fwww.trulia.com%2FNY%2FNew_York%2F2_p%2F（大致是通过%2F来分割查询字段的）
+        详情页：通过后端渲染再传回页面，关于房屋信息的数据基本全部全部都是后端渲染，一部分和该房屋信息相关的别的房屋信息是通过接口返回数据，前端在渲染的）
+        限制情况：列表页接口显示的房屋数据信息不全，只是一些基本信息，要想获取详细的信息，只能通过详情页的标签抓取；
+            列表页的显示情况也是显示不全，但是它可以通过增加页面数，获取，也就是说可以通过url获取一个查询条件的所有数据
+                但是需要计算一下循环的次数问题，可以通过一个标签获取；
+        抓取策略：
+            1：如果只考虑简略信息，通过列表页接口就可以获取，
+            2：但是如果要获取全部信息，必须通过列表页中的url再进入详情页，通过标签获取数据；
+            3：抓取全部房屋数据是通过“州缩写”以及“州下面的县”获取数据（format url作为请求数据的url）
+                url样式：https://www.trulia.com/NY/New_York/380_p/
+                标签页需要计算出来；它数据没有显示完，但是能够全部获取，（通过一个标签获取）
 
 
 

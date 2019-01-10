@@ -106,12 +106,13 @@ class AmericanrealestateDownloaderMiddleware(object):
 
 # 设置自动切换user-gent
 class RandomUserAgentMiddleware(object):
-    #随机替换usergent
+    # 随机替换usergent
     def __init__(self,crawler):
         super(RandomUserAgentMiddleware,self).__init__()
         # self.user_agent_list = crawler.settings.get("user_agent_list")
         self.ua = UserAgent()
         self.ua_type = crawler.settings.get("RANDOM_UA_TYPE","random")
+
     @classmethod
     def from_crawler(cls,crawler):
         # 将它传递给self
@@ -121,5 +122,20 @@ class RandomUserAgentMiddleware(object):
         # 配置settings获取ua的属性值；
         def get_ua():
             return getattr(self.ua,self.ua_type)
-        random_agent = get_ua()
+        # random_agent = get_ua()
         request.headers.setdefault('User-Agent',get_ua())
+
+
+# 设置headers的middleware
+class HeadersMiddleware(object):
+    def __init__(self,crawler):
+        super(HeadersMiddleware,self).__init__()
+        self.my_headers = crawler.settings.get("DEFAULT_REQUEST_HEADERS")
+
+    @classmethod
+    def from_crawler(cls,crawler):
+        # 将它传递给self
+        return cls(crawler)
+
+    def process_request(self,request,spider):
+        request.headers.setdefault('headers',self.my_headers)

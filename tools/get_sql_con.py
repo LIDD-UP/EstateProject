@@ -6,7 +6,7 @@
 """
 import pymysql
 
-from AmericanRealEstate.AmericanRealEstate import settings
+from AmericanRealEstate import settings
 
 
 def get_sql_con():

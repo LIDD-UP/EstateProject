@@ -12,3 +12,14 @@ class AmericanrealestateItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass
+
+
+class StateNameCountyNameItem(scrapy.Item):
+    stateName = scrapy.Field()
+    countyName = scrapy.Field()
+    county = scrapy.Field()
+
+
+class CountyNameZipCodeItem(scrapy.Item):
+    countyName = scrapy.Field()
+    zipCode = scrapy.Field()

@@ -249,6 +249,14 @@ https://www.trulia.com
                     搜索条件网址格式：
                         1：https://www.realtor.com/realestateandhomes-search/New-York_NY
                         2：https://www.realtor.com/realestateandhomes-search/Montgomery_AL/pg-2
+        其他：
+            https://www.realtor.com/realestateandhomes-search/New-York-County_NY
+            https://www.realtor.com/realestateandhomes-search/New-York-City_NY
+            https://www.realtor.com/miscellaneous/userblocked
+            Kenai Peninsula
+            还有这个网站在我分析的时候就封我ip
+        realtor这个网站有city和county的搜索条件，所以这里就用county作为搜索条件，但是也有存在的问题是，有些县中间还有其他的一些中间条件，
+        如：
     3：trulia.com网站
         列表页：通过接口返回数据（是一页页返回的，如果点击下一页，就会返回下一页的所有信息）（一页显示30条信息）
             接口：https://www.trulia.com/json/search/url/?url=https%3A%2F%2Fwww.trulia.com%2FNY%2FNew_York%2F2_p%2F（大致是通过%2F来分割查询字段的）

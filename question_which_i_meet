@@ -1,0 +1,6 @@
+1:关于mysql json存储问题：用blob存储会出现$乱码问题：
+    解决办法：用text存储
+
+2：关于scrapy的cookies enable的作用问题；
+
+3:

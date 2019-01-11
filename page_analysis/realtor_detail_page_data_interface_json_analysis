@@ -1,0 +1,664 @@
+{
+    "meta": {
+        "fesl_endpoint": "http://fesl-basecamp-p1.rdc.moveaws.com/properties/M4319803655?app_name=realtor_dot_com&app_version=8.0.0.1&exclude&google_map_channel=rdc-ldp-streetview&include_associated_calls=false&is_seo_user=false&listing_id&mobile&property_address&search_referer&slug=Manhattan_NY&state_code&user_agent=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F71.0.3578.98+Safari%2F537.36&user_id&visitor_id",
+        "params": { },
+        "method": "get",
+        "response_code": 200,
+        "success": true,
+        "errors": [ ],
+        "warnings": [ ],
+        "api_debug": [
+            {
+                "api_url": "http://api.sdswrite-prod.moveaws.com/v1/properties/4319803655?client_id=RDC&include=listings",
+                "start_time": "2019-01-11T04:14:00.896+00:00",
+                "end_time": "2019-01-11T04:14:00.906+00:00",
+                "response_time": "0.011s"
+            },
+            {
+                "api_url": "http://fe-property-services.rdc.moveaws.com/api/v1/properties/4319803655?prop_status=for_sale&client_id=rdc%2C8.0%2Cdesktop&include_quick_to_sell=true&include_property_insights=true",
+                "start_time": "2019-01-11T04:14:00.907+00:00",
+                "end_time": "2019-01-11T04:14:00.996+00:00",
+                "response_time": "0.088s",
+                "feps_version": "v2"
+            },
+            {
+                "api_url": "http://feature-switch-ecs.rdc.moveaws.com/projects/1/switches.json",
+                "start_time": "",
+                "end_time": "",
+                "response_time": "s"
+            }
+        ],
+        "total_response_time": "0.117s"
+    },
+    "property": {
+        "property_id": 4319803655,
+        "plan_id": 4319803655,
+        "status": "for_sale",
+        "lat": 40.780306,
+        "long": -73.986926,
+        "address": "240 Riverside Blvd Apt 6F",
+        "street": "Riverside",
+        "street_suffix": "Blvd",
+        "street_direction": null,
+        "street_post_direction": null,
+        "city": "New York",
+        "state": "New York",
+        "state_code": "NY",
+        "postal_code": "10069",
+        "county": "New York",
+        "baths": "1",
+        "baths_full": null,
+        "baths_half": null,
+        "listing_id": 615945689,
+        "price": 825000,
+        "price_display": "$825,000",
+        "description": "The Heritage is the flagship building of the development  boasting the premier location  and the highest end finishes and amenities. Located on the last parcel that can ever be developed on West 72nd Street  The Heritage is buffered on all four sides  giving it unparalleled privacy. Riverside Park is to its North. The Hudson River is to its West. The Chatsworth  a landmarked  Beaux Arts apartment building is to its East. And  West 71st  one of Manhattans only double  cul de sac streets is to its South  protecting it from unwanted thru traffic. The F line  alcove studio is one of the buildings only studios on the exterior  southern face with oblique river views! Key features include   outstanding light   two  separated & oversized windows with partial river views  marble bath with Kohler  satin nickel fixtures  open  granite pass thru kitchen with 6 bar counter and Poggenpohl cabinetry  washer/dryer in the apartment  maple  herringbone floorsOther important building features include   24hr.  white glove  concierge service & live in  resident manager  15 000sf fitness center with 2 pools  saunas  steam rooms  massage rooms  aerobics studio & mens and womens locker rooms  valet parking garage  dry cleaning and maid services  private screening room & function rooms  landscaped  garden courtyard among top  resident brokers  specializing in The Heritage",
+        "type": "condo",
+        "type_display": "Condo",
+        "sqft": 572,
+        "sqft_display": "572",
+        "lot_size": 0,
+        "lot_size_display": null,
+        "lot_size_units": "sqft",
+        "lot_size_units_display": "SqFt Lot",
+        "beds": 0,
+        "permalink": "240-Riverside-Blvd-Apt-6F_New-York_NY_10069_M43198-03655",
+        "garage": "yes",
+        "beds_display": "0",
+        "listed_date": "2019-01-10T00:02:27Z",
+        "listed_date_display": "January 10, 2019",
+        "listing_age": "1 day",
+        "price_per_sqft": 1442,
+        "price_per_sqft_display": "$1,442",
+        "ldp_urls": [ ],
+        "year_built": 2005,
+        "geo_slug": "New-York_NY",
+        "distressed": null,
+        "open_houses": null,
+        "style": null,
+        "photos": [
+            {
+                "url": "https://ap.rdcpix.com/1441418523/ea605c6109665a3f324e85704c1fa45fl-w0xd-w640_h480_q80.jpg",
+                "description": "",
+                "type": null
+            },
+            {
+                "url": "https://ap.rdcpix.com/497026093/ea605c6109665a3f324e85704c1fa45fl-w1xd-w640_h480_q80.jpg",
+                "description": "",
+                "type": null
+            },
+            {
+                "url": "https://ap.rdcpix.com/927996118/ea605c6109665a3f324e85704c1fa45fl-w2xd-w640_h480_q80.jpg",
+                "description": "",
+                "type": null
+            },
+            {
+                "url": "https://ap.rdcpix.com/2100568972/ea605c6109665a3f324e85704c1fa45fl-w3xd-w640_h480_q80.jpg",
+                "description": "",
+                "type": null
+            },
+            {
+                "url": "https://ap.rdcpix.com/1226130414/ea605c6109665a3f324e85704c1fa45fl-w4xd-w640_h480_q80.jpg",
+                "description": "",
+                "type": null
+            },
+            {
+                "url": "https://ap.rdcpix.com/585378167/ea605c6109665a3f324e85704c1fa45fl-w5xd-w640_h480_q80.jpg",
+                "description": "",
+                "type": null
+            },
+            {
+                "url": "https://ap.rdcpix.com/1831948426/ea605c6109665a3f324e85704c1fa45fl-w6xd-w640_h480_q80.jpg",
+                "description": "",
+                "type": null
+            },
+            {
+                "url": "https://ap.rdcpix.com/1085514119/ea605c6109665a3f324e85704c1fa45fl-w7xd-w640_h480_q80.jpg",
+                "description": "",
+                "type": null
+            },
+            {
+                "url": "https://ap.rdcpix.com/1290897156/ea605c6109665a3f324e85704c1fa45fl-w8xd-w640_h480_q80.jpg",
+                "description": "",
+                "type": null
+            },
+            {
+                "url": "https://ap.rdcpix.com/1844166669/ea605c6109665a3f324e85704c1fa45fl-w9xd-w640_h480_q80.jpg",
+                "description": "",
+                "type": null
+            },
+            {
+                "url": "https://ap.rdcpix.com/569714945/ea605c6109665a3f324e85704c1fa45fl-w10xd-w640_h480_q80.jpg",
+                "description": "",
+                "type": null
+            }
+        ],
+        "photo_count": 11,
+        "advertiser_id": 2277876,
+        "features": [
+            {
+                "Other Rooms": [
+                    "Total Rooms: 2"
+                ],
+                "photos": null
+            },
+            {
+                "Bedrooms": [
+                    "Bedrooms: 0"
+                ],
+                "photos": [
+                    "https://ap.rdcpix.com/497026093/ea605c6109665a3f324e85704c1fa45fl-w1xd-w300_h300_q80.jpg",
+                    "https://ap.rdcpix.com/927996118/ea605c6109665a3f324e85704c1fa45fl-w2xd-w300_h300_q80.jpg"
+                ]
+            },
+            {
+                "Garage and Parking": [
+                    "Garage Description: On-Site"
+                ],
+                "photos": null
+            },
+            {
+                "Homeowners Association": [
+                    "Association Fee: 1047.00",
+                    "Association Fee Frequency: Monthly",
+                    "Prorated Total Monthly Association Fees: 1047.00"
+                ],
+                "photos": null
+            },
+            {
+                "Multi-Unit Info": [
+                    "Number of Units: 169"
+                ],
+                "photos": null
+            },
+            {
+                "Other Property Info": [
+                    "Inclusions: Laundry Central, Garage, Laundry, Pool, Concierge, Courtyard, Water View",
+                    "Property Subtype: Condo",
+                    "Source System Name: C2CN"
+                ],
+                "photos": null
+            },
+            {
+                "Legal and finance": [
+                    "HOA Frequency: Monthly/1047",
+                    "HOA fee: $1047"
+                ],
+                "photos": null
+            }
+        ],
+        "tax_history": [
+            {
+                "year": "2018",
+                "tax": null,
+                "land_assessment": 4095,
+                "building_assessment": 79082,
+                "total_assessment": 83177,
+                "year_display": "2018",
+                "tax_display": "Price Not Available",
+                "land_assessment_display": "$4,095",
+                "building_assessment_display": "$79,082",
+                "total_assessment_display": "$83,177"
+            },
+            {
+                "year": "2017",
+                "tax": 8300,
+                "land_assessment": 4095,
+                "building_assessment": 70332,
+                "total_assessment": 74427,
+                "year_display": "2017",
+                "tax_display": "$8,300",
+                "land_assessment_display": "$4,095",
+                "building_assessment_display": "$70,332",
+                "total_assessment_display": "$74,427"
+            },
+            {
+                "year": "2016",
+                "tax": 8230,
+                "land_assessment": 4095,
+                "building_assessment": 70296,
+                "total_assessment": 74391,
+                "year_display": "2016",
+                "tax_display": "$8,230",
+                "land_assessment_display": "$4,095",
+                "building_assessment_display": "$70,296",
+                "total_assessment_display": "$74,391"
+            }
+        ],
+        "turbo_campaign_id": null,
+        "address_display": "240 Riverside Blvd Apt 6F",
+        "neighborhood": "Upper West Side",
+        "tollfree_number": null,
+        "virtual_tour_url": "",
+        "products": [
+            "core.agent",
+            "core.broker",
+            "listing_owner_brand.broker",
+            "listing_owner_lead.broker",
+            "suppress_foreclosure"
+        ],
+        "property_type": "for_sale",
+        "status_display": "Home For Sale",
+        "branding": {
+            "agent": {
+                "photo_attribution": {
+                    "name": "Gilad Azaria",
+                    "photo": "https://ap.rdcpix.com/1459399465/47be7153270cd614cd598b563efca74ca-w0od-r7_w60.jpg",
+                    "phone": "(917) 586-0720",
+                    "slogan": null,
+                    "show_realtor_logo": false,
+                    "link": null,
+                    "accent_color": null
+                },
+                "details": {
+                    "name": "Gilad Azaria",
+                    "photo": "https://ap.rdcpix.com/1459399465/47be7153270cd614cd598b563efca74ca-w0od-r7_w60.jpg",
+                    "phone": "(917) 586-0720",
+                    "slogan": null,
+                    "show_realtor_logo": false,
+                    "link": "/realestateagents/Gilad-Azaria_New-York_NY_2279014",
+                    "accent_color": null
+                }
+            },
+            "office": {
+                "photo_attribution": {
+                    "name": "Douglas Elliman - 575 Madison Ave",
+                    "photo": "https://p.rdcpix.com/v01/of4c12200-c0s.gif",
+                    "phone": "(212) 891-7000",
+                    "slogan": null,
+                    "show_realtor_logo": false,
+                    "link": null,
+                    "accent_color": null
+                },
+                "details": {
+                    "name": "Douglas Elliman - 575 Madison Ave",
+                    "photo": "https://p.rdcpix.com/v01/of4c12200-c0s.gif",
+                    "phone": "(212) 891-7000",
+                    "slogan": null,
+                    "show_realtor_logo": false,
+                    "link": "http://elliman.com/3611478",
+                    "accent_color": null
+                }
+            }
+        },
+        "lead_attributes": {
+            "form_type": "classic",
+            "lead_type": "advantage_pro",
+            "show_contact_a_lender": true,
+            "is_lcm_enabled": false,
+            "flip_the_market_enabled": false,
+            "show_veterans_united": true
+        },
+        "product_name": "advantage_pro",
+        "matterport_url": null,
+        "quick_to_sell_days": null,
+        "price_history": [
+            {
+                "date": "01/09/2019",
+                "price": 825000,
+                "sqft": 572,
+                "source": "MLS #3611478",
+                "event_name": "Listed",
+                "price_changed": 0,
+                "price_changed_display": null,
+                "datasource_name": "DouglasElliman",
+                "date_display": "01/09/2019",
+                "price_display": "$825,000",
+                "event_name_display": "Listed",
+                "price_sqft_display": "$1,442",
+                "datasource_name_display": "DouglasElliman",
+                "photos": null,
+                "timeline_date": "Jan  9, 2019",
+                "event_year": 2019,
+                "price_difference": null,
+                "price_changed_percent": null,
+                "selling_agent_name": null,
+                "selling_agent_url": null,
+                "selling_office_name": null,
+                "selling_office_url": null,
+                "markup_price": null,
+                "markup_price_display": null,
+                "markup_percent": null,
+                "markup_time": null,
+                "description": null,
+                "year_marker": 2019,
+                "permit_type": null
+            },
+            {
+                "date": "11/15/2013",
+                "price": 360000,
+                "sqft": 574,
+                "source": "Public Record",
+                "event_name": "Sold",
+                "price_changed": 0,
+                "price_changed_display": null,
+                "datasource_name": "",
+                "date_display": "11/15/2013",
+                "price_display": "$360,000",
+                "event_name_display": "Sold",
+                "price_sqft_display": "$627",
+                "datasource_name_display": "",
+                "photos": null,
+                "timeline_date": "Nov 15, 2013",
+                "event_year": 2013,
+                "price_difference": null,
+                "price_changed_percent": null,
+                "selling_agent_name": null,
+                "selling_agent_url": null,
+                "selling_office_name": null,
+                "selling_office_url": null,
+                "markup_price": -340000,
+                "markup_price_display": "$340,000",
+                "markup_percent": "49%",
+                "markup_time": 7,
+                "description": null,
+                "year_marker": 2013,
+                "permit_type": null
+            },
+            {
+                "date": "11/09/2006",
+                "price": 700000,
+                "sqft": 574,
+                "source": "Public Record",
+                "event_name": "Sold",
+                "price_changed": 0,
+                "price_changed_display": null,
+                "datasource_name": "",
+                "date_display": "11/09/2006",
+                "price_display": "$700,000",
+                "event_name_display": "Sold",
+                "price_sqft_display": "$1,220",
+                "datasource_name_display": "",
+                "photos": null,
+                "timeline_date": "Nov  9, 2006",
+                "event_year": 2006,
+                "price_difference": null,
+                "price_changed_percent": null,
+                "selling_agent_name": null,
+                "selling_agent_url": null,
+                "selling_office_name": null,
+                "selling_office_url": null,
+                "markup_price": 79500,
+                "markup_price_display": "$79,500",
+                "markup_percent": "13%",
+                "markup_time": 1.5,
+                "description": null,
+                "year_marker": 2006,
+                "permit_type": null
+            },
+            {
+                "date": "07/19/2005",
+                "price": 620500,
+                "sqft": 574,
+                "source": "Public Record",
+                "event_name": "Sold",
+                "price_changed": 0,
+                "price_changed_display": null,
+                "datasource_name": "",
+                "date_display": "07/19/2005",
+                "price_display": "$620,500",
+                "event_name_display": "Sold",
+                "price_sqft_display": "$1,081",
+                "datasource_name_display": "",
+                "photos": null,
+                "timeline_date": "Jul 19, 2005",
+                "event_year": 2005,
+                "price_difference": null,
+                "price_changed_percent": null,
+                "selling_agent_name": null,
+                "selling_agent_url": null,
+                "selling_office_name": null,
+                "selling_office_url": null,
+                "markup_price": null,
+                "markup_price_display": null,
+                "markup_percent": null,
+                "markup_time": null,
+                "description": null,
+                "year_marker": 2005,
+                "permit_type": null
+            }
+        ],
+        "schools_info": "",
+        "flags": {
+            "is_showcase": false,
+            "is_cobroke": false,
+            "is_address_suppressed": false,
+            "has_private_showing": false,
+            "is_coshow_product": false,
+            "is_pre_approved": false,
+            "is_office_standard": false,
+            "has_realtor_logo": false,
+            "is_suppress_map_pin": false,
+            "is_suppress_map": false,
+            "is_price_reduced": false,
+            "is_new_listing": true,
+            "is_pending": false,
+            "is_contingent": false,
+            "is_short_sale": null,
+            "is_foreclosure": false,
+            "is_mortgage_feature": false,
+            "should_suppress_ads": false,
+            "show_porch_link": false,
+            "has_tour": false,
+            "is_costar": false,
+            "is_new_construction": false,
+            "should_suppress_listing_agent": false,
+            "is_advantage_brand": false,
+            "is_advantage_pro": true,
+            "is_advantage": true,
+            "is_essentials": false,
+            "is_basic_opt_in": false,
+            "is_basic_opt_out": false,
+            "is_basic": false,
+            "is_fios_supported": false,
+            "is_fios_gige": false,
+            "is_fios_sfu": false,
+            "is_aptlist": false,
+            "is_tcpa_message_enabled": false
+        },
+        "full_address_display": "240 Riverside Blvd Apt 6 F, New York, NY 10069",
+        "listing_provider": {
+            "agent_name": "Gilad Azaria",
+            "agent_photo": "http://ap.rdcpix.com/1459399465/47be7153270cd614cd598b563efca74ca-w0l.jpg",
+            "agent_profile_link": null,
+            "agent_billing_id": null,
+            "broker_name": "Douglas Elliman - 575 Madison Ave",
+            "broker_billing_id": null,
+            "broker_location": "New York, NY",
+            "broker_number": "(212) 891-7000",
+            "broker_link": "http://elliman.com/3611478",
+            "buyer_agent_name": null,
+            "buyer_broker_name": null,
+            "buyer_broker_number": null,
+            "mls_id": "3611478",
+            "mls_name": "DouglasElliman",
+            "mls_copy_right": null,
+            "mls_abbreviation": "DENY",
+            "office_contact": "(212) 891-7000"
+        },
+        "product_type": "basic",
+        "headline": null,
+        "saved_resource_id": null,
+        "saved_resource_note": {
+            "message": null,
+            "updated_at": null
+        },
+        "property_suppressed_at": null,
+        "active_status": "Active",
+        "property_status_display": "Active",
+        "agent_advertiser_id": 2279014,
+        "office_advertiser_id": 2277876,
+        "broker_advertiser_id": 2277901,
+        "property_status": "for_sale",
+        "other_listing": null,
+        "neighborhoods": [
+            {
+                "name": "Lincoln Square",
+                "city": "Manhattan",
+                "state_code": "NY",
+                "level": "sub_neighborhood",
+                "id": 4009112
+            },
+            {
+                "name": "Upper West Side",
+                "city": "Manhattan",
+                "state_code": "NY",
+                "level": "neighborhood",
+                "id": 4025330
+            },
+            {
+                "name": "Upper Manhattan",
+                "city": "Manhattan",
+                "state_code": "NY",
+                "level": "macro_neighborhood",
+                "id": 4017144
+            }
+        ],
+        "saved_listings": null,
+        "hoa_fee": 1047,
+        "building": {
+            "id": 9583350085,
+            "permalink": "240-Riverside-Blvd_New-York_NY_10069_B9583350085"
+        },
+        "property_insights": [ ],
+        "real_tip": [ ],
+        "seo_meta": null,
+        "mapUrl": "https://maps.googleapis.com/maps/api/staticmap?center=40.780306%2C-73.986926&channel=rdc-ldp-print&client=gme-movesalesinc&key=&markers=color%3Ared%7C40.780306%2C-73.986926&scale=2&size=300x100&style=feature%3Apoi%7Cvisibility%3Aoff&visible=40.780306%2C-73.986926&zoom=14&signature=qBLBjrn3whHd1Jin_FtAFYx8v9Q="
+    },
+    "hoa": 1047,
+    "decorator": {
+        "display_open_house_cta": true,
+        "price_history_value": 825000,
+        "display_rcm_checkbox": true,
+        "display_listing_agent": true,
+        "display_save_listing": true,
+        "display_for_sale_features": true,
+        "display_key_facts": true,
+        "display_multiple_open_houses": true,
+        "display_property_history": true,
+        "display_listing_provider": true,
+        "display_print": true,
+        "advantage_enabled": true,
+        "display_minirate_table": true,
+        "overview_title": "",
+        "display_amenity_map": true,
+        "display_recommended_homes": true,
+        "display_map": true,
+        "display_agent_photo_attribution": true,
+        "display_agent_additional_info": true,
+        "display_office_additional_info": true,
+        "status_display_below_hero_image": "For Sale",
+        "url_from_app": "/property-overview/M4319803655",
+        "display_price_per_sqft": true,
+        "display_homes_near_street": true,
+        "display_building_url": true,
+        "display_active_status": true,
+        "display_share": true,
+        "display_hide_cta": true,
+        "display_note_text": true,
+        "display_branding": true,
+        "display_office_photo_attribution": true,
+        "display_open_house": true,
+        "display_city_state_zip": "New York, NY 10069",
+        "homes_around_price_display": "$825,000",
+        "display_payment_options": true,
+        "display_request_more_details_form": true,
+        "lead_capture_product": "advantage_pro",
+        "lead_service": "LCS",
+        "lead_form_title": "More about this property",
+        "lead_button_text": "Contact Agent",
+        "lead_capture_product_advantage_enabled": "advantage_pro",
+        "property_products": [
+            "core.agent",
+            "core.broker",
+            "listing_owner_brand.broker",
+            "listing_owner_lead.broker",
+            "suppress_foreclosure"
+        ]
+    },
+    "adsData": {
+        "show_photo_mrect": true,
+        "targeting": {
+            "cityldp": "'NEW_YORK'",
+            "citystldp": "'NEW_YORK_NY'",
+            "zipldp": "'10069'",
+            "countyldp": "'NEW_YORK'",
+            "address": "'240_RIVERSIDE_BLVD_APT_6F'",
+            "st": "'NY'",
+            "mlid": "'615945689'",
+            "mprid": "'4319803655'",
+            "agent_advertiser_id": "'2279014'",
+            "broker_advertiser_id": "'2277901'",
+            "office_advertiser_id": "'2277876'",
+            "mls": "'3611478'",
+            "bid": "",
+            "offbid": "",
+            "bkr": "'DE'",
+            "listingprice": "'825000'",
+            "pldp": "'750K_1MM','85K','250K','300K','400K','420K','530K','500K','600K','700K','800K'",
+            "ptldp": "'2'",
+            "pfldp": "'POOL','WATER','SEWER'",
+            "garageldp": "'YES'",
+            "agehom": "'4'",
+            "sqft": "'572'",
+            "sqldp": "'999'",
+            "bedldp": "",
+            "bathldp": "'1'",
+            "add": "'011019'",
+            "lstat": "'NEW'",
+            "openldp": "'FALSE'",
+            "rdpr": "'FALSE'",
+            "t": "'EL'"
+        }
+    },
+    "rate_table_link": "/mortgage/rates/?reference=web_ldp_pymt_cta1#ref=listingdetail&mlid=615945689&mprid=4319803655&zip=10069&property_price=825000&iid=TXTLDP2",
+    "adobeDTM": {
+        "listingCounty": "New York",
+        "listingCity": "New York",
+        "listingZip": "10069",
+        "listingAddress": "240 Riverside Blvd Apt 6 F, New York, NY 10069",
+        "listingState": "NY",
+        "listingNeighborhood": "Upper West Side",
+        "propertyType": "condo",
+        "propertyStatus": "for_sale",
+        "productType": "core.agent,core.broker,listing_owner_brand.broker,listing_owner_lead.broker",
+        "listingPrice": 825000,
+        "listingSqFt": 572,
+        "pageType": "ldp-quickview",
+        "listingSource": "DENY",
+        "listingStatus": "active",
+        "listingBeds": 0,
+        "listingBaths": "1",
+        "propertyStatusSub": null,
+        "listingActivity": "new listing",
+        "mprID": 4319803655,
+        "realtipPresent": "n",
+        "planID": null,
+        "subID": null,
+        "listingID": 615945689,
+        "advertiserID-office": 2277876,
+        "advertiserID-agent": 2279014,
+        "advertiserID-broker": 2277901,
+        "advertiserID-listing": null,
+        "listingPhotoCt": 11,
+        "dataSourceType": null,
+        "communityId": null,
+        "roleType": "",
+        "listingKey": null,
+        "dataScienceProducts": "none",
+        "listing": {
+            "enhancements": "broker-photo-top,broker-phone-top,broker-photo-btm,broker-phone-btm,agent-photo-top,agent-phone-top,agent-photo-btm,agent-phone-btm",
+            "leadDelivery": "advantage_pro",
+            "leadEnhancements": "classic,rcm"
+        },
+        "searchID": "aca287adf29843f5ba8bd6d44aba38d2",
+        "realtipCount": null,
+        "listingClickSource": null,
+        "rdcTrackingEnabled": "y",
+        "identityStatus": "not-registered",
+        "identityID": null,
+        "appVersion": "8.0.0.1",
+        "userTesting": "renovate:dialUp:testGroup",
+        "basecamp": true
+    }
+}

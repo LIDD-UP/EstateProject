@@ -23,3 +23,7 @@ class StateNameCountyNameItem(scrapy.Item):
 class CountyNameZipCodeItem(scrapy.Item):
     countyName = scrapy.Field()
     zipCode = scrapy.Field()
+
+
+class RealtorHouseInfoJsonItem(scrapy.Item):
+    houseData = scrapy.Field()

@@ -18,6 +18,7 @@ class RealtorSpider(scrapy.Spider):
 
         },
         "LOG_FILE": "realtor_log.txt",
+        "LOG_LEVEL": 'WARNING',
     }
 
     def parse(self, response):

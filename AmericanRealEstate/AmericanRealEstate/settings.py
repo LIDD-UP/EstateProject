@@ -50,6 +50,13 @@ ROBOTSTXT_OBEY = False
 #    'AmericanRealEstate.middlewares.AmericanrealestateSpiderMiddleware': 543,
 #}
 
+# redis 设置：
+# Enables scheduling storing requests queue in redis.
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+
+# Ensure all spiders share same duplicates filter through redis.
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
@@ -70,7 +77,7 @@ RANDOM_UA_TYPE = "random"
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    # 'AmericanRealEstate.pipelines.AmericanrealestatePipeline': 300,
-
+    'scrapy_redis.pipelines.RedisPipeline': 300
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -103,3 +110,5 @@ MYSQL_PASSWORD = '123456'
 
 # 日子输出：
 # LOG_FILE="log.txt"
+
+# redis settings

@@ -3,32 +3,42 @@ import re
 
 import scrapy
 from urllib.parse import urljoin
+from scrapy_redis.spiders import RedisSpider
 
 from AmericanRealEstate.items import RealtorHouseInfoJsonItem
 
 
-class RealtorSpider(scrapy.Spider):
+class RealtorSpider(RedisSpider):
     name = 'realtor'
     allowed_domains = ['realtor.com']
-    start_urls = ['https://www.realtor.com/realestateandhomes-search/Haines-County_AK']
+    redis_key = "realtor:start_urls"
+
+    # start_urls = ['https://www.realtor.com/realestateandhomes-search/Monroe-County_NY']
 
     custom_settings = {
         "ITEM_PIPELINES": {
-            'AmericanRealEstate.pipelines.RealtorHouseInfoPipeline': 301,
+            # 'AmericanRealEstate.pipelines.RealtorHouseInfoPipeline': 301,
+            'AmericanRealEstate.pipelines.RealtorHouseInfoTestPipeline': 302,
 
         },
-        "LOG_FILE": "realtor_log.txt",
-        "LOG_LEVEL": 'WARNING',
+        # "LOG_FILE": "realtor_log.txt",
+        # "LOG_LEVEL": 'WARNING',
     }
 
     def parse(self, response):
         counties = [
-            'Monroe-County_NY',
+            # 'Monroe-County_NY',
+            'Haines-County_AK',
         ]
         for county in counties:
-            houses = response.css('ul.prop-list li.js-quick-view')
+            # houses = response.css('ul.prop-list li.js-quick-view')
+            # xpath
+            houses = response.xpath("//ul[contains(@class,'prop-list')]/li[contains(@class,'js-quick-view')]")
             for house in houses:
-                detail_url = house.css('.photo-wrap a::attr(href)').extract_first()
+                # css
+                # detail_url = house.css('.photo-wrap a::attr(href)').extract_first()
+                # xpath
+                detail_url = house.xpath("//div[@class='photo-wrap ']/a/@href").extract_first()
                 x = re.findall(r'(M\d{5}-\d{5})', detail_url)
                 if len(x) != 0:
                     x = x[-1]
@@ -42,7 +52,9 @@ class RealtorSpider(scrapy.Spider):
                 # true_detail_url = urljoin(realtor_index_website,detail_url)
                 # print(true_detail_url)
                 # https: // www.realtor.com / realestateandhomes - detail / 60 - Riverside - Blvd - Apt - 1112_New - York_NY_10069_M37676 - 31493
-            next_page_url = response.css('span.next a.next::attr(href)').extract_first()
+            # next_page_url = response.css('span.next a.next::attr(href)').extract_first()
+            # xpath
+            next_page_url = response.xpath("//span[@class='next ']/a[@class='next']/@href").extract_first()
             if next_page_url is not None:
                 true_next_page_url = urljoin(response.url,next_page_url)
                 yield scrapy.Request(url=true_next_page_url, callback=self.parse)
@@ -53,3 +65,4 @@ class RealtorSpider(scrapy.Spider):
         realtor_house_info_item = RealtorHouseInfoJsonItem()
         realtor_house_info_item['houseData'] = response.text
         yield realtor_house_info_item
+

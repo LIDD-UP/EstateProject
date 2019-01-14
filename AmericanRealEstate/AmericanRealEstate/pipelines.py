@@ -76,6 +76,8 @@ class RealtorHouseInfoPipeline(object):
 可以异步的插入数据；
 twisted本身是没有连接池的，但是它提供了一个异步的机制；
 用的连接池还是对应数据库的连接池；
+但是存在一个问题就是不知道是否可以通过ssh连接；
+算了不搞了；
 '''
 
 class MysqlTwistedPipeline(object):
@@ -118,3 +120,15 @@ class MysqlTwistedPipeline(object):
             ''', [item['houseData']
                   ]
         )
+
+
+class RealtorHouseInfoTestPipeline(object):
+    house_list = []
+
+    def process_item(self, item, spider):
+        if isinstance(item,RealtorHouseInfoJsonItem):
+            self.house_list.append(item['houseData'])
+            if len(self.house_list) >= 3:
+                print('数据显示',self.house_list)
+                del self.house_list[:]
+        return item

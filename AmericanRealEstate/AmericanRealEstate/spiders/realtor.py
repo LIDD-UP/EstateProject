@@ -23,6 +23,13 @@ class RealtorSpider(RedisSpider):
         },
         # "LOG_FILE": "realtor_log.txt",
         # "LOG_LEVEL": 'WARNING',
+        'REDIS_HOST': '192.144.149.43',
+        'REDIS_PORT': 6379,
+
+        # 指定 redis链接密码，和使用哪一个数据库
+        'REDIS_PARAMS': {
+            'password': '123456',
+        },
     }
 
     def parse(self, response):

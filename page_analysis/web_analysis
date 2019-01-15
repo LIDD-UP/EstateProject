@@ -270,6 +270,19 @@ https://www.trulia.com
             3：抓取全部房屋数据是通过“州缩写”以及“州下面的县”获取数据（format url作为请求数据的url）
                 url样式：https://www.trulia.com/NY/New_York/380_p/
                 标签页需要计算出来；它数据没有显示完，但是能够全部获取，（通过一个标签获取）
+            上面的搜索条件太小了，无法全面：
+            需要用到下面的作为搜索条件：
+            这个url（搜索条件）特点：指明County作为搜索条件，然后是州的缩写，最后是县名加上Real_Estate,如果县名是多个字符，需要用_来来连接；
+            https://www.trulia.com/County/NY/New_York_Real_Estate/
+
+            trulia网站最好不要通过邮编来进行抓取：
+            https://www.trulia.com/NM/Cedar_Crest/87008/
+            它的邮编前面也是有州的缩写和相应的县的，还不如直接用它的州县来作为搜索条件；
+
+
+
+
+
 
 
 

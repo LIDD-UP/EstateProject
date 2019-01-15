@@ -13,7 +13,7 @@ class RealtorSpider(RedisSpider):
     allowed_domains = ['realtor.com']
     redis_key = "realtor:start_urls"
 
-    # start_urls = ['https://www.realtor.com/realestateandhomes-search/Monroe-County_NY']
+    # start_urls = ['https://www.realtor.com/realestateandhomes-search/Adair-County_MO']
 
     custom_settings = {
         "ITEM_PIPELINES": {
@@ -36,6 +36,13 @@ class RealtorSpider(RedisSpider):
         counties = [
             # 'Monroe-County_NY',
             'Haines-County_AK',
+            'Autauga-County_AL',
+            'Bibb-County_AL',
+            'Adair-County_MO',
+            # '''
+            # https://www.realtor.com/realestateandhomes-search/Autauga-County_AL
+            # https://www.realtor.com/realestateandhomes-search/Bibb-County_AL
+            # '''
         ]
         for county in counties:
             # houses = response.css('ul.prop-list li.js-quick-view')

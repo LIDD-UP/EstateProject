@@ -11,5 +11,5 @@ RUN pip install -r requirements.txt
 # #设置容器工作目录
 WORKDIR /code/vmoredis/vmoredis/spiders
 # #运行命令
-CMD /usr/local/bin/scrapy runspider vmSpider.py
+CMD /usr/local/bin/scrapy crawl realtor
 

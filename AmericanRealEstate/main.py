@@ -12,3 +12,5 @@ from scrapy.cmdline import execute
 
 # execute('scrapy crawl realtor -s JOBDIR=crawls/trulia_state_county_zip-1'.split(' '))
 execute('scrapy crawl realtor'.split(' '))
+
+

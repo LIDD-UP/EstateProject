@@ -23,8 +23,8 @@ class RealtorSpider(RedisSpider):
             'AmericanRealEstate.pipelines.RealtorHouseInfoTestPipeline': 302,
 
         },
-        # "LOG_FILE": "realtor_log.txt",
-        # "LOG_LEVEL": 'WARNING',
+        "LOG_FILE": "realtor_log.txt",
+        "LOG_LEVEL": 'WARNING',
         'REDIS_HOST': '192.144.149.43',
         'REDIS_PORT': 6379,
 

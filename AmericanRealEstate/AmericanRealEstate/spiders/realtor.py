@@ -4,8 +4,10 @@ import re
 import scrapy
 from urllib.parse import urljoin
 from scrapy_redis.spiders import RedisSpider
+import pandas as pd
 
 from AmericanRealEstate.items import RealtorHouseInfoJsonItem
+from AmericanRealEstate.settings import realtor_search_criteria
 
 
 class RealtorSpider(RedisSpider):
@@ -30,20 +32,22 @@ class RealtorSpider(RedisSpider):
         'REDIS_PARAMS': {
             'password': '123456',
         },
+
     }
 
     def parse(self, response):
-        counties = [
-            # 'Monroe-County_NY',
-            'Haines-County_AK',
-            'Autauga-County_AL',
-            'Bibb-County_AL',
-            'Adair-County_MO',
-            # '''
-            # https://www.realtor.com/realestateandhomes-search/Autauga-County_AL
-            # https://www.realtor.com/realestateandhomes-search/Bibb-County_AL
-            # '''
-        ]
+        counties = realtor_search_criteria
+        #     [
+        #     # 'Monroe-County_NY',
+        #     'Haines-County_AK',
+        #     'Autauga-County_AL',
+        #     'Bibb-County_AL',
+        #     'Adair-County_MO',
+        #     # '''
+        #     # https://www.realtor.com/realestateandhomes-search/Autauga-County_AL
+        #     # https://www.realtor.com/realestateandhomes-search/Bibb-County_AL
+        #     # '''
+        # ]
         for county in counties:
             # houses = response.css('ul.prop-list li.js-quick-view')
             # xpath

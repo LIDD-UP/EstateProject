@@ -112,3 +112,8 @@ MYSQL_PASSWORD = '123456'
 # LOG_FILE="log.txt"
 
 # redis settings
+
+# 搜索条件设置
+import pandas as pd
+'/home/bluesli/PycharmProjects/EstateProject/AmericanRealEstate/AmericanRealEstate/realtor_search_criteria.csv'
+realtor_search_criteria = list(pd.read_csv('/home/bluesli/PycharmProjects/EstateProject/AmericanRealEstate/AmericanRealEstate/realtor_search_criteria.csv')['countyStateJoin'])

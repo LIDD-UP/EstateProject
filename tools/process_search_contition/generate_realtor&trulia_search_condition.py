@@ -10,3 +10,6 @@ import pandas as pd
 data = pd.read_csv('county_stateabbrevation.csv')
 print(data.head())
 
+new_data = pd.DataFrame()
+
+new_data['countyStateJoin'] = []

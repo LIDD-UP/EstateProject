@@ -24,7 +24,7 @@ class RealtorSpider(RedisSpider):
 
         },
         "LOG_FILE": "realtor_log.txt",
-        "LOG_LEVEL": 'WARNING',
+        "LOG_LEVEL": 'INFO',
         'REDIS_HOST': '192.144.149.43',
         'REDIS_PORT': 6379,
 

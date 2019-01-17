@@ -27,3 +27,7 @@ class CountyNameZipCodeItem(scrapy.Item):
 
 class RealtorHouseInfoJsonItem(scrapy.Item):
     houseData = scrapy.Field()
+
+
+class TruliaHouseInfoItem(scrapy.Item):
+    pass

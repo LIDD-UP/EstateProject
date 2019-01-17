@@ -279,6 +279,13 @@ https://www.trulia.com
             https://www.trulia.com/NM/Cedar_Crest/87008/
             它的邮编前面也是有州的缩写和相应的县的，还不如直接用它的州县来作为搜索条件；
 
+            trulia 详情页中还包含了联系人和代理人以及提供房屋人的信息：
+            接口：https://www.trulia.com/_ajax/Conversion/LeadFormApi/form/?ab=&disableExclusiveAgent=false&isBuilderCommunity=false&propertyId=/p/ny/new-york/12-e-63rd-st-new-york-ny-10065--1028591830&searchType=for%20sale&stateCode=NY&userId=190111pl5oxe6dz6h9ql8f26dy4gw379&logged_in_user_id=0&source=www
+            对应的请求url：https://www.trulia.com/p/ny/new-york/12-e-63rd-st-new-york-ny-10065--1028591830
+            浏览器中展示了具体的请求参数；
+
+
+
 
 
 

@@ -15,11 +15,18 @@ new_data = pd.DataFrame()
 # for i in data.loc:
 #     print(i)
 
-new_data['countyStateJoin'] = ['-'.join(x.split(' '))+'-County_'+y for i,x in enumerate(data['countyName']) for j,y in enumerate(data['stateAbbreviation']) if i==j]
+# generate realtor search criteria
+# new_data['countyStateJoin'] = ['-'.join(x.split(' '))+'-County_'+y for i,x in enumerate(data['countyName']) for j,y in enumerate(data['stateAbbreviation']) if i==j]
+# new_data = new_data.drop_duplicates()
+# new_data.to_csv('./realtor_search_criteria.csv',index=False)
 
-
+# generate trulia search critertia
+# County/NY/New_York_Real_Estate/
+new_data['countyStateJoin'] = ['County'+'/'+y+'/'+'_'.join(x.split(' '))+'_Real_Estate' for i,x in enumerate(data['countyName']) for j,y in enumerate(data['stateAbbreviation']) if i==j]
 new_data = new_data.drop_duplicates()
-new_data.to_csv('./realtor_search_criteria.csv',index=False)
+print(new_data)
+new_data.to_csv('./trulia_search_criteria.csv',index=False)
+
 
 
 # print(new_data)
@@ -31,6 +38,7 @@ new_data.to_csv('./realtor_search_criteria.csv',index=False)
 
 'Autauga-County_AL'
 
+# County/NY/New_York_Real_Estate/
 
 
 

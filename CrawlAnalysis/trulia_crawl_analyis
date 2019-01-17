@@ -1,0 +1,17 @@
+trulia 网站列表页标签的获取：
+列表页是有对应房屋的json数据接口的：但是数据量有限，还是需要抓详情页：
+    1：列表的每一个房屋的提取：他有干扰项：
+    还有一个是community 的东西：不属于房屋：具体是相当于一个数据，但是不是房子，相当于大房子；每一页好像有一个，感觉像广告一样；
+    2：
+    xpath提取：
+    1：通过class的完全相同不是合理，这样，网站稍微改版，基本就凉了
+    //div[@class='backgroundControls']//div[@class='containerFluid']/ul//li[@class='xsCol12Landscape smlCol12 lrgCol8']
+    ：通过contain函数：
+    //div[@class='backgroundControls']//div[@class='containerFluid']/ul//li[contains(@class,'xsCol12Landscape')]
+
+    在详情页还没有具体的经纬度信息，所以还需要将列表页的经纬度信息保存起来；
+
+    3：列表页的接口要有vpn才能访问；
+
+    4:详情页的url的a标签
+    //div[@class='backgroundControls']//div[@class='containerFluid']/ul//li[contains(@class,'xsCol12Landscape')]//a[@class='tileLink']

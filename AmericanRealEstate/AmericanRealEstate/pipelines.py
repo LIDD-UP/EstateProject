@@ -11,6 +11,7 @@ import pymysql
 from AmericanRealEstate.items import StateNameCountyNameItem,CountyNameZipCodeItem,RealtorHouseInfoJsonItem
 from tools.get_sql_con import get_sql_con
 from tools.test_file import post_url
+from AmericanRealEstate.settings import post_interface_url
 
 
 class AmericanrealestatePipeline(object):
@@ -134,7 +135,7 @@ class RealtorHouseInfoTestPipeline(object):
                 post_data = {
                     "data": self.house_list
                 }
-                result = post_url('http://192.168.0.126:8080/America-DataSave/index/saveRealtorDataJson/', post_data)
+                result = post_url(post_interface_url, post_data)
                 print(result == 'success')
 
                 del self.house_list[:]

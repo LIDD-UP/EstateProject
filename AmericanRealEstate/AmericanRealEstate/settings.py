@@ -21,6 +21,25 @@ NEWSPIDER_MODULE = 'AmericanRealEstate.spiders'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
+# 爬虫提升配置
+# 并发：同时处理request的数量
+CONCURRENT_REQUESTS = 100
+# 降低log级别：降低到INFO级别就不能获取重定向的一些信息了
+LOG_LEVEL = 'INFO'
+# 对于不需要登陆的网站禁用cookies
+COOKIES_ENABLED = False
+# 禁止重试:对于失败的http请求取消重试；但是这个还需要考虑
+RETRY_ENABLED = False
+
+# 如果您对一个非常慢的连接进行爬取(一般对通用爬虫来说并不重要)， 减小下载超时能让卡住的连接能被快速的放弃并解放处理其他站点的能力。
+DOWNLOAD_TIMEOUT = 15 # 其中15是设置的下载超时时间
+
+# 禁止重定向
+REDIRECT_ENABLED = False
+# 设置代理ip池，可以使用downloadermiddleware
+# 配置请求头
+
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -115,4 +134,7 @@ MYSQL_PASSWORD = '123456'
 
 # 搜索条件设置
 import pandas as pd
-realtor_search_criteria = list(pd.read_csv('F:\\PycharmProject\\EstateProject\\AmericanRealEstate\\AmericanRealEstate\\realtor_search_criteria.csv')['countyStateJoin'])
+realtor_search_criteria = list(pd.read_csv(r'J:\PycharmProject\EstateProject\tools\realtor_search_criteria.csv')['countyStateJoin'])
+
+# post_url
+post_interface_url = 'http://192.168.0.65:8080/America-DataSave/index/saveRealtorDataJson/'

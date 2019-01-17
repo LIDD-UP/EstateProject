@@ -134,7 +134,7 @@ MYSQL_PASSWORD = '123456'
 
 # 搜索条件设置
 import pandas as pd
-realtor_search_criteria = list(pd.read_csv(r'J:\PycharmProject\EstateProject\tools\realtor_search_criteria.csv')['countyStateJoin'])
+realtor_search_criteria = list(pd.read_csv(r'J:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\realtor_search_criteria.csv')['countyStateJoin'])
 
 # post_url
 post_interface_url = 'http://192.168.0.65:8080/America-DataSave/index/saveRealtorDataJson/'

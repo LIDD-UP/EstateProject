@@ -21,10 +21,11 @@ class RealtorSpider(RedisSpider):
         "ITEM_PIPELINES": {
             # 'AmericanRealEstate.pipelines.RealtorHouseInfoPipeline': 301,
             'AmericanRealEstate.pipelines.RealtorHouseInfoTestPipeline': 302,
+            'scrapy_redis.pipelines.RedisPipeline': 300
 
         },
-        "LOG_FILE": "realtor_log.txt",
-        "LOG_LEVEL": 'INFO',
+        # "LOG_FILE": "realtor_log.txt",
+        # "LOG_LEVEL": 'INFO',
         'REDIS_HOST': '192.144.149.43',
         'REDIS_PORT': 6379,
 
@@ -32,6 +33,12 @@ class RealtorSpider(RedisSpider):
         'REDIS_PARAMS': {
             'password': '123456',
         },
+        # redis 设置：
+        # Enables scheduling storing requests queue in redis.
+        "SCHEDULER": "scrapy_redis.scheduler.Scheduler",
+
+        # Ensure all spiders share same duplicates filter through redis.
+        "DUPEFILTER_CLASS": "scrapy_redis.dupefilter.RFPDupeFilter",
 
     }
 

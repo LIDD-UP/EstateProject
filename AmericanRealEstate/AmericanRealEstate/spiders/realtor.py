@@ -20,12 +20,12 @@ class RealtorSpider(RedisSpider):
     custom_settings = {
         "ITEM_PIPELINES": {
             # 'AmericanRealEstate.pipelines.RealtorHouseInfoPipeline': 301,
-            'AmericanRealEstate.pipelines.RealtorHouseInfoTestPipeline': 302,
+            # 'AmericanRealEstate.pipelines.RealtorHouseInfoTestPipeline': 302,
             'scrapy_redis.pipelines.RedisPipeline': 300
 
         },
         # "LOG_FILE": "realtor_log.txt",
-        # "LOG_LEVEL": 'INFO',
+        # "LOG_LEVEL": 'DEBUG',
         'REDIS_HOST': '192.144.149.43',
         'REDIS_PORT': 6379,
 

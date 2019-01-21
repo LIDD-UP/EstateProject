@@ -156,3 +156,4 @@ post_interface_url = 'http://192.168.0.65:8080/America-DataSave/index/saveRealto
 
 # realtor domain url
 realtor_domain_url = 'https://www.realtor.com/'
+trulia_domain_url = 'https://www.trulia.com/'

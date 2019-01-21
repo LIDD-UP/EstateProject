@@ -28,7 +28,7 @@ CONCURRENT_REQUESTS = 1
 # 降低log级别：降低到INFO级别就不能获取重定向的一些信息了
 # LOG_LEVEL = 'INFO'
 # 对于不需要登陆的网站禁用cookies
-COOKIES_ENABLED = False
+# COOKIES_ENABLED = True
 # 禁止重试:对于失败的http请求取消重试；但是这个还需要考虑
 RETRY_ENABLED = False
 
@@ -147,8 +147,8 @@ MYSQL_PASSWORD = '123456'
 
 # 搜索条件设置
 import pandas as pd
-realtor_search_criteria = list(pd.read_csv(r'F:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\realtor_search_criteria.csv')['countyStateJoin'])
-trulia_search_criteria = list(pd.read_csv(r'F:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\trulia_search_criteria.csv')['countyStateJoin'])
+realtor_search_criteria = list(pd.read_csv(r'D:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\realtor_search_criteria.csv')['countyStateJoin'])
+trulia_search_criteria = list(pd.read_csv(r'D:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\trulia_search_criteria.csv')['countyStateJoin'])
 
 
 # post_url

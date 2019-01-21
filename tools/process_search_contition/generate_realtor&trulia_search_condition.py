@@ -16,16 +16,17 @@ new_data = pd.DataFrame()
 #     print(i)
 
 # generate realtor search criteria
-new_data['countyStateJoin'] = ['https://www.realtor.com/realestateandhomes-search/'+'-'.join(x.split(' '))+'-County_'+y for i,x in enumerate(data['countyName']) for j,y in enumerate(data['stateAbbreviation']) if i==j]
-new_data = new_data.drop_duplicates()
-new_data.to_csv('./realtor_search_criteria.csv',index=False)
+# new_data['countyStateJoin'] = ['https://www.realtor.com/realestateandhomes-search/'+'-'.join(x.split(' '))+'-County_'+y for i,x in enumerate(data['countyName']) for j,y in enumerate(data['stateAbbreviation']) if i==j]
+# new_data = new_data.drop_duplicates()
+# new_data.to_csv('./realtor_search_criteria.csv',index=False)
+# 'County / KY / Webster_Real_Estat'
 
 # generate trulia search critertia
 # County/NY/New_York_Real_Estate/
-# new_data['countyStateJoin'] = ['County'+'/'+y+'/'+'_'.join(x.split(' '))+'_Real_Estate' for i,x in enumerate(data['countyName']) for j,y in enumerate(data['stateAbbreviation']) if i==j]
-# new_data = new_data.drop_duplicates()
-# print(new_data)
-# new_data.to_csv('./trulia_search_criteria.csv',index=False)
+new_data['countyStateJoin'] = ['https://www.trulia.com/County'+'/'+y+'/'+'_'.join(x.split(' '))+'_Real_Estate' for i,x in enumerate(data['countyName']) for j,y in enumerate(data['stateAbbreviation']) if i==j]
+new_data = new_data.drop_duplicates()
+print(new_data)
+new_data.to_csv('./trulia_search_criteria.csv',index=False)
 
 
 

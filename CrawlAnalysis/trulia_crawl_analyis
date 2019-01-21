@@ -15,3 +15,6 @@ trulia 网站列表页标签的获取：
 
     4:详情页的url的a标签
     //div[@class='backgroundControls']//div[@class='containerFluid']/ul//li[contains(@class,'xsCol12Landscape')]//a[@class='tileLink']
+
+
+    trulia 网站必须携带cookies过去

@@ -15,6 +15,7 @@ SPIDER_MODULES = ['AmericanRealEstate.spiders']
 NEWSPIDER_MODULE = 'AmericanRealEstate.spiders'
 
 
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'AmericanRealEstate (+http://www.yourdomain.com)'
 
@@ -23,7 +24,7 @@ ROBOTSTXT_OBEY = False
 
 # 爬虫提升配置
 # 并发：同时处理request的数量
-CONCURRENT_REQUESTS = 100
+CONCURRENT_REQUESTS = 1
 # 降低log级别：降低到INFO级别就不能获取重定向的一些信息了
 # LOG_LEVEL = 'INFO'
 # 对于不需要登陆的网站禁用cookies
@@ -38,6 +39,22 @@ DOWNLOAD_TIMEOUT = 15 # 其中15是设置的下载超时时间
 REDIRECT_ENABLED = False
 # 设置代理ip池，可以使用downloadermiddleware
 # 配置请求头
+
+
+# 自动限速设置：
+AUTOTHROTTLE_ENABLED = True
+DOWNLOAD_DELAY = 1
+
+
+DOWNLOADER_MIDDLEWARES = {
+   # 'AmericanRealEstate.middlewares.AmericanrealestateDownloaderMiddleware': 543,
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'AmericanRealEstate.middlewares.RandomUserAgentMiddleware': 543,
+}
+RANDOM_UA_TYPE = "random"
+
+
+
 
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
@@ -78,12 +95,8 @@ REDIRECT_ENABLED = False
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-   # 'AmericanRealEstate.middlewares.AmericanrealestateDownloaderMiddleware': 543,
-    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
-    'AmericanRealEstate.middlewares.RandomUserAgentMiddleware': 543,
-}
-RANDOM_UA_TYPE = "random"
+
+
 
 
 # Enable or disable extensions
@@ -140,3 +153,6 @@ trulia_search_criteria = list(pd.read_csv(r'F:\PycharmProject\EstateProject\Amer
 
 # post_url
 post_interface_url = 'http://192.168.0.65:8080/America-DataSave/index/saveRealtorDataJson/'
+
+# realtor domain url
+realtor_domain_url = 'https://www.realtor.com/'

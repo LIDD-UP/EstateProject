@@ -1,0 +1,42 @@
+    1：17.48:
+    开始爬取，使用的是
+    setting 中的配置情况：
+        CONCURRENT_REQUESTS = 100
+    # 降低log级别：降低到INFO级别就不能获取重定向的一些信息了
+    # LOG_LEVEL = 'INFO'
+    # 对于不需要登陆的网站禁用cookies
+    COOKIES_ENABLED = False
+    # 禁止重试:对于失败的http请求取消重试；但是这个还需要考虑
+    RETRY_ENABLED = False
+
+    # 如果您对一个非常慢的连接进行爬取(一般对通用爬虫来说并不重要)， 减小下载超时能让卡住的连接能被快速的放弃并解放处理其他站点的能力。
+    DOWNLOAD_TIMEOUT = 15 # 其中15是设置的下载超时时间
+
+    # 禁止重定向
+    REDIRECT_ENABLED = False
+    # 设置代理ip池，可以使用downloadermiddleware
+    # 配置请求头
+
+
+    # 自动限速设置：
+    AUTOTHROTTLE_ENABLED = True
+    DOWNLOAD_DELAY = 1
+    2019-01-18 17:57:04 [scrapy.extensions.logstats] INFO: Crawled 75 pages (at 0 pages/min), scraped 36 items (at 0 items/min)
+
+2：18.27
+    100 并发去掉：（使用1）可能是fiddler的原因；
+    2019-01-18 18:30:40 [scrapy.extensions.logstats] INFO: Crawled 67 pages (at 12 pages/min), scraped 32 items (at 5 items/min)
+3：18.27：关掉fiddler代理
+
+
+4:直接重构代码，详情页不用接口爬取；
+    1:使用哈尔滨的网络，参数调到最低，没过多久就封ip了
+    2：使用遨游vpn，使用美国的线路，相同参数效果还算稳定；
+        能够跑完，但是数据量不够，不知道那里出问题了：
+            找到原因了：xpath语法的原因；
+        12：13开发抓的，使用最低配置：使用遨游，抓取时间：
+
+总结：使用哈尔滨的ip不管是抓接口还是抓dom，美国都多就封了；（使用的还是最低的配置）抓了30多个item就封了
+
+使用遨游vpn：
+

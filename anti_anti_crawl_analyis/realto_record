@@ -39,4 +39,15 @@
 总结：使用哈尔滨的ip不管是抓接口还是抓dom，美国都多就封了；（使用的还是最低的配置）抓了30多个item就封了
 
 使用遨游vpn：
+    各项参数调到最低也是直接封ip（抓了284）个
+    2019-01-21 12:41:26 [scrapy.extensions.logstats] INFO: Crawled 316 pages (at 33 pages/min), scraped 284 items (at 12 items/min)
+    反正抓取的时间不长；
 
+    加上referer：一样的
+
+    我怀疑是如果禁用了cookies之后对于一个ip会有用户个数限制，如果用户量过多，就会直接封ip
+
+
+新的办法，
+    1：使用无头浏览器，大量获取网站的cookies，然后封完一个cookies之后再使用另外一个cookies，这样把封锁限制到用户级别，
+    

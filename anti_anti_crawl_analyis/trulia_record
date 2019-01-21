@@ -1,0 +1,14 @@
+trulia 网站是必须携带cookies和加载javascript的；
+    不然会出现以下界面：
+    Please verify you are a human
+    Please click "I am not a robot" to continue
+
+    Access to this page has been denied because we believe you are using automation tools to browse the website.
+
+    This may happen as a result of the following:
+
+    Javascript is disabled or blocked by an extension (ad blockers for example)
+    Your browser does not support cookies
+    Please make sure that Javascript and cookies are enabled on your browser and that you are not blocking them from loading.
+
+    Reference ID: #a48cd830-1d4a-11e9-8917-87979c98f059

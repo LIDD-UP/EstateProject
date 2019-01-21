@@ -42,8 +42,8 @@ REDIRECT_ENABLED = False
 
 
 # 自动限速设置：
-AUTOTHROTTLE_ENABLED = True
-DOWNLOAD_DELAY = 1
+# AUTOTHROTTLE_ENABLED = True
+# DOWNLOAD_DELAY = 1
 
 
 DOWNLOADER_MIDDLEWARES = {
@@ -75,10 +75,11 @@ RANDOM_UA_TYPE = "random"
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-#DEFAULT_REQUEST_HEADERS = {
+# DEFAULT_REQUEST_HEADERS = {
 #   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 #   'Accept-Language': 'en',
-#}
+#
+# }
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
@@ -147,8 +148,8 @@ MYSQL_PASSWORD = '123456'
 
 # 搜索条件设置
 import pandas as pd
-realtor_search_criteria = list(pd.read_csv(r'D:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\realtor_search_criteria.csv')['countyStateJoin'])
-trulia_search_criteria = list(pd.read_csv(r'D:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\trulia_search_criteria.csv')['countyStateJoin'])
+realtor_search_criteria = list(pd.read_csv(r'F:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\realtor_search_criteria.csv')['countyStateJoin'])
+trulia_search_criteria = list(pd.read_csv(r'F:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\trulia_search_criteria.csv')['countyStateJoin'])
 
 
 # post_url

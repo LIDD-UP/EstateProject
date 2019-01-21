@@ -28,6 +28,9 @@ class RealtorSpider(scrapy.Spider):
             # 'scrapy_redis.pipelines.RedisPipeline': 300
 
         },
+        "DEFAULT_REQUEST_HEADERS": {
+                "referer": "https://www.realtor.com/"
+        },
         # "LOG_FILE": "realtor_log.txt",
         # "LOG_LEVEL": 'INFO',
         # 'REDIS_HOST': '192.144.149.43',

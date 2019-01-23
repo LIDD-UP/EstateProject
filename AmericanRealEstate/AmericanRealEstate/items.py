@@ -30,6 +30,7 @@ class RealtorHouseInfoJsonItem(scrapy.Item):
 
 
 class TruliaHouseInfoItem(scrapy.Item):
+    price = scrapy.Field()
     pass
 
 
@@ -41,3 +42,10 @@ class RealtorDetailDomItem(scrapy.Item):
     zipCode = scrapy.Field()
     city = scrapy.Field()
     state = scrapy.Field()
+
+
+class SearchCriteriaItem(scrapy.Item):
+    stateName = scrapy.Field()
+    fullCountyName = scrapy.Field()
+    countyName = scrapy.Field()
+    zipCode = scrapy.Field()

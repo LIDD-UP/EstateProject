@@ -1,0 +1,25 @@
+cache-control: no-store, no-cache, must-revalidate
+cache-control: no-cache
+content-encoding: gzip
+content-length: 42852
+content-type: text/html; charset=UTF-8
+date: Tue, 22 Jan 2019 04:06:07 GMT
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+pragma: no-cache
+server: Apache/2.4.18 (Ubuntu)
+set-cookie: tlftmusr=190111pl5oxe6dz6h9ql8f26dy4gw379; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599353680; path=/; domain=.trulia.com
+set-cookie: tlftmusr=190111pl5oxe6dz6h9ql8f26dy4gw379; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599353680; path=/; domain=.trulia.com
+set-cookie: tlftmusr=190111pl5oxe6dz6h9ql8f26dy4gw379; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599353680; path=/; domain=.trulia.com
+set-cookie: tlftmusr=190111pl5oxe6dz6h9ql8f26dy4gw379; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599353680; path=/; domain=.trulia.com
+set-cookie: tlftmusr=190111pl5oxe6dz6h9ql8f26dy4gw379; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599353680; path=/; domain=.trulia.com
+set-cookie: tlftmusr=190111pl5oxe6dz6h9ql8f26dy4gw379; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599353680; path=/; domain=.trulia.com
+set-cookie: search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201001%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; path=/; HttpOnly
+set-cookie: promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A6%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; expires=Wed, 22-Jan-2020 04:06:07 GMT; Max-Age=31536000; path=/; domain=.trulia.com
+set-cookie: tlftmusr=190111pl5oxe6dz6h9ql8f26dy4gw379; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599353680; path=/; domain=.trulia.com
+set-cookie: SERVERID=webfe335|XEaWs; path=/
+status: 200
+strict-transport-security: max-age=604800;
+vary: Host,Accept-Encoding
+via: 1.1 003d7c1b393a4f2391f49338ba13b47b.cloudfront.net (CloudFront)
+x-amz-cf-id: aVkLfvH5_9pHLCyjlRnIi-otrwwjE-NoC4jg4vOIczyZk6Y1jF-fcA==
+x-cache: Miss from cloudfront

@@ -47,7 +47,28 @@
 
     我怀疑是如果禁用了cookies之后对于一个ip会有用户个数限制，如果用户量过多，就会直接封ip
 
+    # 加上一些别的浏览器标识，禁用cookie，自动限速看一下情况：
+     Crawled 83 pages (at 39 pages/min), scraped 29 items (at 0 items/min)
+     果然是针对用cookie级别的封锁；
+     不同的ip有用户量的限制；
+
 
 新的办法，
     1：使用无头浏览器，大量获取网站的cookies，然后封完一个cookies之后再使用另外一个cookies，这样把封锁限制到用户级别，
-    
+     <div class="alert alert-sm alert-warning alert-corner alert-dismissible no-show" role="alert" id="notification-cookies">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <span>It looks like Cookies are disabled in your browser. For the best experience, please enable cookies when using our site.</span>
+        </div>
+
+看了一遍最新的文章发现scrapy有自动管理cookie的功能
+但是使用cookie的时候也是同样发送几十个请求之后封了ip；（哈尔冰的网络）但是agent是动态的，
+注释掉动态的agent；情况：
+2019-01-22 16:04:07 [scrapy.extensions.logstats] INFO: Crawled 82 pages (at 37 pages/min), scraped 31 items (at 0 items/min)
+情况一样；
+
+目前能做的可能性就是用美国的网络：在启用cookie的情况下（在要被封之前就清除cookie，重新获取cookie）不然一被封就是ip被封，不是封一个cookie
+这种情况下就要获取大量的cookie；（但是同一个ip下新的cookie过多也会被封，）
+所以这个网站很恐怖，
+参数调到最低的情况下依旧被封；

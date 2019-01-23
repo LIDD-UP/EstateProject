@@ -1,0 +1,182 @@
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Received cookies from: <200 https://www.trulia.com/County/AL/Baldwin_Real_Estate/>
+Set-Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; path=/; HttpOnly
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278587; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278587; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278586; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278586; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278586; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278586; path=/; domain=.trulia.com
+
+Set-Cookie: search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; path=/; HttpOnly
+
+Set-Cookie: promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; expires=Thu, 23-Jan-2020 00:57:41 GMT; Max-Age=31536000; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278586; path=/; domain=.trulia.com
+
+Set-Cookie: fvstts=20190122; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278586; path=/
+
+Set-Cookie: tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; Path=/; Expires=Wed, 23 Jan 2019 01:02:41 GMT; HttpOnly
+
+Set-Cookie: csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D; Domain=.trulia.com; Path=/; HttpOnly
+
+Set-Cookie: SERVERID=webfe355|XEe8C; path=/
+
+2019-01-23 08:57:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.trulia.com/County/AL/Baldwin_Real_Estate/> (referer: None)
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/gulf-shores/1421-w-lagoon-ave-b-gulf-shores-al-36542--2178117798>
+https://www.trulia.com/p/al/gulf-shores/1421-w-lagoon-ave-b-gulf-shores-al-36542--2178117798
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+https://www.trulia.com/p/al/orange-beach/24101-perdido-beach-blvd-101-e-orange-beach-al-36561--2039035608
+https://www.trulia.com/p/al/daphne/130-chatam-loop-daphne-al-36526--1048124615
+https://www.trulia.com/p/al/foley/16366-absalom-st-foley-al-36535--1044684941
+https://www.trulia.com/p/al/foley/17448-tallasee-blvd-foley-al-36535--1151104167
+https://www.trulia.com/p/al/foley/1699-abbey-loop-foley-al-36535--2039001090
+https://www.trulia.com/p/al/spanish-fort/11702-arlington-blvd-spanish-fort-al-36527--2196186676
+https://www.trulia.com/p/al/fairhope/10450-steel-creek-ct-fairhope-al-36532--2038986315
+https://www.trulia.com/p/al/daphne/103-sweetbriar-cir-daphne-al-36526--2038964243
+https://www.trulia.com/p/al/daphne/9901-sommerset-dr-daphne-al-36526--2038974882
+https://www.trulia.com/p/al/gulf-shores/22323-cotton-creek-dr-202-gulf-shores-al-36542--2340671887
+https://www.trulia.com/p/al/orange-beach/4100-lauder-ln-orange-beach-al-36561--2039044728
+https://www.trulia.com/p/al/fairhope/9850-twin-beech-rd-fairhope-al-36532--2038997729
+https://www.trulia.com/p/al/gulf-shores/1203-w-2nd-st-gulf-shores-al-36542--2096224453
+https://www.trulia.com/p/al/foley/1217-sloane-cv-foley-al-36535--2038998818
+https://www.trulia.com/p/al/orange-beach/5588-ornacor-ave-orange-beach-al-36561--2039046320
+https://www.trulia.com/p/al/orange-beach/5381-baldwin-ave-orange-beach-al-36561--2039046063
+https://www.trulia.com/p/al/gulf-shores/22323-cotton-creek-dr-201-gulf-shores-al-36542--2340896078
+https://www.trulia.com/p/al/gulf-shores/430-w-fort-morgan-rd-402-gulf-shores-al-36542--2180792213
+https://www.trulia.com/p/al/fairhope/541-falling-water-blvd-fairhope-al-36532--2038994929
+https://www.trulia.com/p/al/daphne/27554-red-eagle-dr-daphne-al-36526--2038970675
+https://www.trulia.com/p/al/elberta/24800-kichler-cir-n-elberta-al-36530--2096217694
+https://www.trulia.com/p/al/orange-beach/23060-perdido-beach-blvd-307-orange-beach-al-36561--2039035214
+https://www.trulia.com/p/al/fairhope/17095-section-st-fairhope-al-36532--2038990194
+https://www.trulia.com/p/al/gulf-shores/372-e-beach-blvd-4-gulf-shores-al-36542--2096228038
+https://www.trulia.com/p/al/orange-beach/4851-wharf-pkwy-318-orange-beach-al-36561--2297616094
+https://www.trulia.com/p/al/gulf-shores/22323-cotton-creek-dr-204-gulf-shores-al-36542--2340671728
+https://www.trulia.com/p/al/fairhope/11051-county-road-1-fairhope-al-36532--2038987060
+https://www.trulia.com/p/al/orange-beach/24720-perdido-beach-blvd-803-orange-beach-al-36561--2039036574
+https://www.trulia.com/p/al/daphne/9223-sanibel-loop-daphne-al-36526--2038974248
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/daphne/9223-sanibel-loop-daphne-al-36526--2038974248>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/orange-beach/24720-perdido-beach-blvd-803-orange-beach-al-36561--2039036574>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/fairhope/11051-county-road-1-fairhope-al-36532--2038987060>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/gulf-shores/22323-cotton-creek-dr-204-gulf-shores-al-36542--2340671728>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/orange-beach/4851-wharf-pkwy-318-orange-beach-al-36561--2297616094>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/gulf-shores/372-e-beach-blvd-4-gulf-shores-al-36542--2096228038>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/fairhope/17095-section-st-fairhope-al-36532--2038990194>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/orange-beach/23060-perdido-beach-blvd-307-orange-beach-al-36561--2039035214>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/elberta/24800-kichler-cir-n-elberta-al-36530--2096217694>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/daphne/27554-red-eagle-dr-daphne-al-36526--2038970675>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/fairhope/541-falling-water-blvd-fairhope-al-36532--2038994929>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/gulf-shores/430-w-fort-morgan-rd-402-gulf-shores-al-36542--2180792213>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/gulf-shores/22323-cotton-creek-dr-201-gulf-shores-al-36542--2340896078>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/orange-beach/5381-baldwin-ave-orange-beach-al-36561--2039046063>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:43 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/orange-beach/5588-ornacor-ave-orange-beach-al-36561--2039046320>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:44 [scrapy.downloadermiddlewares.cookies] DEBUG: Received cookies from: <200 https://www.trulia.com/p/al/gulf-shores/1421-w-lagoon-ave-b-gulf-shores-al-36542--2178117798>
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278585; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278585; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278585; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278585; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278585; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278584; path=/; domain=.trulia.com
+
+Set-Cookie: promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%2C%22pg-pdp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; expires=Thu, 23-Jan-2020 00:57:43 GMT; Max-Age=31536000; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278584; path=/; domain=.trulia.com
+
+2019-01-23 08:57:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.trulia.com/p/al/gulf-shores/1421-w-lagoon-ave-b-gulf-shores-al-36542--2178117798> (referer: https://www.trulia.com/County/AL/Baldwin_Real_Estate/)
+2019-01-23 08:57:44 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/County/AL/Baldwin_Real_Estate/2_p/>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%2C%22pg-pdp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.trulia.com/p/al/gulf-shores/1421-w-lagoon-ave-b-gulf-shores-al-36542--2178117798>
+{'price': '<span class="h3" data-role="price">\n'
+          '              $219,500\n'
+          '      \n'
+          '          </span>'}
+2019-01-23 08:57:45 [scrapy.downloadermiddlewares.cookies] DEBUG: Received cookies from: <200 https://www.trulia.com/p/al/daphne/9223-sanibel-loop-daphne-al-36526--2038974248>
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278584; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278584; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278584; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278584; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278584; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278583; path=/; domain=.trulia.com
+
+Set-Cookie: promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%2C%22pg-pdp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; expires=Thu, 23-Jan-2020 00:57:44 GMT; Max-Age=31536000; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278583; path=/; domain=.trulia.com
+
+2019-01-23 08:57:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.trulia.com/p/al/daphne/9223-sanibel-loop-daphne-al-36526--2038974248> (referer: https://www.trulia.com/County/AL/Baldwin_Real_Estate/)
+2019-01-23 08:57:45 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/foley/1217-sloane-cv-foley-al-36535--2038998818>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8C; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%2C%22pg-pdp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D
+
+2019-01-23 08:57:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.trulia.com/p/al/daphne/9223-sanibel-loop-daphne-al-36526--2038974248>
+{'price': '<span class="h3" data-role="price">\n'
+          '              $234,800\n'
+          '      \n'
+          '          </span>'}
+2019-01-23 08:57:46 [scrapy.downloadermiddlewares.cookies] DEBUG: Received cookies from: <200 https://www.trulia.com/p/al/orange-beach/24720-perdido-beach-blvd-803-orange-beach-al-36561--2039036574>
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278583; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278583; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278583; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278583; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278583; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278583; path=/; domain=.trulia.com
+
+Set-Cookie: promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%2C%22pg-pdp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; expires=Thu, 23-Jan-2020 00:57:45 GMT; Max-Age=31536000; path=/; domain=.trulia.com
+
+Set-Cookie: tlftmusr=190123plreo502acqurhb1q9a2v4w355; expires=Tue, 19-Jan-2038 03:14:07 GMT; Max-Age=599278582; path=/; domain=.trulia.com
+
+Set-Cookie: SERVERID=webfe355|XEe8D; path=/
+
+2019-01-23 08:57:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.trulia.com/p/al/orange-beach/24720-perdido-beach-blvd-803-orange-beach-al-36561--2039036574> (referer: https://www.trulia.com/County/AL/Baldwin_Real_Estate/)
+2019-01-23 08:57:46 [scrapy.downloadermiddlewares.cookies] DEBUG: Sending cookies to: <GET https://www.trulia.com/p/al/gulf-shores/1203-w-2nd-st-gulf-shores-al-36542--2096224453>
+Cookie: PHPSESSID=bb4dprcjje2uu7jda7kh2u5rh6; search_parameter_set=%7B%22searchType%22%3A%22for_sale%22%2C%22location%22%3A%7B%22counties%22%3A%5B%2201003%22%5D%7D%2C%22filters%22%3A%7B%22page%22%3A1%2C%22view%22%3A%22map%22%2C%22limit%22%3A30%2C%22sort%22%3A%7B%22type%22%3A%22best%22%2C%22ascending%22%3Atrue%7D%7D%7D; fvstts=20190122; tabc=%7B%221076%22%3A%22control%22%2C%221022%22%3A%22b%22%2C%22958%22%3A%22a%22%2C%221052%22%3A%22a%22%2C%221053%22%3A%22a%22%7D; SERVERID=webfe355|XEe8D; tlftmusr=190123plreo502acqurhb1q9a2v4w355; promptdata=%7B%22c%22%3A%7B%22pg-srp%22%3A1%2C%22pg-pdp%22%3A1%7D%2C%22pd%22%3A%5B%5D%2C%22pts%22%3Anull%7D; csrft=KpBdqBbRcilv0hJDUOrYVrN%2BFUAVNp1BE9bbUaIliZw%3D

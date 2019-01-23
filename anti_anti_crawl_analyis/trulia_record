@@ -12,3 +12,41 @@ trulia 网站是必须携带cookies和加载javascript的；
     Please make sure that Javascript and cookies are enabled on your browser and that you are not blocking them from loading.
 
     Reference ID: #a48cd830-1d4a-11e9-8917-87979c98f059
+
+通过分析cookie发现：
+    1：csrft是不变的参与到了cookie的合成中
+    jA0ya2SbWv3cOtEpj66HYO+eAi5DCp0GGeJWxahT8pk=
+    jA0ya2SbWv3cOtEpj66HYO%2BeAi5DCp0GGeJWxahT8pk%3D
+
+
+    trulia 网站也和zillow网站有相似之处，数据显示不完全，也就是说还是要限制条件；
+    https://www.trulia.com/NY/New_York/600_p/顶多显示600页，这还是数据多的情况，数据少的情况下不知道要多少也；
+    所以需要设置限定条件：
+    但是现在先不考虑这个情况，先测试有没有反爬；
+
+
+trulia 这个网站很奇怪，有时候需要cookies，有时候不要cookies
+trulia 网站cookie里面包含了搜索条件:
+
+通过scrapy的debugcookies进行分析：
+
+对于trulia网站，cookie是可带可不带得，（由于网站要做seo，不可能所有的都需要身份识别，但是
+不带cookies时间长了会对这个：
+    有点奇怪这里，不带cookie会被封，带cookie也会被封，还是没有找到正真原因；
+    很奇怪，这个网站带着假的cookie也能通过；不知道是不是网站在这一方面有容错率，
+
+    在注释掉cookies enable的时候scrapy每次携带过去的cookies都是一样的；
+
+    这个网站可能存在着不够果断的情况：
+    首先当我用scrapy去抓取数据的时候，如果抓挂了之后（是注释掉cookiesenable的情况）
+        如果再经过浏览器访问该网站，那么他就会robot访问禁止的问题，如果再用新的cookies访问（假的）它依旧能访问到新的数据（使用的requests）库
+        当时还再浏览器中点击了rotbot机器人的按钮，不知道是这种方式中的哪一种；
+
+        可以做出如下假设：
+            如果对于一个ip，如果检测出同一个ip下出现异常情况，他会短暂的封锁该ip，如果有人访问就跳出rotbot界面
+            让用户做robot检测，如果检测之后，这个ip就有可以用scrapy继续抓取了，这是启动了cookie的情况下；
+            那相比于realtor网站，这个网站没有对同一个ip下做流量异常检测；
+            但是cookie异常检测应该是有的，再一次测试之中禁用cookie后，好像也很快就封了；
+
+
+

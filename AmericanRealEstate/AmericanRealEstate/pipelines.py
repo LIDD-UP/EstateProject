@@ -8,7 +8,7 @@
 from twisted.enterprise import adbapi
 import pymysql
 
-from AmericanRealEstate.items import StateNameCountyNameItem,CountyNameZipCodeItem,RealtorHouseInfoJsonItem,RealtorDetailDomItem
+from AmericanRealEstate.items import StateNameCountyNameItem,CountyNameZipCodeItem,RealtorHouseInfoJsonItem,RealtorDetailDomItem,TruliaHouseInfoItem,SearchCriteriaItem
 from crawl_tools.get_sql_con import get_sql_con
 from crawl_tools.test_file import post_url
 from AmericanRealEstate.settings import post_interface_url
@@ -52,6 +52,25 @@ class CountyZipCodePipeline(object):
             )
         self.conn.commit()
         return item
+
+
+class SearchCriteriaPipeline(object):
+    def __init__(self):
+        self.conn = get_sql_con()
+
+    def process_item(self, item, spider):
+        if isinstance(item,SearchCriteriaItem):
+            cursor = self.conn.cursor()
+            cursor.execute(
+                '''
+                insert into search_criteria(stateName,countyName,fullCountyName,zipCode) values(%s,%s,%s,%s)
+                ''', [item['stateName'] ,item['countyName'] ,item['fullCountyName'] ,item['zipCode'] ,
+                      ]
+            )
+        self.conn.commit()
+        return item
+
+
 
 
 class RealtorHouseInfoPipeline(object):
@@ -158,3 +177,23 @@ class RealtorDetailDomPipeline(object):
             )
         self.conn.commit()
         return item
+
+
+class TruliaDetailDomPipeline(object):
+    def __init__(self):
+        self.conn = get_sql_con()
+
+    def process_item(self, item, spider):
+        if isinstance(item, TruliaHouseInfoItem):
+            cursor = self.conn.cursor()
+            cursor.execute(
+                '''
+                insert into trulia_detail_dom(price) values(%s)
+                ''', [item['price']
+                      ]
+            )
+        self.conn.commit()
+        return item
+
+
+

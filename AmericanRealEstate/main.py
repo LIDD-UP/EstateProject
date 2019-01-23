@@ -27,8 +27,8 @@ from scrapy.cmdline import execute
 # print(r.get('foo').decode('utf8'))
 
 
-# execute('scrapy crawl trulia_state_county_zip -s JOBDIR=crawls/trulia_state_county_zip-1'.split(' '))
-execute('scrapy crawl trulia_state_county_zip'.split(' '))
+execute('scrapy crawl trulia_state_county_zip -s JOBDIR=crawls/trulia_state_county_zip-1'.split(' '))
+# execute('scrapy crawl trulia_state_county_zip'.split(' '))
 
 # execute('scrapy crawl realtor -s JOBDIR=crawls/trulia_state_county_zip-1'.split(' '))
 # execute('scrapy crawl realtor'.split(' '))

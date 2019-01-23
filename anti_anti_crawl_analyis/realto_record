@@ -72,3 +72,67 @@
 这种情况下就要获取大量的cookie；（但是同一个ip下新的cookie过多也会被封，）
 所以这个网站很恐怖，
 参数调到最低的情况下依旧被封；
+
+# 接下来尝试怎样大量获取该网站的cookie以及一个ip地址下最多存在多少cookie:
+使用requests库;
+
+
+realtor 网站cookie的生成机制:浏览器只要一刷新,产生的cookie就和上次的cookie不太一样;但是还是有一本分是相同的;后面有一段开始就不同的,可能是前端产生的;里面还有一段搜索条件;
+
+
+测试在同一个ip下:同一个cookies不限速度能请求多少次(使用python requests 库)
+    接下来发生的情况:
+        1:在浏览器中能够访问网站,没有被重定向到ipblock页面
+        2:去掉cookie,再访问,不行
+        3:去掉cookie,加上user-agent 不行
+        4:再加上浏览器的一些标识之后,可以,
+            然后利用这些浏览器标识和cookie,使用chrome浏览器作为user-agent,请求200多次后被封了,
+            被封的方式是封的浏览器,cookie不知道有没有被封;(也就是说,优先封锁的浏览器,这很奇怪;)
+                测试cookies有没有被封;
+                测试发现新的user-agent + 以前被封的cookies一样能请求通过,所以,他没有针对cookie进行封锁,也就是说可以是针对user-agent的封锁
+                (因为发现,用新的url去请求也是一样的)
+
+                但是这还是不能说明问题,应为用的是requests库,反复请求同一个网站导致的封锁;
+
+
+接下来在继续测试下面的假设:---------->>如果不带cookies过去,单纯的只      是夹带useragent过去;
+    结果:
+
+
+
+系统一下测试过程:
+    1:分析网络请求的要素
+        1:浏览器请求普遍的header
+        2:浏览器请求重要的header元素
+            1:user-agent
+            2:cookie
+
+存在问题:考虑到之前用scrapy爬取网站禁用cookie之后直接封ip,还有结合前面的简单测试发现优先封的是user-agent所以
+    优先测试带cookie的情况:(接下来默认带cookie)(测试分为两组,一组是request反复请求同一个url,以及scrapy的规律爬取)
+    1:request组(带cookie)
+        1:使用requests啥都不加
+        2:使用requests+普通的浏览器请求header
+        3:使用request+
+    2:scrapy 组(带cookie)(要想使用自己的cookie要禁用cookieenable)
+        1:裸奔
+        2:加一些普通的浏览器标识
+        3:user-agent
+        4:随机变换user-agent
+        5:user-agent 被封了之后在变;同时将被302的url重新yieldscapy下载器中
+    3:request组(不带cookie) (不带cookie有很大的可能直接封ip)
+        1:使用requests啥都不加
+        2:使用requests+普通的浏览器请求header
+        3:使用request+
+    4:scrapy 组(带cookie)(要想使用自己的cookie要禁用cookieenable)
+        1:裸奔
+        2:加一些普通的浏览器标识
+        3:user-agent
+        4:随机变换user-agent
+        5:user-agent 被封了之后在变;同时将被302的url重新yieldscapy下载器中
+
+
+
+
+
+
+

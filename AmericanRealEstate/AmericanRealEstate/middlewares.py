@@ -7,6 +7,7 @@
 
 from scrapy import signals
 from fake_useragent import UserAgent
+from scrapy import Request
 
 
 class AmericanrealestateSpiderMiddleware(object):
@@ -139,3 +140,9 @@ class HeadersMiddleware(object):
 
     def process_request(self,request,spider):
         request.headers.setdefault('headers',self.my_headers)
+
+# 处理302
+# class ProcessIPBlockMiddleware(object):
+#     def process_response(self,request, response, spider):
+#         if response.code =='302':
+#             return request

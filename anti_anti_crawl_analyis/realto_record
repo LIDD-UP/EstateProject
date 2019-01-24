@@ -107,12 +107,33 @@ realtor 网站cookie的生成机制:浏览器只要一刷新,产生的cookie就�
             1:user-agent
             2:cookie
 
+#这些测试都是基于台湾125.227.36.106(这个ip的范围:125.227.30.0 - 125.227.61.255)(考虑到这个网站对不同地区的ip的流量限制不同)
 存在问题:考虑到之前用scrapy爬取网站禁用cookie之后直接封ip,还有结合前面的简单测试发现优先封的是user-agent所以
     优先测试带cookie的情况:(接下来默认带cookie)(测试分为两组,一组是request反复请求同一个url,以及scrapy的规律爬取)
     1:request组(带cookie)
         1:使用requests啥都不加
-        2:使用requests+普通的浏览器请求header
-        3:使用request+
+            带cookie过去,直接用python-request作为user-agent,刚开始能够访问,没几下就不能访问了(没有直接封ip)
+                用浏览器还能访问(使用的google的解析出的cookie,chrome和firefox都能访问);
+            1:过一会再请求:
+                重定向到userblock页面,同上面;
+            2:更换cookie
+                同
+
+        2:使用requests+普通的浏览器请求header #
+            也是出现问题;(直接重定向到userblock
+
+        3:使用request+user-agent
+            1:没有加在一定时间停止后再请求:
+                只能请求130多次
+                1:更换浏览器没有更换cookie,请求2次就被封了;可能是昨天测试的时候,这个user-agent被封过
+                两个浏览器的问题:
+                # 'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36',
+                'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0',
+                    这里可以做个推测对于不同平台或者不同版本的浏览器的user-agent也有不同的区别.,封禁的量级不同;
+                2:在换一个更新的user-agent:依然能请求很多次;
+                    请求次数是:
+                3:添加一些时间停顿
+
     2:scrapy 组(带cookie)(要想使用自己的cookie要禁用cookieenable)
         1:裸奔
         2:加一些普通的浏览器标识

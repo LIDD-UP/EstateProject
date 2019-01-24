@@ -46,6 +46,7 @@ signal = 1
 while(signal):
     res = requests.get(url='https://www.realtor.com/realestateandhomes-search/Adair-County_MO',headers=realtor_cookies,verify=False)
     print(res.status_code)
+    print(signal)
     if res.status_code==200:
         signal +=1
     # if signal==20:

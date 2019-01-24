@@ -75,19 +75,19 @@ class RealtorSpider(scrapy.Spider):
             detail_url = house.xpath(".//div[contains(@class,'photo-wrap')]/a/@href").extract_first()
 
             #
-            # # 以防数据接口消失只能用
-            true_detail_url = urljoin(realtor_domain_url, detail_url)
-            print('true', true_detail_url)
-            yield scrapy.Request(url=true_detail_url,callback=self.parse_content)
+            # # 以防数据接口消失只能用(dom的方式)
+            # true_detail_url = urljoin(realtor_domain_url, detail_url)
+            # print('true', true_detail_url)
+            # yield scrapy.Request(url=true_detail_url,callback=self.parse_content)
 
             # 使用接口方式获取数据
-            # x = re.findall(r'(M\d{5}-\d{5})', detail_url)
-            # if len(x) != 0:
-            #     x = x[-1]
-            #     x = x.replace('-', '')
-            #     print(x)
-            # next_detail_page_url = 'https://www.realtor.com/property-overview/{}'.format(x)
-            # yield scrapy.Request(url=next_detail_page_url,callback=self.parse_content)
+            x = re.findall(r'(M\d{5}-\d{5})', detail_url)
+            if len(x) != 0:
+                x = x[-1]
+                x = x.replace('-', '')
+                print(x)
+            next_detail_page_url = 'https://www.realtor.com/property-overview/{}'.format(x)
+            yield scrapy.Request(url=next_detail_page_url,callback=self.parse_content)
 
         next_page_url = response.xpath("//span[@class='next ']/a[@class='next']/@href").extract_first()
         if next_page_url is not None:
@@ -97,19 +97,20 @@ class RealtorSpider(scrapy.Spider):
 
     def parse_content(self,response):
         # 接口的parse
-        # realtor_house_info_item = RealtorHouseInfoJsonItem()
-        # realtor_house_info_item['houseData'] = response.text
+        realtor_house_info_item = RealtorHouseInfoJsonItem()
+        realtor_house_info_item['houseData'] = response.text
+        yield realtor_house_info_item
 
         # 通过dom解析
-        realtor_detail_dom_item = RealtorDetailDomItem()
-        price = response.xpath("//span[contains(@itemprop,'price')]/text()").extract_first()
-        print(price)
-        realtor_detail_dom_item['price'] = price
-        # address = response.xpath("//span[contains(@itemprop,'streetAddress')]/text()").extract_first()
-        # bedrooms = response.xpath("'//ul[contains(@class,'property-meta')]//li[contains(@data-label,'property-meta-beds')]//span[contains(@class,'data-value')]")
-        # bath = scrapy.Field()
-        # zipCode = scrapy.Field()
-        # city = scrapy.Field()
-        # state = scrapy.Field()
-        yield realtor_detail_dom_item
+        # realtor_detail_dom_item = RealtorDetailDomItem()
+        # price = response.xpath("//span[contains(@itemprop,'price')]/text()").extract_first()
+        # print(price)
+        # realtor_detail_dom_item['price'] = price
+        # # address = response.xpath("//span[contains(@itemprop,'streetAddress')]/text()").extract_first()
+        # # bedrooms = response.xpath("'//ul[contains(@class,'property-meta')]//li[contains(@data-label,'property-meta-beds')]//span[contains(@class,'data-value')]")
+        # # bath = scrapy.Field()
+        # # zipCode = scrapy.Field()
+        # # city = scrapy.Field()
+        # # state = scrapy.Field()
+        # yield realtor_detail_dom_item
 

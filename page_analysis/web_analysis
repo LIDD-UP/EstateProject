@@ -241,6 +241,9 @@ https://www.trulia.com
         详情页：json数据串
             详情页的url：https://www.realtor.com/realestateandhomes-detail/7-N-Vaughn-Crossing-Spur_Pike-Road_AL_36064_M86232-45854?view=qv（存在对应的关系）
             接口：https://www.realtor.com/property-overview/M8623245854（需要破解后面的字符是怎么来的）
+
+            现在又出现了新的接口:https://www.realtor.com/realestateandhomes-detail/The-Cherry-45_The-Oaks-of-Buena_Buena-Vista-Blvd_Prattville_AL_36067_P413423443775?view=qv
+                                    接口为:https://www.realtor.com/property-overview/P413423443775
         限制情况：可能会遇到referer的问题；
         抓取策略：
             1：通过列表页获取详情页的url

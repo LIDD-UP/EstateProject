@@ -8,6 +8,7 @@
 from scrapy import signals
 from fake_useragent import UserAgent
 from scrapy import Request
+from AmericanRealEstate.settings import realtor_user_agent_list
 
 
 class AmericanrealestateSpiderMiddleware(object):
@@ -141,8 +142,62 @@ class HeadersMiddleware(object):
     def process_request(self,request,spider):
         request.headers.setdefault('headers',self.my_headers)
 
-# 处理302
-# class ProcessIPBlockMiddleware(object):
-#     def process_response(self,request, response, spider):
-#         if response.code =='302':
-#             return request
+
+# realtor处理302 重定向问题,对于外部写脚本;(考虑到之前有浏览器被封了)(利用user-agent)user-agent是随机获取的)
+class Process302Middleware(object):
+    def __init__(self):
+        # super(Process302Middleware,self).__init__()
+        self.stop_signal = 1
+
+    def process_response(self, request, response, spider):
+        print(response.status)
+        if response.status == 302:
+            self.stop_signal += 1
+            print(self.stop_signal)
+            if self.stop_signal > 10:
+                spider.crawler.engine.close_spider(spider, '遇到302错误大于50次,爬虫已经被服务器发现')
+            return request
+        return response
+
+
+# realtor,当一个user-agent被封之后进行替换user-agent,这种就不需要启用随机的user-agent了
+class AlertUserAgentWhenEncounter302Middleware(object):
+    def __init__(self):
+        super(AlertUserAgentWhenEncounter302Middleware,self).__init__()
+        self.stop_signal = 1
+        self.user_agent_index = 0
+
+    def process_response(self, request, response, spider):
+        print(response.status)
+        if response.status == 302:
+            self.stop_signal += 1
+            print(self.stop_signal)
+
+            if self.stop_signal > 200:
+                spider.crawler.engine.close_spider(spider, '更换了200次user-agent了,user-agent已经没有了')
+            request.headers.setdefault('user-agent',realtor_user_agent_list[self.user_agent_index])
+            self.user_agent_index += 1
+            return request
+        return response
+
+
+# trulia change cookie when encounter 403
+class AlertCookieWhenEncounter403Middleware(object):
+    def __init__(self):
+        super(AlertCookieWhenEncounter403Middleware,self).__init__()
+        self.stop_signal = 1
+
+    def process_response(self, request, response, spider):
+        print(response.status)
+        if response.status == 302:
+            self.stop_signal += 1
+            print(self.stop_signal)
+
+            if self.stop_signal > 200:
+                spider.crawler.engine.close_spider(spider, '更换了200次user-agent了,user-agent已经没有了')
+            request.headers.setdefault('cookie','cookie')
+
+            return request
+        return response
+
+

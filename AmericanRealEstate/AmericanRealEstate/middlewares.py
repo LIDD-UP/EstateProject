@@ -175,6 +175,13 @@ class AlertUserAgentWhenEncounter302Middleware(object):
 
             if self.stop_signal > 200:
                 spider.crawler.engine.close_spider(spider, '更换了200次user-agent了,user-agent已经没有了')
+                # # 停止爬虫
+                # # 定义一个其实时间变量 a
+                # # a = time.time
+                # # while (b:time.time-a>10)
+                # # 开启爬虫;
+                # spider.crawler.engine.pause()
+                # while
             request.headers.setdefault('user-agent',realtor_user_agent_list[self.user_agent_index])
             self.user_agent_index += 1
             return request

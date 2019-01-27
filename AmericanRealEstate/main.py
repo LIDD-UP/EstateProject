@@ -72,11 +72,27 @@ custom_settings_str_list = [custom_settings_str,custom_settings_str2,custom_sett
 
 def execute_spider(num,start_urls,custom_settings,*args,**kwargs):
     print('开启了第{}爬虫进程'.format(num))
-    execute(['scrapy', 'crawl', 'realtor'.format(num),
+    print('realtor{}'.format(num))
+    execute(['scrapy', 'crawl', 'realtor{}'.format(num),
              "-a",
              "start_urls={}".format(start_urls),
              "-a",
              "custom_settings={}".format(custom_settings),
+             "-s",
+             "JOBDIR=crawls/realtor{}".format(num),
+             ])
+
+
+def resume_execute_spider(num,start_urls,custom_settings,*args,**kwargs):
+    print('开启了第{}爬虫进程'.format(num))
+    print('realtor{}'.format(num))
+    execute(['scrapy', 'crawl', 'realtor{}'.format(num),
+             # "-a",
+             # "start_urls={}".format(start_urls),
+             "-a",
+             "custom_settings={}".format(custom_settings),
+             "-s",
+             "JOBDIR=crawls/realtor{}".format(num),
              ])
 
 
@@ -85,7 +101,7 @@ if __name__=='__main__':
     from AmericanRealEstate.settings import realtor_search_criteria
 
     #爬虫进程数
-    process_nums = 4
+    process_nums = 3
     # 生成起始url字符串
     each_spider_criteria_number = int(len(realtor_search_criteria) / process_nums)
     spider_start_urls_list = []
@@ -103,7 +119,11 @@ if __name__=='__main__':
     print('Parent process %s.' % os.getpid())
     p = Pool(process_nums)
     for i in range(process_nums):
-        p.apply_async(execute_spider, args=(i, spider_start_urls_list[i], custom_settings_str_list[i], i),)
+        # 首次执行
+        p.apply_async(execute_spider, args=(i+1, spider_start_urls_list[i], custom_settings_str_list[i], i),)
+        # 再次执行
+        # p.apply_async(resume_execute_spider, args=(i + 1, spider_start_urls_list[i], custom_settings_str_list[i], i), )
+
     print('Waiting for all subprocesses done...')
     p.close()
     p.join()

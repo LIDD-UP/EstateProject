@@ -170,11 +170,13 @@ class AlertUserAgentWhenEncounter302Middleware(object):
     def process_response(self, request, response, spider):
         print(response.status)
         if response.status == 302:
+            import time
+            time.sleep(300)
             self.stop_signal += 1
             print(self.stop_signal)
 
-            if self.stop_signal > 200:
-                spider.crawler.engine.close_spider(spider, '更换了200次user-agent了,user-agent已经没有了')
+            if self.stop_signal > 1000:
+                spider.crawler.engine.close_spider(spider, '更换了1000次user-agent了,爬虫已经被发现了')
                 # # 停止爬虫
                 # # 定义一个其实时间变量 a
                 # # a = time.time
@@ -182,6 +184,8 @@ class AlertUserAgentWhenEncounter302Middleware(object):
                 # # 开启爬虫;
                 # spider.crawler.engine.pause()
                 # while
+            if self.user_agent_index > 120:
+                self.user_agent_index =0
             request.headers.setdefault('user-agent',realtor_user_agent_list[self.user_agent_index])
             self.user_agent_index += 1
             return request

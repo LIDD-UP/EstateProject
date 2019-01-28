@@ -17,8 +17,11 @@ realtor_cookies = {
     'Host': 'www.realtor.com',
     'Upgrade-Insecure-Requests': '1',
     # 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+    # 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3452.0 Safari/537.36'
     # 'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36',
-    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0',
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; ; x64; rv:0.0) Gecko/1 Fiox/5.0',
+    # 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)',
+
     # 'user-agent' : 'Opera/9.80 (X11; Linux x86_64; U; fr) Presto/2.9.168 Version/11.50',
 
     # firefox 通用浏览器标识
@@ -46,12 +49,12 @@ realtor_cookies = {
 
 signal = 1
 while(signal):
-    res = requests.get(url='https://www.realtor.com/realestateandhomes-search/Adair-County_MO',headers=realtor_cookies,verify=False)
-    print(res.status_code)
-    print(signal)
-    if res.status_code==200:
+    res = requests.get(url='https://www.realtor.com/realestateandhomes-search/Adair-County_MO',headers=realtor_cookies,verify=False,allow_redirects=False)
+    print('status_code',res.status_code)
+    print('signal',signal)
+    if res.status_code==302:
         signal +=1
-        if signal==20:
+        if signal==10:
             break
 
     # else:

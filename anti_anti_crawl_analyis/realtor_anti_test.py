@@ -47,15 +47,15 @@ realtor_cookies = {
     # google
 }
 
-signal = 1
-while(signal):
-    res = requests.get(url='https://www.realtor.com/realestateandhomes-search/Adair-County_MO',headers=realtor_cookies,verify=False,allow_redirects=False)
-    print('status_code',res.status_code)
-    print('signal',signal)
-    if res.status_code==302:
-        signal +=1
-        if signal==10:
-            break
+# signal = 1
+# while(signal):
+#     res = requests.get(url='https://www.realtor.com/realestateandhomes-search/Adair-County_MO',headers=realtor_cookies,verify=False,allow_redirects=False)
+#     print('status_code',res.status_code)
+#     print('signal',signal)
+#     if res.status_code==302:
+#         signal +=1
+#         if signal==10:
+#             break
 
     # else:
     #     print(res.status_code)
@@ -73,5 +73,11 @@ while(signal):
 #
 # with open('./realtor_test.html','w',encoding='utf-8') as f:
 #     f.write(res.text)
+
+
+
+
+
+
 
 

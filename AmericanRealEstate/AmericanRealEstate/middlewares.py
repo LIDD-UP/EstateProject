@@ -124,8 +124,11 @@ class RandomUserAgentMiddleware(object):
         # 配置settings获取ua的属性值；
         def get_ua():
             return getattr(self.ua,self.ua_type)
-        # random_agent = get_ua()
-        request.headers.setdefault('User-Agent',get_ua())
+        random_agent = get_ua()
+        print(random_agent)
+        request.headers.setdefault('user-agent',random_agent)
+
+
 
 
 # 设置headers的middleware
@@ -167,15 +170,24 @@ class AlertUserAgentWhenEncounter302Middleware(object):
         self.stop_signal = 1
         self.user_agent_index = 0
 
+    def proces_request(self,request,spider):
+        print(request.meata['302error'])
+        if request.meta['302error']:
+            print('接受302 meta信息,更换user-agent')
+            request.headers.setdefault('User-Agent', realtor_user_agent_list[self.user_agent_index])
+            self.user_agent_index += 1
+
     def process_response(self, request, response, spider):
         print(response.status)
+
         if response.status == 302:
+            print('被发现了,更换user-agent')
             import time
-            time.sleep(300)
+            time.sleep(1)
             self.stop_signal += 1
             print(self.stop_signal)
 
-            if self.stop_signal > 1000:
+            if self.stop_signal > 10:
                 spider.crawler.engine.close_spider(spider, '更换了1000次user-agent了,爬虫已经被发现了')
                 # # 停止爬虫
                 # # 定义一个其实时间变量 a
@@ -186,10 +198,37 @@ class AlertUserAgentWhenEncounter302Middleware(object):
                 # while
             if self.user_agent_index > 120:
                 self.user_agent_index =0
-            request.headers.setdefault('user-agent',realtor_user_agent_list[self.user_agent_index])
+            print(realtor_user_agent_list[self.user_agent_index])
+            request.headers.setdefault('User-Agent',realtor_user_agent_list[self.user_agent_index])
+            request.headers.setdefault('User-Agent', 'fjdalfjdlajfdlajf')
+            request.headers['user-agent'] = 'yuanshide '
+            # 这个只能在process_request 中才能起作用
+            # request.headers = "{'user-agent': realtor_user_agent_list[self.user_agent_index]}"
+            # request.headers={b'Authority': [b'www.realtor.com'], b'Method': [b'GET'], b'Scheme': [b'https'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,'], b'Accept-Encoding': [b'gzip, deflate, br'], b'Accept-Language': [b'zh-CN,zh;q=0.9,ja;q=0.8'], b'Cache-Control': [b'no-cache'], b'Upgrade - Insecure - Requests': [b'1'], b'Referer': [b'www.realtor.com'],b'UserAgent':['xxxxxxxxlajfdakjsf']}
+            # request.headers['User-Agent'] = 'hdalhfdlahfdlah'
+            # request.meta['User-Agent'] = 'xxxxxxxxxxxxxxjflajflafxxxxxxxxxxxx'
+            new_request = request.copy()
+            new_request.meta['302error'] = 'yes'
+            new_request.headers['cookie'] = '12345678cookie'
+            new_request.headers.setdefault('User-Agent','hahahhahahahha')
+            new_request.headers['user-agent'] = realtor_user_agent_list[self.user_agent_index]
             self.user_agent_index += 1
-            return request
+            return new_request
         return response
+
+
+class Process302MetaMiddleware(object):
+    def process_request(self,request,spider):
+        print(request.meta)
+        print(type(request.meta))
+
+        if '302error' in request.meta.keys():
+            print(request.meta['302error'])
+            print('接受302 meta信息,更换user-agent')
+            request.headers['User-Agent'] = 'my user agent hahaha'
+            print('.......')
+
+
 
 
 # trulia change cookie when encounter 403
@@ -207,8 +246,41 @@ class AlertCookieWhenEncounter403Middleware(object):
             if self.stop_signal > 200:
                 spider.crawler.engine.close_spider(spider, '更换了200次user-agent了,user-agent已经没有了')
             request.headers.setdefault('cookie','cookie')
-
             return request
         return response
+
+
+# #动态ip代理
+# class RandomProxyMiddleware(object):
+#     # 动态设置ip代理
+#     def process_request(self,request,spider):
+#         get_ip = GetIP()
+#         request.meta["proxy"] = get_ip.get_random_ip()
+
+
+# 多进程+代理ip
+# class RandomProxyMiddleware(object):
+#     # 动态设置ip代理
+#     def process_request(self,request,spider):
+#         get_ip = GetIP()
+#         request.meta["proxy"] = get_ip.get_random_ip()
+
+
+# 测试代理的使用
+class RandomProxyMiddleware(object):
+    # 动态设置ip代理
+    def process_request(self,request,spider):
+        # 通过meta传递
+        request.meta["proxy"] = 'http://119.101.126.9:9999'
+
+
+
+
+
+
+
+
+
+
 
 

@@ -43,14 +43,14 @@ ROBOTSTXT_OBEY = False
 
 # 自动限速设置：
 # AUTOTHROTTLE_ENABLED = True
-DOWNLOAD_DELAY = 1
+# DOWNLOAD_DELAY = 1
 
 
-DOWNLOADER_MIDDLEWARES = {
-   # 'AmericanRealEstate.middlewares.AmericanrealestateDownloaderMiddleware': 543,
-   #  'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
-   #  'AmericanRealEstate.middlewares.RandomUserAgentMiddleware': 543,
-}
+# DOWNLOADER_MIDDLEWARES = {
+#    # 'AmericanRealEstate.middlewares.AmericanrealestateDownloaderMiddleware': 543,
+#    #  'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+#    #  'AmericanRealEstate.middlewares.RandomUserAgentMiddleware': 543,
+# }
 RANDOM_UA_TYPE = "random"
 
 
@@ -159,13 +159,58 @@ post_interface_url = 'http://192.168.0.65:8080/America-DataSave/index/saveRealto
 realtor_domain_url = 'https://www.realtor.com/'
 trulia_domain_url = 'https://www.trulia.com/'
 
+# 代理ip列表:
+proxy_ip_list = [
+'119.101.124.223:9999',
+    '119.101.125.75:9999',
+    '58.240.7.195:32558',
+    '222.217.68.51:39682',
+    '119.101.125.180:9999',
+    '119.101.126.9:9999',
+# http://119.101.124.223:9999
+# http://119.101.125.75:9999
+# http://58.240.7.195:32558
+# http://222.217.68.51:39682
+# http://119.101.125.180:9999
+# http://119.101.126.9:9999
+]
+
+# scrapy-proxie settings
+# Retry many times since proxies often fail
+RETRY_TIMES = 10
+# Retry on most error codes since proxies fail for different reasons
+RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408]
+
+# DOWNLOADER_MIDDLEWARES = {
+#     'scrapy.downloadermiddlewares.retry.RetryMiddleware': 90,
+#     'scrapy_proxies.RandomProxy': 100,
+#     'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
+# }
+
+# Proxy list containing entries like
+# http://host1:port
+# http://username:password@host2:port
+# http://host3:port
+# ...
+PROXY_LIST = 'F:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\get_proxy/list.txt'
+
+# Proxy mode
+# 0 = Every requests have different proxy
+# 1 = Take only one proxy from the list and assign it to every requests
+# 2 = Put a custom proxy to use in the settings
+PROXY_MODE = 2
+
+# If proxy mode is 2 uncomment this sentence :
+CUSTOM_PROXY = "http://host1:port"
+
+
 realtor_user_agent_list = [
     'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chome/41.0.2228.0 Saari/57.36',
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppeWebKit/57.36 (KHTML, like Gecko) Chome/41.0.2227.1 Safari/537.36',
     'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (HTML, like Gecko) Crome/41.0.2227.0 Saari/537.36',
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, lke Geko) Chrome/41.0.227.0 Safai/37.36',
-    'Mozilla/5.0 (Windows NT 6.3; WOW64) pplWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2226.0 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 6.4; WOW64) ApplbKit/537.36 (KHTML, like Gecko) Chrome/41.0.2225.0 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.3; WOW64) pplWebKit/537.36 (KHTML, like Gecko) Chrome/46.0 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.4; WOW64) ApplbKit/537.36 (KHTML, like Gecko) Chrome/41.0.22ari/537.36',
     'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWet/537.36 (KHTML, ike Geco) hrome/41.0.2225.0 Sfari/37.36',
     'Mozilla/5.0 (Windows NT 5.1) AppleWebt/537.36 (KHTML, like Gecko) Chrome/41.0.224.3 Saari/537.36',
     'Mozilla/5.0 (Windos NT 10.0) ApplebKit/537.36 (KHTML, like Geko) Chrme/400.2214.93 Saari57.36',

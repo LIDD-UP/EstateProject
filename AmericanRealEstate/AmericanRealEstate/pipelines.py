@@ -8,7 +8,7 @@
 from twisted.enterprise import adbapi
 import pymysql
 
-from AmericanRealEstate.items import StateNameCountyNameItem,CountyNameZipCodeItem,RealtorHouseInfoJsonItem,RealtorDetailDomItem,TruliaHouseInfoItem,SearchCriteriaItem
+from AmericanRealEstate.items import StateNameCountyNameItem,CountyNameZipCodeItem,RealtorHouseInfoJsonItem,RealtorDetailDomItem,TruliaHouseInfoItem,SearchCriteriaItem,StatisticRealtorHouseCountItem
 from crawl_tools.get_sql_con import get_sql_con
 from crawl_tools.test_file import post_url
 from AmericanRealEstate.settings import post_interface_url
@@ -190,6 +190,23 @@ class TruliaDetailDomPipeline(object):
                 '''
                 insert into trulia_detail_dom(price) values(%s)
                 ''', [item['price']
+                      ]
+            )
+        self.conn.commit()
+        return item
+
+
+class StatisticRealtorHouseCountPipeline(object):
+    def __init__(self):
+        self.conn = get_sql_con()
+
+    def process_item(self, item, spider):
+        if isinstance(item, StatisticRealtorHouseCountItem):
+            cursor = self.conn.cursor()
+            cursor.execute(
+                '''
+                insert into realtor_count(realtor_count) values(%s)
+                ''', [item['count']
                       ]
             )
         self.conn.commit()

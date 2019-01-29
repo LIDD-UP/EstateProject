@@ -4,9 +4,13 @@
 @file: get_sql_con.py
 @time: 2019/1/9
 """
-import pymysql
+import os,sys
 
-from AmericanRealEstate import settings
+import pymysql
+new_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '\AmericanRealEstate'
+print(new_path)
+
+from AmericanRealEstate.AmericanRealEstate import settings
 
 
 def get_sql_con():

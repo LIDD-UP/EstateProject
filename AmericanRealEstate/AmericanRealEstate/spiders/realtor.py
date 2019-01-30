@@ -21,19 +21,21 @@ class RealtorSpider(scrapy.Spider):
     # start_urls = ['https://www.realtor.com/realestateandhomes-search/Los-Angeles-County_CA']
     # start_urls = [url for url in realtor_search_criteria]
     # introduce parameter
-    def __init__(self, start_urls=None, custom_settings=None,*args,**kwargs):
-        # super(RealtorSpider, self).__init__(*args,**kwargs)
+    def __init__(self, start_urls=None, user_agent_list=None, *args, **kwargs):
+        super(RealtorSpider, self).__init__(*args,**kwargs)
         print(start_urls)
-        start_urls_list = start_urls.split(',')
-        print(start_urls_list)
-        true_custom_settings = ast.literal_eval(custom_settings)
-        print(true_custom_settings)
-        print(type(true_custom_settings))
+        # 传入start_request_list
+        start_urls_list = None
+        if start_urls is not None:
+            start_urls_list = start_urls.split(',')
+            print(start_urls_list)
         self.start_urls = start_urls_list
-        self.custom_settings = true_custom_settings
 
-    # aa = 1
-
+        # 传入user_agent_list
+        true_user_agent_list = None
+        if user_agent_list is not None:
+            true_user_agent_list = user_agent_list.split(',')
+        self.user_agent_list = true_user_agent_list
 
     custom_settings = {
         "ITEM_PIPELINES": {

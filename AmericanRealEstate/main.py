@@ -50,77 +50,78 @@ from scrapy.cmdline import execute
 
 from multiprocessing import Pool
 import os, time, random
-import ast
 
 
-
-
-custom_settings_str = '{"ITEM_PIPELINES": {"AmericanRealEstate.pipelines.RealtorHouseInfoPipeline": 301,},"DOWNLOADER_MIDDLEWARES": {"AmericanRealEstate.middlewares.AlertUserAgentWhenEncounter302Middleware": 545,},"DEFAULT_REQUEST_HEADERS": {"authority": "www.realtor.com","method": "GET","scheme": "https","accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,","accept-encoding": "gzip, deflate, br","accept-language": "zh-CN,zh;q=0.9,ja;q=0.8","cache-control": "no-cache","upgrade - insecure - requests": "1","user-agent": "Opera/9.80 (X11; Linux i686; U; hu) Preso/2.9.168 Verssion",},"COOKIES_ENABLED": False,"REDIRECT_ENABLED": False,"LOG_FILE": "realtor_log.txt","LOG_LEVEL": "INFO",}'
-custom_settings_str2 = '{"ITEM_PIPELINES": {"AmericanRealEstate.pipelines.RealtorHouseInfoPipeline": 301,},"DOWNLOADER_MIDDLEWARES": {"AmericanRealEstate.middlewares.AlertUserAgentWhenEncounter302Middleware": 545,},"DEFAULT_REQUEST_HEADERS": {"authority": "www.realtor.com","method": "GET","scheme": "https","accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,","accept-encoding": "gzip, deflate, br","accept-language": "zh-CN,zh;q=0.9,ja;q=0.8","cache-control": "no-cache","upgrade - insecure - requests": "1","user-agent": "Opera/9.80 (X11; Linux i686; U; hu) Preto/2.9.168 Vversion",},"COOKIES_ENABLED": False,"REDIRECT_ENABLED": False,"LOG_FILE": "realtor_log.txt","LOG_LEVEL": "INFO",}'
-custom_settings_str3 = '{"ITEM_PIPELINES": {"AmericanRealEstate.pipelines.RealtorHouseInfoPipeline": 301,},"DOWNLOADER_MIDDLEWARES": {"AmericanRealEstate.middlewares.AlertUserAgentWhenEncounter302Middleware": 545,},"DEFAULT_REQUEST_HEADERS": {"authority": "www.realtor.com","method": "GET","scheme": "https","accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,","accept-encoding": "gzip, deflate, br","accept-language": "zh-CN,zh;q=0.9,ja;q=0.8","cache-control": "no-cache","upgrade - insecure - requests": "1","user-agent": "Opera/9.80 (X11; Linux i686; U; hu) Psto/2.9.168 Vern",},"COOKIES_ENABLED": False,"REDIRECT_ENABLED": False,"LOG_FILE": "realtor_log.txt","LOG_LEVEL": "INFO",}'
-custom_settings_str4 = '{"ITEM_PIPELINES": {"AmericanRealEstate.pipelines.RealtorHouseInfoPipeline": 301,},"DOWNLOADER_MIDDLEWARES": {"AmericanRealEstate.middlewares.AlertUserAgentWhenEncounter302Middleware": 545,},"DEFAULT_REQUEST_HEADERS": {"authority": "www.realtor.com","method": "GET","scheme": "https","accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,","accept-encoding": "gzip, deflate, br","accept-language": "zh-CN,zh;q=0.9,ja;q=0.8","cache-control": "no-cache","upgrade - insecure - requests": "1","user-agent": "Opera/9.80 (X11; Linux i686; U; hu) Prto/2.9.168 Versve9rsion",},"COOKIES_ENABLED": False,"REDIRECT_ENABLED": False,"LOG_FILE": "realtor_log.txt","LOG_LEVEL": "INFO",}'
-
-
-
-
-# custom_settings_str_transform = ast.literal_eval(custom_settings_str4)
-# print(custom_settings_str_transform)
-
-custom_settings_str_list = [custom_settings_str,custom_settings_str2,custom_settings_str3,custom_settings_str4]
-
-
-
-def execute_spider(num,start_urls,custom_settings,*args,**kwargs):
-    print('开启了第{}爬虫进程'.format(num))
-    print('realtor{}'.format(num))
-    execute(['scrapy', 'crawl', 'realtor{}'.format(num),
+def execute_spider(num,start_urls,user_agent_list,*args,**kwargs):
+    # print('开启了第{}爬虫进程'.format(num))
+    # print('realtor{}'.format(num))
+    execute(['scrapy', 'crawl', 'realtor',
              "-a",
              "start_urls={}".format(start_urls),
              "-a",
-             "custom_settings={}".format(custom_settings),
-             "-s",
-             "JOBDIR=crawls/realtor{}".format(num),
+             "user_agent_list={}".format(user_agent_list),
+             # "-s",
+             # "JOBDIR=crawls/realtor{}".format(num),
              ])
 
 
-def resume_execute_spider(num,start_urls,custom_settings,*args,**kwargs):
-    print('开启了第{}爬虫进程'.format(num))
-    print('realtor{}'.format(num))
-    execute(['scrapy', 'crawl', 'realtor{}'.format(num),
-             # "-a",
-             # "start_urls={}".format(start_urls),
+def resume_execute_spider(num,start_urls,user_agent_list,*args,**kwargs):
+    # print('开启了第{}爬虫进程'.format(num))
+    # print('realtor{}'.format(num))
+    execute(['scrapy', 'crawl', 'realtor',
              "-a",
-             "custom_settings={}".format(custom_settings),
-             "-s",
-             "JOBDIR=crawls/realtor{}".format(num),
+             "start_urls={}".format(start_urls),
+             "-a",
+             "user_agent_list={}".format(user_agent_list),
+             # "-s",
+             # "JOBDIR=crawls/realtor{}".format(num),
              ])
 
 
 
 if __name__=='__main__':
-    from AmericanRealEstate.settings import realtor_search_criteria
+    from AmericanRealEstate.settings import realtor_search_criteria, realtor_user_agent_list
 
     #爬虫进程数
     process_nums = 3
     # 生成起始url字符串
+
+    # 将start_url 分成进程数
     each_spider_criteria_number = int(len(realtor_search_criteria) / process_nums)
+    # 将user_agent_list 分成进程数
+    each_spider_user_agent_number = int(len(realtor_user_agent_list) / process_nums)
+
     spider_start_urls_list = []
+    spider_user_agent_list = []
     for i in range(process_nums):
-        if i == process_nums-1:
-            start_url_str = ','.join(
-                realtor_search_criteria[each_spider_criteria_number * i:])
+        # start_request_list
         start_url_str = ','.join(
             realtor_search_criteria[each_spider_criteria_number * i:(i + 1) * each_spider_criteria_number])
+        print(start_url_str)
+        spider_start_urls_list.append(start_url_str)
+
+        # user_agent_list
+        user_agent_str = ','.join(
+            realtor_user_agent_list[each_spider_user_agent_number * i:(i + 1) * each_spider_user_agent_number])
+
+        if i == process_nums-1:
+            # start_request_list
+            start_url_str = ','.join(
+                realtor_search_criteria[each_spider_criteria_number * i:])
+            # user_agent_list
+            user_agent_str = ','.join(
+                realtor_user_agent_list[each_spider_user_agent_number * i:])
 
         print(start_url_str)
         spider_start_urls_list.append(start_url_str)
+        spider_user_agent_list.append(user_agent_str)
 
     print(len(spider_start_urls_list))
     print('Parent process %s.' % os.getpid())
     p = Pool(process_nums)
     for i in range(process_nums):
         # 首次执行
-        p.apply_async(execute_spider, args=(i+1, spider_start_urls_list[i], custom_settings_str_list[i], i),)
+        p.apply_async(execute_spider, args=(i+1, spider_start_urls_list[i], spider_user_agent_list[i], i),)
         # 再次执行
         # p.apply_async(resume_execute_spider, args=(i + 1, spider_start_urls_list[i], custom_settings_str_list[i], i), )
 

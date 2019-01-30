@@ -144,7 +144,7 @@ def get_proxy_from_url(url=None):
 
 def get_numerical_proxies(url=None):
     proxy_data_origin = pd.read_csv('./proxy_df.csv')
-    for i in range(2, 2000):
+    for i in range(2, 500):
         print(i)
         # html5lib
         import time
@@ -168,20 +168,27 @@ def get_mipu_proxy(url=None):
 
 if __name__ == '__main__':
 
-    # proxy_data = pd.read_csv('./proxy_df.csv')
-    #
-    # get_ip = GetIP()
-    # validation_proxy_ip = 0
-    # for i in range(len(proxy_data)):
-    #
-    #     result = get_ip.judge_ip(proxy_data['IP'].iloc[i], port=proxy_data['PORT'].iloc[i], proxy_type=proxy_data['类型'].iloc[i])
-    #     if result:
-    #
-    #         validation_proxy_ip += 1
-    #
-    # print(validation_proxy_ip)
+    # 检测代理ip是否好用
+    proxy_data = pd.read_csv('./full_proxy.csv')
+    print(len(proxy_data))
+
+    get_ip = GetIP()
+    validation_proxy_ip = 0
+    file =  open('./format_proxy_ip.txt','w')
+    for i in range(len(proxy_data)):
+        print(i)
+
+        result = get_ip.judge_ip(proxy_data['IP'].iloc[i], port=proxy_data['PORT'].iloc[i], proxy_type=proxy_data['类型'].iloc[i])
+        if result:
+            true_proxy_ip = 'http://{0}:{1}'.format(proxy_data['IP'].iloc[i], proxy_data['PORT'].iloc[i])
+            print(true_proxy_ip)
+            validation_proxy_ip += 1
+            print('validation_proxy_ip_count',validation_proxy_ip)
+            file.write(true_proxy_ip)
+            file.write('\n')
+    print(validation_proxy_ip)
     # get_numerical_proxies()
-    get_mipu_proxy()
+    # get_mipu_proxy()
     # get_proxy_from_url()
     # 'https: // proxy.mimvp.com /'
     # data = pd.read_html('https://www.kuaidaili.com/free/inha/')

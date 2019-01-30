@@ -7,3 +7,15 @@
 from scrapy.cmdline import execute
 
 execute('scrapy crawl statistics_realtor_house_count'.split(' '))
+
+
+
+
+
+
+
+
+
+
+
+

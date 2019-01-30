@@ -9,6 +9,7 @@ from scrapy import signals
 from fake_useragent import UserAgent
 from scrapy import Request
 from AmericanRealEstate.settings import realtor_user_agent_list
+import random
 
 
 class AmericanrealestateSpiderMiddleware(object):
@@ -187,7 +188,7 @@ class AlertUserAgentWhenEncounter302Middleware(object):
             self.stop_signal += 1
             print(self.stop_signal)
 
-            if self.stop_signal > 10:
+            if self.stop_signal > 50:
                 spider.crawler.engine.close_spider(spider, '更换了1000次user-agent了,爬虫已经被发现了')
                 # # 停止爬虫
                 # # 定义一个其实时间变量 a
@@ -199,7 +200,7 @@ class AlertUserAgentWhenEncounter302Middleware(object):
             if self.user_agent_index > 120:
                 self.user_agent_index =0
             print(realtor_user_agent_list[self.user_agent_index])
-            request.headers.setdefault('User-Agent',realtor_user_agent_list[self.user_agent_index])
+            # request.headers.setdefault('User-Agent',realtor_user_agent_list[self.user_agent_index])
             request.headers.setdefault('User-Agent', 'fjdalfjdlajfdlajf')
             request.headers['user-agent'] = 'yuanshide '
             # 这个只能在process_request 中才能起作用
@@ -207,14 +208,61 @@ class AlertUserAgentWhenEncounter302Middleware(object):
             # request.headers={b'Authority': [b'www.realtor.com'], b'Method': [b'GET'], b'Scheme': [b'https'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,'], b'Accept-Encoding': [b'gzip, deflate, br'], b'Accept-Language': [b'zh-CN,zh;q=0.9,ja;q=0.8'], b'Cache-Control': [b'no-cache'], b'Upgrade - Insecure - Requests': [b'1'], b'Referer': [b'www.realtor.com'],b'UserAgent':['xxxxxxxxlajfdakjsf']}
             # request.headers['User-Agent'] = 'hdalhfdlahfdlah'
             # request.meta['User-Agent'] = 'xxxxxxxxxxxxxxjflajflafxxxxxxxxxxxx'
-            new_request = request.copy()
-            new_request.meta['302error'] = 'yes'
-            new_request.headers['cookie'] = '12345678cookie'
-            new_request.headers.setdefault('User-Agent','hahahhahahahha')
-            new_request.headers['user-agent'] = realtor_user_agent_list[self.user_agent_index]
+            # new_request = request.copy()
+            # new_request.meta['302error'] = 'yes'
+            # new_request.headers['cookie'] = '12345678cookie'
+            # new_request.headers.setdefault('User-Agent','hahahhahahahha')
+            # new_request.headers['user-agent'] = realtor_user_agent_list[self.user_agent_index]
             self.user_agent_index += 1
-            return new_request
+            return request
         return response
+
+
+
+
+
+class NewAlertUserAgentWhenEncounter302Middleware(object):
+    def __init__(self):
+        super(NewAlertUserAgentWhenEncounter302Middleware,self).__init__()
+        self.stop_signal = 1
+        self.user_agent_index = 0
+        self.change_user_agent = False
+        self.is_first_get_user_agent = True
+
+    def process_request(self,request,spider):
+        # 第一次随机获取一个列表中的user-agent
+        if self.is_first_get_user_agent:
+            random_index = random.randint(0, len(realtor_user_agent_list))
+            request.headers.setdefault('User-Agent', realtor_user_agent_list[random_index])
+            self.is_first_get_user_agent = False
+
+        if self.change_user_agent:
+            random_index = random.randint(0, len(realtor_user_agent_list))
+            request.headers.setdefault('User-Agent', realtor_user_agent_list[random_index])
+            self.change_user_agent = False
+
+    def process_response(self, request, response, spider):
+        print(response.status)
+        if response.status == 302:
+            print('被发现了,更换user-agent')
+            # 设置暂停时间
+            import time
+            time.sleep(1)
+            self.stop_signal += 1
+            print(self.stop_signal)
+            #
+            if self.stop_signal > 50:
+                spider.crawler.engine.close_spider(spider, '更换了1000次user-agent了,爬虫已经被发现了')
+
+
+            # 去掉该user-agent,同时将change_user_agent置为True
+            print(request.headeres['user-agent'])
+            realtor_user_agent_list.remove(request.headers['user-agent'])
+            self.change_user_agent = True
+            return request
+        return response
+
+
 
 
 class Process302MetaMiddleware(object):
@@ -226,7 +274,99 @@ class Process302MetaMiddleware(object):
             print(request.meta['302error'])
             print('接受302 meta信息,更换user-agent')
             request.headers['User-Agent'] = 'my user agent hahaha'
+            request.headers.setdefault('user-agent','defualt-user-agent')
             print('.......')
+
+
+# 测试获取spider中的一些参数:从spider中更换user-agent参数;
+class TestGetSpiderAttrMiddleware(object):
+
+    def process_request(self, request, spider):
+        if getattr(spider, 'user_agent_list', None) is not None:
+            print(spider.user_agent_list)
+            spider_user_agent_list = spider.user_agent_list
+            print(len(spider_user_agent_list))
+            if len(spider_user_agent_list) != 0:
+                # 每次固定取第零个
+                print('设置的user-agent',spider_user_agent_list[0])
+                request.headers.setdefault('user-agent',spider_user_agent_list[0])
+                print('设置固定的user-agent')
+
+    def process_response(self,request,response,spider):
+        if response.status == 302:
+            print(request.headers['user-agent'])
+            print(request.headers['user-agent'].decode())
+
+            spider.user_agent_list.remove((request.headers['user-agent']).decode())
+
+            if len(spider.user_agent_list) == 0:
+                print('user-agent没有了')
+                spider.crawler.engine.close_spider(spider, '更换了1000次user-agent了,爬虫已经被发现了')
+                # spider.crawler.engine.stop(spider,'user_agent_list 没有了')
+                # from scrapy.crawler.engine import CloseSpider
+                # raise CloseSpider()
+                # spider.crawler.engine.pause()
+                # from scrapy import cmdline
+                # cmdline.execute('ctrl c')
+
+            if len(spider.user_agent_list) > 0:
+                request.headers['user-agent'] = spider.user_agent_list[0]
+
+            return request
+        return response
+
+
+# 使用代理ip进行抓取:
+class AlterProxyIPMiddleware(object):
+
+    def process_request(self, request, spider):
+        if getattr(spider, 'proxy_ip_list', None) is not None:
+            print(spider.proxy_ip_list)
+            spider_proxy_ip_list = spider.proxy_ip_list
+            print(len(spider_proxy_ip_list))
+            if len(spider_proxy_ip_list) != 0:
+                # 每次固定取第零个
+                print('设置代理ip并打印', spider_proxy_ip_list[0])
+                request.meta["proxy"] = spider_proxy_ip_list[0]
+                print('设置固定的proxy_ip')
+
+    def process_response(self,request,response,spider):
+        if response.status == 302:
+            print(request.meta['proxy'])
+            print(request.headers['proxy'].decode())
+
+            spider.proxy_ip_list.remove((request.meta['proxy']).decode())
+
+            if len(spider.proxy_ip_list) == 0:
+                print('user-agent没有了')
+                spider.crawler.engine.close_spider(spider, '更换了1000次user-agent了,爬虫已经被发现了')
+                # spider.crawler.engine.stop(spider,'user_agent_list 没有了')
+                # from scrapy.crawler.engine import CloseSpider
+                # raise CloseSpider()
+                # spider.crawler.engine.pause()
+                # from scrapy import cmdline
+                # cmdline.execute('ctrl c')
+
+            if len(spider.proxy_ip_list) > 0:
+                request.meta['proxy'] = spider.proxy_ip_list[0]
+
+            return request
+        return response
+
+
+
+
+
+class Test(object):
+    def __init__(self):
+        self.test = 1
+
+
+# if hasattr(Test, 'attr1'):
+#     if Test.attr1 != 0:
+#         pass
+
+
 
 
 
@@ -271,8 +411,22 @@ class RandomProxyMiddleware(object):
     # 动态设置ip代理
     def process_request(self,request,spider):
         # 通过meta传递
-        request.meta["proxy"] = 'http://119.101.126.9:9999'
+        request.meta["proxy"] = 'http:/121.61.3.143:9999',
 
+
+# 从csv中加载代理ip,然后...
+'''
+csv文件中加载不好删除,还是放到数据库中好了,
+取得时候随机取,这样就可以让不同进程取到相同代理ip得概率变低,并且可以减少不同进程爬虫在获取ip得逻辑
+    2:然后判断,如果延迟时间太大了,或者是出现状态码非200-300之间就从数据库中删除该代理ip,然后,在随机获取一个然后保持不变;(这个在middleware中处理)
+    3:多进程调度程序(或者是多线程),user-agent从列表中获取(可以从文件中读取,也可以直接设置在setting中)
+        但是这里存在一个问题就是怎样维护一个列表(必须是全局的,然后可以改变)这种方式写的时候可能不成熟;
+        还有一种就是放到文件中(数据库中也可以,但是没有必要),如果发现user-agent不能用了,就直接删除掉(可以用到文件的操作,
+        同时将不能用的user-agnent,存到一个新的文件中;
+        
+        这里还有一个问题就是切换user-agent和ip_proxy的问题,如果使用了ip-proxy起始不用从列表中删除user-agent,因为ip变了;
+        但是如果不使用代理ip的情况下,那就只能从列表中删除,然后重新获取一个user-agent,设置到请求中后 ,在再middleware中的process_response 中返回(这里还存在一个问题就是到底要不要使用request.headers.setdefault 方法);测试一下,结果是:
+'''
 
 
 

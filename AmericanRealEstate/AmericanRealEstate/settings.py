@@ -177,9 +177,9 @@ proxy_ip_list = [
 
 # scrapy-proxie settings
 # Retry many times since proxies often fail
-RETRY_TIMES = 10
+# RETRY_TIMES = 10
 # Retry on most error codes since proxies fail for different reasons
-RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408]
+# RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408]
 
 # DOWNLOADER_MIDDLEWARES = {
 #     'scrapy.downloadermiddlewares.retry.RetryMiddleware': 90,
@@ -192,16 +192,16 @@ RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408]
 # http://username:password@host2:port
 # http://host3:port
 # ...
-PROXY_LIST = 'F:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\get_proxy/list.txt'
+# PROXY_LIST = 'F:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\get_proxy/list.txt'
 
 # Proxy mode
 # 0 = Every requests have different proxy
 # 1 = Take only one proxy from the list and assign it to every requests
 # 2 = Put a custom proxy to use in the settings
-PROXY_MODE = 2
+# PROXY_MODE = 2
 
 # If proxy mode is 2 uncomment this sentence :
-CUSTOM_PROXY = "http://host1:port"
+# CUSTOM_PROXY = "http://host1:port"
 
 
 realtor_user_agent_list = [

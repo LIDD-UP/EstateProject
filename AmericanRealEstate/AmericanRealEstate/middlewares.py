@@ -413,7 +413,7 @@ class RandomProxyMiddleware(object):
     # 动态设置ip代理
     def process_request(self,request,spider):
         # 通过meta传递
-        request.meta["proxy"] = 'http:/121.61.3.143:9999',
+        request.meta["proxy"] = 'http://121.61.3.143:9999',
 
 
 # 从csv中加载代理ip,然后...
@@ -429,6 +429,24 @@ csv文件中加载不好删除,还是放到数据库中好了,
         这里还有一个问题就是切换user-agent和ip_proxy的问题,如果使用了ip-proxy起始不用从列表中删除user-agent,因为ip变了;
         但是如果不使用代理ip的情况下,那就只能从列表中删除,然后重新获取一个user-agent,设置到请求中后 ,在再middleware中的process_response 中返回(这里还存在一个问题就是到底要不要使用request.headers.setdefault 方法);测试一下,结果是:
 '''
+
+
+# 测试scrapy 自带的断点续爬:
+class TestCrawlerBreakContinuedClimb(object):
+    def __init__(self):
+        # super(Process302Middleware,self).__init__()
+        self.stop_signal = 1
+
+    def process_response(self, request, response, spider):
+        print(response.status)
+        if response.status == 302:
+            self.stop_signal += 1
+            print(self.stop_signal)
+            print('response.url', response._url)
+            if self.stop_signal > 2:
+                spider.crawler.engine.close_spider(spider, '遇到302错误大于3次,爬虫已经被服务器发现')
+            return request
+        return response
 
 
 

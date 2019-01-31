@@ -52,16 +52,16 @@ from multiprocessing import Pool
 import os, time, random
 
 
-def execute_spider(num,start_urls,user_agent_list,*args,**kwargs):
+def execute_spider(num,start_urls,custom_settings,*args,**kwargs):
     # print('开启了第{}爬虫进程'.format(num))
     # print('realtor{}'.format(num))
     execute(['scrapy', 'crawl', 'realtor',
              "-a",
              "start_urls={}".format(start_urls),
              "-a",
-             "user_agent_list={}".format(user_agent_list),
-             # "-s",
-             # "JOBDIR=crawls/realtor{}".format(num),
+             "custom_settings={}".format(custom_settings),
+             "-s",
+             "JOBDIR=crawls/realtor{}".format(num),
              ])
 
 

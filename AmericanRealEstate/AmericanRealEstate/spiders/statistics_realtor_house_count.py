@@ -10,7 +10,7 @@ import re
 class StatisticsRealtorHouseCountSpider(scrapy.Spider):
     name = 'statistics_realtor_house_count'
     allowed_domains = ['realtor.com']
-    start_urls = [url for url in realtor_search_criteria][0:100]
+    start_urls = [url for url in realtor_search_criteria][0:10]
 
     def __init__(self, start_urls=None, user_agent_list=None,proxy_ip_list=None,*args,**kwargs):
         super(StatisticsRealtorHouseCountSpider, self).__init__(*args,**kwargs)
@@ -43,6 +43,7 @@ class StatisticsRealtorHouseCountSpider(scrapy.Spider):
         "DOWNLOADER_MIDDLEWARES":{
         # 'AmericanRealEstate.middlewares.AmericanrealestateDownloaderMiddleware': 543,
          'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+            'AmericanRealEstate.middlewares.TestCrawlerBreakContinuedClimb':544,
          # 'AmericanRealEstate.middlewares.RandomUserAgentMiddleware': 1,
          #    'AmericanRealEstate.middlewares.NewAlertUserAgentWhenEncounter302Middleware': 1,
          #    'AmericanRealEstate.middlewares.TestGetSpiderAttrMiddleware':1,
@@ -54,7 +55,7 @@ class StatisticsRealtorHouseCountSpider(scrapy.Spider):
             # 'scrapy.downloadermiddlewares.retry.RetryMiddleware': 90,
             # 'scrapy_proxies.RandomProxy': 100,
             # 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
-            'AmericanRealEstate.middlewares.RandomProxyMiddleware':500,
+            # 'AmericanRealEstate.middlewares.RandomProxyMiddleware':500,
     },
         "DEFAULT_REQUEST_HEADERS": {
                 'authority': 'www.realtor.com',

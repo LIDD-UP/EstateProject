@@ -294,6 +294,8 @@ class TestGetSpiderAttrMiddleware(object):
 
     def process_response(self,request,response,spider):
         if response.status == 302:
+            import time
+            time.sleep(600)
             print(request.headers['user-agent'])
             print(request.headers['user-agent'].decode())
 

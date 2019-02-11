@@ -99,7 +99,7 @@ if __name__=='__main__':
             realtor_search_criteria[each_spider_criteria_number * i:(i + 1) * each_spider_criteria_number])
 
         # user_agent_list
-        user_agent_str = '-'.join(
+        user_agent_str = '|'.join(
             realtor_user_agent_list[each_spider_user_agent_number * i:(i + 1) * each_spider_user_agent_number])
 
         if i == process_nums-1:
@@ -107,7 +107,7 @@ if __name__=='__main__':
             start_url_str = ','.join(
                 realtor_search_criteria[each_spider_criteria_number * i:])
             # user_agent_list
-            user_agent_str = '-'.join(
+            user_agent_str = '|'.join(
                 realtor_user_agent_list[each_spider_user_agent_number * i:])
 
         print(start_url_str)

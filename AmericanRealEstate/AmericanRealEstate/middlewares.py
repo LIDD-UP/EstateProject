@@ -305,8 +305,9 @@ class TestGetSpiderAttrMiddleware(object):
             print(invalidation_user_agent)
 
             with open('./invalidation_user_agent_file.txt','a+') as f:
-                f.write(invalidation_user_agent)
-                f.write('\n')
+                # f.write('\n')
+                f.write('\n'+invalidation_user_agent)
+                # f.write('\n')
 
             spider.user_agent_list.remove(invalidation_user_agent)
 

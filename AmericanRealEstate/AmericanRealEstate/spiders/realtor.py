@@ -24,7 +24,7 @@ class RealtorSpider(scrapy.Spider):
     def __init__(self,
                  start_urls=None, user_agent_list=None,
                  *args, **kwargs):
-        super(RealtorSpider, self).__init__(*args,**kwargs)
+        super(RealtorSpider, self).__init__(*args, **kwargs)
         print(start_urls)
         # 传入start_request_list
         start_urls_list = None
@@ -37,7 +37,7 @@ class RealtorSpider(scrapy.Spider):
         true_user_agent_list = None
         print('用户代理',user_agent_list)
         if user_agent_list is not None:
-            true_user_agent_list = user_agent_list.split('-')
+            true_user_agent_list = user_agent_list.split('|')
         self.user_agent_list = true_user_agent_list
         print(self.user_agent_list)
 

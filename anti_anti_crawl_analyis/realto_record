@@ -445,6 +445,13 @@ realtor 网站cookie的生成机制:浏览器只要一刷新,产生的cookie就�
 
 
 
+realtor 网站反爬升级问题：
+    1：之前的禁用cookie+变化user-agent已经出现问题：现在是直接封的ip
+        出现这个问题可能的原因：
+            1：
+
+
+
 
 
 

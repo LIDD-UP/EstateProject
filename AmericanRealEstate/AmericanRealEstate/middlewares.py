@@ -296,6 +296,7 @@ class TestGetSpiderAttrMiddleware(object):
         if response.status == 302:
             import time
             time.sleep(600)
+            print('被发现了，沉睡10分钟切换user-agent')
             print(request.headers['user-agent'])
             print(request.headers['user-agent'].decode())
 

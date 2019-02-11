@@ -7,7 +7,7 @@
 import requests
 
 
-realtor_cookies = {
+realtor_header = {
     # google 通用浏览器标识
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'Accept-Encoding': 'gzip, deflate, br',
@@ -19,7 +19,7 @@ realtor_cookies = {
     # 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
     # 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3452.0 Safari/537.36'
     # 'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36',
-    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; ; x64; rv:0.0) Gecko/1 Fiox/5.0',
+    # 'User-Agent':'Mozilla/5.0 (Windows NT 6.1; ; x64; rv:0.0) Gecko/1 Fiox/5.0',
     # 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)',
 
     # 'user-agent' : 'Opera/9.80 (X11; Linux x86_64; U; fr) Presto/2.9.168 Version/11.50',
@@ -64,12 +64,12 @@ realtor_cookies = {
 
 
 
-# res = requests.get(
-#                     # url='https://www.realtor.com/realestateandhomes-search/Adair-County_MO',
-#                    url = 'https://www.realtor.com/realestateandhomes-detail/807-W-Hamilton-St_Kirksville_MO_63501_M86027-79545?view=qv',
-#                    headers=realtor_cookies,
-#                    verify=False)
-# print(res.text)
+res = requests.get(
+                    # url='https://www.realtor.com/realestateandhomes-search/Adair-County_MO',
+                   url = 'https://www.realtor.com/realestateandhomes-detail/807-W-Hamilton-St_Kirksville_MO_63501_M86027-79545?view=qv',
+                   headers=realtor_header,
+                   verify=False)
+print(res.text)
 #
 # with open('./realtor_test.html','w',encoding='utf-8') as f:
 #     f.write(res.text)

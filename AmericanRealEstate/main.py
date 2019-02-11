@@ -52,16 +52,16 @@ from multiprocessing import Pool
 import os, time, random
 
 
-def execute_spider(num,start_urls,custom_settings,*args,**kwargs):
+def execute_spider(num,start_urls,user_agent_list,*args,**kwargs):
     # print('开启了第{}爬虫进程'.format(num))
     # print('realtor{}'.format(num))
     execute(['scrapy', 'crawl', 'realtor',
              "-a",
              "start_urls={}".format(start_urls),
              "-a",
-             "custom_settings={}".format(custom_settings),
-             "-s",
-             "JOBDIR=crawls/realtor{}".format(num),
+             "user_agent_list={}".format(user_agent_list),
+             # "-s",
+             # "JOBDIR=crawls/realtor{}".format(num),
              ])
 
 
@@ -83,7 +83,7 @@ if __name__=='__main__':
     from AmericanRealEstate.settings import realtor_search_criteria, realtor_user_agent_list
 
     #爬虫进程数
-    process_nums = 20
+    process_nums = 1
     # 生成起始url字符串
 
     # 将start_url 分成进程数

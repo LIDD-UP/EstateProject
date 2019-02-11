@@ -289,16 +289,16 @@ class TestGetSpiderAttrMiddleware(object):
             if len(spider_user_agent_list) != 0:
                 # 每次固定取第零个
                 print('设置的user-agent',spider_user_agent_list[0])
-                request.headers.setdefault('user-agent',spider_user_agent_list[0])
+                request.headers.setdefault('User-Agent',spider_user_agent_list[0])
                 print('设置固定的user-agent')
 
     def process_response(self,request,response,spider):
         if response.status == 302:
             import time
-            time.sleep(600)
+            time.sleep(5)
             print('被发现了，沉睡10分钟切换user-agent')
-            print(request.headers['user-agent'])
-            print(request.headers['user-agent'].decode())
+            print(request.headers['User-Agent'])
+            print(request.headers['User-Agent'].decode())
 
             spider.user_agent_list.remove((request.headers['user-agent']).decode())
 
@@ -313,7 +313,7 @@ class TestGetSpiderAttrMiddleware(object):
                 # cmdline.execute('ctrl c')
 
             if len(spider.user_agent_list) > 0:
-                request.headers['user-agent'] = spider.user_agent_list[0]
+                request.headers['User-Agent'] = spider.user_agent_list[0]
 
             return request
         return response

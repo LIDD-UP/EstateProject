@@ -97,11 +97,9 @@ if __name__=='__main__':
         # start_request_list
         start_url_str = ','.join(
             realtor_search_criteria[each_spider_criteria_number * i:(i + 1) * each_spider_criteria_number])
-        print(start_url_str)
-        spider_start_urls_list.append(start_url_str)
 
         # user_agent_list
-        user_agent_str = ','.join(
+        user_agent_str = '-'.join(
             realtor_user_agent_list[each_spider_user_agent_number * i:(i + 1) * each_spider_user_agent_number])
 
         if i == process_nums-1:
@@ -109,14 +107,15 @@ if __name__=='__main__':
             start_url_str = ','.join(
                 realtor_search_criteria[each_spider_criteria_number * i:])
             # user_agent_list
-            user_agent_str = ','.join(
+            user_agent_str = '-'.join(
                 realtor_user_agent_list[each_spider_user_agent_number * i:])
 
         print(start_url_str)
         spider_start_urls_list.append(start_url_str)
+
         spider_user_agent_list.append(user_agent_str)
 
-    print(len(spider_start_urls_list))
+    print('一共几批start_url',len(spider_start_urls_list))
     print('Parent process %s.' % os.getpid())
     p = Pool(process_nums)
     for i in range(process_nums):

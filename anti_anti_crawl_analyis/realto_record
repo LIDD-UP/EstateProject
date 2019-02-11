@@ -448,7 +448,17 @@ realtor 网站cookie的生成机制:浏览器只要一刷新,产生的cookie就�
 realtor 网站反爬升级问题：
     1：之前的禁用cookie+变化user-agent已经出现问题：现在是直接封的ip
         出现这个问题可能的原因：
-            1：
+            1：对于被封过的user-agent，如果再次使用可能很快被封；（应该是有敏感度检测）
+    2：当同时出现很多个敏感user-agent一起抓取的时候，会直接封ip，
+
+    3：当我用一个新的user-agent的时候，能够稳定抓取1000多次（还在继续抓取），当
+    4：还有一种可能是使用的user-agent string 不合规范，所以被直接封ip了，
+
+    这个user-agent 抓取了2000多次之后依旧再抓取，
+    User-Agent: Mozilla/5.0 (Windows NT 7.0; WOW64) AppleWebKit/501 (KHTML, like Gecko) Chrome/28.0.1547.62 Safari/501
+
+    解决办法：需要研究各个浏览器的格式规范，生成user-agent池；
+
 
 
 

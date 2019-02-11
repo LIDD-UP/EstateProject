@@ -21,8 +21,10 @@ realtor_header = {
     # 'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36',
     # 'User-Agent':'Mozilla/5.0 (Windows NT 6.1; ; x64; rv:0.0) Gecko/1 Fiox/5.0',
     # 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)',
+    # 'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:21.000101 Firefox/21.0'
 
     # 'user-agent' : 'Opera/9.80 (X11; Linux x86_64; U; fr) Presto/2.9.168 Version/11.50',
+    # 'User-Agent' : 'Mozilla/5.0 (Windows NT; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.17 Safari/537.36',
 
     # firefox 通用浏览器标识
     # 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',

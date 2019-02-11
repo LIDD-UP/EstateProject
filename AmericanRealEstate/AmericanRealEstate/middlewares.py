@@ -8,7 +8,7 @@
 from scrapy import signals
 from fake_useragent import UserAgent
 from scrapy import Request
-from AmericanRealEstate.settings import realtor_user_agent_list
+from AmericanRealEstate.settings import realtor_user_agent_list, trulia_cookies_list
 import random
 
 
@@ -447,6 +447,43 @@ class TestCrawlerBreakContinuedClimb(object):
                 spider.crawler.engine.close_spider(spider, '遇到302错误大于3次,爬虫已经被服务器发现')
             return request
         return response
+
+
+#trulia website
+# trulia process 403 problem according to alert cookie
+class ProcessTrulia403Middleware(object):
+
+    def process_request(self, request, spider):
+        if getattr(spider, 'trulia_cookies_list', None) is not None:
+            print(spider.trulia_cookies_list)
+            spider_trulia_cookies_list = spider.trulia_cookies_list
+            print(len(spider_trulia_cookies_list))
+            if len(spider_trulia_cookies_list) != 0:
+                # 每次固定取第零个
+                print('设置的cookie:',spider_trulia_cookies_list[0])
+                request.headers.setdefault('cookie',spider_trulia_cookies_list[0])
+                print('设置固定的cookie')
+
+    def process_response(self,request,response,spider):
+        if response.status == 302:
+            import time
+            time.sleep(600)
+            print(request.headers['cookie'])
+            print(request.headers['cookie'].decode())
+
+            spider.trulia_cookies_list.remove((request.headers['cookie']).decode())
+
+            if len(spider.trulia_cookies_list) == 0:
+                print('cookie没有了')
+                spider.crawler.engine.close_spider(spider, 'cookie has already none')
+
+            if len(spider.trulia_cookies_list) > 0:
+                request.headers['cookie'] = spider.trulia_cookies_list[0]
+
+            return request
+        return response
+
+
 
 
 

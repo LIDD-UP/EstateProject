@@ -38,6 +38,7 @@ class RealtorSpider(scrapy.Spider):
         self.user_agent_list = true_user_agent_list
 
     custom_settings = {
+        "CONCURRENT_REQUESTS": 1,
         "ITEM_PIPELINES": {
             'AmericanRealEstate.pipelines.RealtorHouseInfoPipeline': 301,
             # 'AmericanRealEstate.pipelines.RealtorDetailDomPipeline': 302,

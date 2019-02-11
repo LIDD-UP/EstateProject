@@ -19,10 +19,16 @@ class TruliaSpider(scrapy.Spider):
         "ITEM_PIPELINES": {
             # 'AmericanRealEstate.pipelines.RealtorHouseInfoPipeline': 301,
             'AmericanRealEstate.pipelines.TruliaDetailDomPipeline': 302,
+
             # 'AmericanRealEstate.pipelines.RealtorHouseInfoTestPipeline': 302,
             # 'scrapy_redis.pipelines.RedisPipeline': 300
 
         },
+
+        "DOWNLOADER_MIDDLEWARES": {
+            'AmericanRealEstate.pipelines.RandomUserAgentMiddleware': 545,
+            'AmericanRealEstate.pipelines.ProcessTrulia403Middleware': 546,
+    },
         "DEFAULT_REQUEST_HEADERS": {
             # "referer": "https://www.trulia.com/",
             'authority': 'www.trulia.com',

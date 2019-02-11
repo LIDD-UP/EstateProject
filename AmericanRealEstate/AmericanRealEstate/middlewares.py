@@ -293,6 +293,9 @@ class TestGetSpiderAttrMiddleware(object):
                 print('设置固定的user-agent')
 
     def process_response(self,request,response,spider):
+        if response.status == 200:
+            with open('./has_already_crawl_url.txt','a+') as f:
+                f.write(response.url)
         if response.status == 302:
             import time
             time.sleep(5)
@@ -309,7 +312,7 @@ class TestGetSpiderAttrMiddleware(object):
 
             if len(spider.user_agent_list) == 0:
                 print('user-agent没有了')
-                spider.crawler.engine.close_spider(spider, '更换了1000次user-agent了,爬虫已经被发现了')
+                spider.crawler.engine.close_spider(spider, 'user-agent 更换完了，已经没有了')
                 # spider.crawler.engine.stop(spider,'user_agent_list 没有了')
                 # from scrapy.crawler.engine import CloseSpider
                 # raise CloseSpider()

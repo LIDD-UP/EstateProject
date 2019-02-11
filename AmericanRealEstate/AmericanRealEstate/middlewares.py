@@ -297,10 +297,15 @@ class TestGetSpiderAttrMiddleware(object):
             import time
             time.sleep(5)
             print('被发现了，沉睡10分钟切换user-agent')
-            print(request.headers['User-Agent'])
-            print(request.headers['User-Agent'].decode())
+            print('byte user agent',request.headers['User-Agent'])
+            invalidation_user_agent = request.headers['User-Agent'].decode()
+            print(invalidation_user_agent)
 
-            spider.user_agent_list.remove((request.headers['user-agent']).decode())
+            with open('./invalidation_user_agent_file.txt','a+') as f:
+                f.write(invalidation_user_agent)
+                f.write('\n')
+
+            spider.user_agent_list.remove(invalidation_user_agent)
 
             if len(spider.user_agent_list) == 0:
                 print('user-agent没有了')

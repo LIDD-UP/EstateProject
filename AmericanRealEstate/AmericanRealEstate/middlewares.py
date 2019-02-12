@@ -10,6 +10,7 @@ from fake_useragent import UserAgent
 from scrapy import Request
 from AmericanRealEstate.settings import realtor_user_agent_list, trulia_cookies_list
 import random
+import time
 
 
 class AmericanrealestateSpiderMiddleware(object):
@@ -293,12 +294,18 @@ class TestGetSpiderAttrMiddleware(object):
                 print('设置固定的user-agent')
 
     def process_response(self,request,response,spider):
+        # 随机停顿
+        random_seed=[0,1]
+        from random import choice
+        a = choice(random_seed)
+        if a ==1:
+            time.sleep(2)
+
         if response.status == 200:
             with open('./has_already_crawl_url.txt','a+') as f:
-                f.write(response.url)
+                f.write(response.url+',\n')
         if response.status == 302:
-            import time
-            time.sleep(5)
+            time.sleep(600)
             print('被发现了，沉睡10分钟切换user-agent')
             print('byte user agent',request.headers['User-Agent'])
             invalidation_user_agent = request.headers['User-Agent'].decode()

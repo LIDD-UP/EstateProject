@@ -42,7 +42,6 @@ class RealtorSpider(scrapy.Spider):
         print(self.user_agent_list)
 
     custom_settings = {
-        "CONCURRENT_REQUESTS": 1,
         "ITEM_PIPELINES": {
             'AmericanRealEstate.pipelines.RealtorHouseInfoPipeline': 301,
             # 'AmericanRealEstate.pipelines.RealtorDetailDomPipeline': 302,
@@ -77,7 +76,7 @@ class RealtorSpider(scrapy.Spider):
                 # 'User-Agent': start_user_agent,
                 # 'referer': 'www.realtor.com',
         },
-        "COOKIES_ENABLED": False,
+        "COOKIES_ENABLED": True,
         "REDIRECT_ENABLED": False,
         # "RETRY_HTTP_CODES": [500, 502, 503, 504, 400, 408]
 

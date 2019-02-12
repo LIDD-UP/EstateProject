@@ -102,6 +102,7 @@ if __name__=='__main__':
         user_agent_str = '|'.join(
             realtor_user_agent_list[each_spider_user_agent_number * i:(i + 1) * each_spider_user_agent_number])
 
+
         if i == process_nums-1:
             # start_request_list
             start_url_str = ','.join(

@@ -299,7 +299,7 @@ class TestGetSpiderAttrMiddleware(object):
         from random import choice
         a = choice(random_seed)
         if a ==1:
-            time.sleep(2)
+            time.sleep(3)
 
         if response.status == 200:
             with open('./has_already_crawl_url.txt','a+') as f:

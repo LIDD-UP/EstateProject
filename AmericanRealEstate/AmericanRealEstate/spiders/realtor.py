@@ -76,7 +76,7 @@ class RealtorSpider(scrapy.Spider):
                 # 'User-Agent': start_user_agent,
                 # 'referer': 'www.realtor.com',
         },
-        "COOKIES_ENABLED": True,
+        "COOKIES_ENABLED": False,
         "REDIRECT_ENABLED": False,
         # "RETRY_HTTP_CODES": [500, 502, 503, 504, 400, 408]
 

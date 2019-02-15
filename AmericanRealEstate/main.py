@@ -57,7 +57,7 @@ import os, time, random, datetime
 def execute_spider(num,start_urls,user_agent_list,scrapy_start_time,*args,**kwargs):
     # print('开启了第{}爬虫进程'.format(num))
     # print('realtor{}'.format(num))
-    execute(['scrapy', 'crawl', 'realtor',
+    execute(['scrapy', 'crawl', 'realtor_app',
              "-a",
              "start_urls={}".format(start_urls),
              "-a",
@@ -87,7 +87,7 @@ if __name__=='__main__':
     from AmericanRealEstate.settings import realtor_search_criteria, realtor_user_agent_list
 
     #爬虫进程数
-    process_nums = 3
+    process_nums = 30
     # 生成起始url字符串
 
     # 将start_url 分成进程数

@@ -541,6 +541,62 @@ realtor 网站反爬升级问题：
 找手机的上的api接口
 
 
+新的抓取策略：既然知道详情页得接口
+https://www.realtor.com/property-overview/M7076150985
+
+那么我们可以直接构造property，这样的话请求数量会增加很多不和理，那么我们可以先将property_id 全部获取到了之后再进行爬取
+这需要测试一下全部获取完全所需要的时间：
+
+看一下直接获取json有没有问题；
+
+但是这种方式也无法解决单个ip一定时间内访问量的问题，还有就是访问频率的问题；
+
+
+上面是浏览器端的问题；
+下面是浏览器端的接口
+
+关于realtor json数据的进一步分析：
+    查找关于link的关键字
+    查找到了有similar的url 可以获取多条数据，但是获取的数据不全，并且显示还有限制；所以没用；
+
+    但是详情页的接口是可以用的：
+        https://mapi-ng.rdc.moveaws.com/api/v1/properties/3796179283?
+        listing_id=616647169&prop_status=for_sale&schema=legacy&client_id=rdc_mobile_native%2C9.3.7%2Candroid
+
+        最重要的是最后的一个client_id 信息，
+        刚开始爬取的时候可以用最原始的进行爬取：
+        关于头信息：
+            Cache-Control: public, max-age=7200
+            Mapi-Bucket: for_sale_v2:on,for_rent_ldp_v2:on,for_rent_srp_v2:on,recently_sold_ldp_v2:on,recently_sold_srp_v2:on,not_for_sale_ldp_v2:on,not_for_sale_srp_v2:on,search_reranking_srch_rerank1:variant1
+            Host: mapi-ng.rdc.moveaws.com
+            Connection: Keep-Alive
+            Accept-Encoding: gzip
+            User-Agent: okhttp/3.10.0
+
+
+现在的问题是批量获取property_id 并且通过详情页的json数据接口获取数据：
+
+如果通过网页获取的话，他的sale和rent的子域名是再不同地方的，所以如果通过网页获取propery_id ,其实爬取量还是有一点大的，
+如果通过app的话，一下能返回200条数据，可以考虑用app上的接口获取propery_id
+
+但是目前的问题是关于信息构造的问题；
+
+可以先测试一下：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

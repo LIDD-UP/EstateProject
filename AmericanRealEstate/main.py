@@ -8,6 +8,8 @@ import os
 import sys
 sys.path.append(os.path.abspath(__file__))
 
+import time
+
 import redis
 import pandas as pd
 from scrapy.cmdline import execute
@@ -49,10 +51,10 @@ from scrapy.cmdline import execute
 
 
 from multiprocessing import Pool
-import os, time, random
+import os, time, random, datetime
 
 
-def execute_spider(num,start_urls,user_agent_list,*args,**kwargs):
+def execute_spider(num,start_urls,user_agent_list,scrapy_start_time,*args,**kwargs):
     # print('开启了第{}爬虫进程'.format(num))
     # print('realtor{}'.format(num))
     execute(['scrapy', 'crawl', 'realtor',
@@ -60,6 +62,8 @@ def execute_spider(num,start_urls,user_agent_list,*args,**kwargs):
              "start_urls={}".format(start_urls),
              "-a",
              "user_agent_list={}".format(user_agent_list),
+             "-s",
+             "scrapy_start_time={}".format(scrapy_start_time)
              # "-s",
              # "JOBDIR=crawls/realtor{}".format(num),
              ])
@@ -83,7 +87,7 @@ if __name__=='__main__':
     from AmericanRealEstate.settings import realtor_search_criteria, realtor_user_agent_list
 
     #爬虫进程数
-    process_nums = 8
+    process_nums = 3
     # 生成起始url字符串
 
     # 将start_url 分成进程数
@@ -93,6 +97,9 @@ if __name__=='__main__':
 
     spider_start_urls_list = []
     spider_user_agent_list = []
+
+    scrapy_start_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
     for i in range(process_nums):
         # start_request_list
         start_url_str = ','.join(
@@ -121,7 +128,7 @@ if __name__=='__main__':
     p = Pool(process_nums)
     for i in range(process_nums):
         # 首次执行
-        p.apply_async(execute_spider, args=(i+1, spider_start_urls_list[i], spider_user_agent_list[i], i),)
+        p.apply_async(execute_spider, args=(i+1, spider_start_urls_list[i], spider_user_agent_list[i], i,scrapy_start_time),)
         # 再次执行
         # p.apply_async(resume_execute_spider, args=(i + 1, spider_start_urls_list[i], custom_settings_str_list[i], i), )
 

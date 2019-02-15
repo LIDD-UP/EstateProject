@@ -5,12 +5,16 @@
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
+import random
+import time
+import datetime
+import re
 from scrapy import signals
 from fake_useragent import UserAgent
 from scrapy import Request
 from AmericanRealEstate.settings import realtor_user_agent_list, trulia_cookies_list
-import random
-import time
+
+
 
 
 class AmericanrealestateSpiderMiddleware(object):
@@ -283,30 +287,60 @@ class Process302MetaMiddleware(object):
 class TestGetSpiderAttrMiddleware(object):
 
     def process_request(self, request, spider):
+        # # 随机停顿
+        random_seed = [0,1]
+        from random import choice
+        a = choice(random_seed)
+        print('a:-----------------',a)
+        if a == 1:
+            time.sleep(3)
+
+        # 爬虫爬取3个小时后停止31分钟
+        # spider_scrapy_start_time = spider.scrapy_start_time
+        # if spider_scrapy_start_time is not None:
+        #     scrapy_time_now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        #     true_scrapy_time_now = datetime.datetime.strptime(scrapy_time_now, '%Y-%m-%d %H:%M:%S')
+        #     time_seconds_subtract = true_scrapy_time_now-spider_scrapy_start_time
+        #     time_hour_subtract = int(time_seconds_subtract/3600)
+        #     print('时间间隔：',time_hour_subtract)
+        #     if time_hour_subtract%3 ==0:
+        #         time.sleep(1890)
+
         if getattr(spider, 'user_agent_list', None) is not None:
             print(spider.user_agent_list)
             spider_user_agent_list = spider.user_agent_list
             print(len(spider_user_agent_list))
             if len(spider_user_agent_list) != 0:
                 # 每次固定取第零个
+                # 每次随机获取一个：
                 print('设置的user-agent',spider_user_agent_list[0])
                 request.headers.setdefault('User-Agent',spider_user_agent_list[0])
-                print('设置固定的user-agent')
+
+                agent_random_seed = [0, 1,2,3,4,5,6,7,8,9]
+                from random import choice
+                a = choice(agent_random_seed)
+                if a == 1:
+                    user_agent_random_index = choice(
+                        [random_seed for random_seed in range(len(spider_user_agent_list))])
+                    print('设置的user-agent', spider_user_agent_list[user_agent_random_index])
+                    request.headers.setdefault('User-Agent', spider_user_agent_list[user_agent_random_index])
+
+                # request.headers.setdefault('User-Agent', spider_user_agent_list[0])
+                print('设置固定随机的user-agent')
 
     def process_response(self,request,response,spider):
-        # 随机停顿
-        random_seed=[0,1]
-        from random import choice
-        a = choice(random_seed)
-        if a ==1:
-            time.sleep(3)
-
-        if response.status == 200:
+        # random_seed = [0, 1]
+        # from random import choice
+        # a = choice(random_seed)
+        # if a == 1:
+        #     time.sleep(5)
+        response_url = response.url
+        if len(re.findall('property-overview',response_url))==0 and response.status == 200:
             with open('./has_already_crawl_url.txt','a+') as f:
-                f.write(response.url+',\n')
+                f.write(response_url+'\n')
         if response.status == 302:
-            time.sleep(600)
-            print('被发现了，沉睡10分钟切换user-agent')
+            time.sleep(1890)
+            print('被发现了，沉睡30分钟切换user-agent')
             print('byte user agent',request.headers['User-Agent'])
             invalidation_user_agent = request.headers['User-Agent'].decode()
             print(invalidation_user_agent)

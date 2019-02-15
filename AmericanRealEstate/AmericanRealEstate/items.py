@@ -54,3 +54,9 @@ class SearchCriteriaItem(scrapy.Item):
 class StatisticRealtorHouseCountItem(scrapy.Item):
     county = scrapy.Field()
     count = scrapy.Field()
+
+
+class RealtorPropertyIdItem(scrapy.Item):
+    propertyId = scrapy.Field()
+
+

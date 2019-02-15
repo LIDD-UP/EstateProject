@@ -8,7 +8,7 @@
 from twisted.enterprise import adbapi
 import pymysql
 
-from AmericanRealEstate.items import StateNameCountyNameItem,CountyNameZipCodeItem,RealtorHouseInfoJsonItem,RealtorDetailDomItem,TruliaHouseInfoItem,SearchCriteriaItem,StatisticRealtorHouseCountItem
+from AmericanRealEstate.items import StateNameCountyNameItem,CountyNameZipCodeItem,RealtorHouseInfoJsonItem,RealtorDetailDomItem,TruliaHouseInfoItem,SearchCriteriaItem,StatisticRealtorHouseCountItem,RealtorPropertyIdItem
 from crawl_tools.get_sql_con import get_sql_con
 from crawl_tools.test_file import post_url
 from AmericanRealEstate.settings import post_interface_url
@@ -84,6 +84,23 @@ class RealtorHouseInfoPipeline(object):
                 '''
                 insert into realtor_house_json_data_new_2(houseData) values(%s)
                 ''', [item['houseData']
+                      ]
+            )
+        self.conn.commit()
+        return item
+
+
+class RealtorRealtorPropertyIdPipeline(object):
+    def __init__(self):
+        self.conn = get_sql_con()
+
+    def process_item(self, item, spider):
+        if isinstance(item,RealtorPropertyIdItem):
+            cursor = self.conn.cursor()
+            cursor.execute(
+                '''
+                insert into realtor_property_id(propertyId) values(%s)
+                ''', [item['propertyId']
                       ]
             )
         self.conn.commit()

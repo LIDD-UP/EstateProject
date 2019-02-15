@@ -337,6 +337,18 @@ class TestGetSpiderAttrMiddleware(object):
             if a == 1:
                 time.sleep(10)
 
+        if len(re.findall(r'/api/v1/', request.url)) > 0:
+            realtor_web_headers = {
+            "Cache-Control": "public",
+            "Mapi-Bucket": "for_sale_v2:on,for_rent_ldp_v2:on,for_rent_srp_v2:on,recently_sold_ldp_v2:on,recently_sold_srp_v2:on,not_for_sale_ldp_v2:on,not_for_sale_srp_v2:on,search_reranking_srch_rerank1:variant1",
+            "Host": "mapi-ng.rdc.moveaws.com",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip",
+            "User-Agent": "okhttp/3.10.0",
+        }
+            for k, v in realtor_web_headers.items():
+                request.headers.setdefault(k, v)
+
 
 
         if getattr(spider, 'user_agent_list', None) is not None :

@@ -150,6 +150,7 @@ MYSQL_PASSWORD = '123456'
 import pandas as pd
 realtor_search_criteria = list(set(list(pd.read_csv(r'j:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\realtor_search_criteria.csv')['countyStateJoin'])))
 trulia_search_criteria = list(set(list(pd.read_csv(r'j:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\trulia_search_criteria.csv')['countyStateJoin'])))
+# realtor_search_criteria = list(set(list(pd.read_csv(r'j:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\realtor_app_url_api.csv')['apiUrl'])))
 
 
 # post_url

@@ -89,6 +89,7 @@ class RealtorAppSpider(scrapy.Spider):
         "COOKIES_ENABLED": False,
         "REDIRECT_ENABLED": False,
         "REFERER_ENABLED" :False,
+        "RETRY_ENABLED": False,
         # "RETRY_HTTP_CODES": [500, 502, 503, 504, 400, 408]
 
         # "LOG_FILE": "realtor_log.txt",

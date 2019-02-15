@@ -87,6 +87,7 @@ class RealtorPropertyWebSpider(scrapy.Spider):
         },
         "COOKIES_ENABLED": False,
         "REDIRECT_ENABLED": False,
+        "RETRY_ENABLED": False,
         # "RETRY_HTTP_CODES": [500, 502, 503, 504, 400, 408]
 
         # "LOG_FILE": "realtor_log.txt",
@@ -127,7 +128,7 @@ class RealtorPropertyWebSpider(scrapy.Spider):
             # yield scrapy.Request(url=true_detail_url,callback=self.parse_content)
 
             # 使用接口方式获取数据
-            x = re.findall(r'(M\d{5}-\d{5})', detail_url)
+            x = re.findall(r'(\d{5}-\d{5})', detail_url)
             if len(x) != 0:
                 x = x[-1]
                 x = x.replace('-', '')

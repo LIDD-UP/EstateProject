@@ -59,8 +59,8 @@ def execute_spider(num,start_urls,user_agent_list,scrapy_start_time,*args,**kwar
     # print('realtor{}'.format(num))
     execute(['scrapy', 'crawl',
              # 'realtor_app',
-             'realtor_property_web',
-             # 'realtor_app_api_test',
+             # 'realtor_property_web',
+             'realtor_app_api_test',
              "-a",
              "start_urls={}".format(start_urls),
              "-a",
@@ -122,7 +122,7 @@ if __name__=='__main__':
             user_agent_str = '|'.join(
                 realtor_user_agent_list[each_spider_user_agent_number * i:])
 
-        print(start_url_str)
+        # print(start_url_str)
         spider_start_urls_list.append(start_url_str)
 
         spider_user_agent_list.append(user_agent_str)

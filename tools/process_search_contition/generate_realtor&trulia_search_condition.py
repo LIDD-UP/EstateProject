@@ -23,11 +23,19 @@ new_data = pd.DataFrame()
 
 # generate trulia search critertia
 # County/NY/New_York_Real_Estate/
-new_data['countyStateJoin'] = ['https://www.trulia.com/County'+'/'+y+'/'+'_'.join(x.split(' '))+'_Real_Estate' for i,x in enumerate(data['countyName']) for j,y in enumerate(data['stateAbbreviation']) if i==j]
+# new_data['countyStateJoin'] = ['https://www.trulia.com/County'+'/'+y+'/'+'_'.join(x.split(' '))+'_Real_Estate' for i,x in enumerate(data['countyName']) for j,y in enumerate(data['stateAbbreviation']) if i==j]
+# new_data = new_data.drop_duplicates()
+# print(new_data)
+# new_data.to_csv('./trulia_search_criteria.csv',index=False)
+
+
+
+# generate realtor app list page url interface
+url_sample = 'https://mapi-ng.rdc.moveaws.com/api/v1/properties?offset=0&limit=200&county=New+York&state_code=NY&sort=relevance&schema=mapsearch&client_id=rdc_mobile_native%2C9.4.2%2Candroid'
+new_data['countyStateJoin'] = ['https://mapi-ng.rdc.moveaws.com/api/v1/properties?offset=0&limit=200&county='+'+'.join(x.split(' '))+'&state_code='+y+'&sort=relevance&schema=mapsearch&client_id=rdc_mobile_native%2C9.4.2%2Candroid' for i,x in enumerate(data['countyName']) for j,y in enumerate(data['stateAbbreviation']) if i==j]
 new_data = new_data.drop_duplicates()
 print(new_data)
-new_data.to_csv('./trulia_search_criteria.csv',index=False)
-
+new_data.to_csv('./realtor_app_list_page_search_criteria.csv',index=False)
 
 
 # print(new_data)

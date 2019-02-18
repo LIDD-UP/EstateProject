@@ -141,6 +141,14 @@ MYSQL_DBNAME = 'america_real_estate'
 MYSQL_USER = 'root'
 MYSQL_PASSWORD = '123456'
 
+# postgresql 本地数据库配置
+PSQL_HOST = '127.0.0.1'
+PSQL_PROT = '5432'
+PSQL_DBNAME = 'realtor_data'
+PSQL_USER = 'postgres'
+PSQL_PASSWORD = '123456'
+
+
 # 日子输出：
 # LOG_FILE="log.txt"
 
@@ -151,7 +159,7 @@ import pandas as pd
 realtor_search_criteria = list(set(list(pd.read_csv(r'j:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\realtor_search_criteria.csv')['countyStateJoin'])))
 trulia_search_criteria = list(set(list(pd.read_csv(r'j:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\trulia_search_criteria.csv')['countyStateJoin'])))
 # realtor_search_criteria = list(set(list(pd.read_csv(r'j:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\realtor_app_url_api.csv')['apiUrl'])))
-
+realtor_list_search_criteria = list(set(list(pd.read_csv(r'j:\PycharmProject\EstateProject\AmericanRealEstate\crawl_tools\realtor_app_list_page_search_criteria.csv')['countyStateJoin'])))
 
 # post_url
 post_interface_url = 'http://192.168.0.65:8080/America-DataSave/index/saveRealtorDataJson/'

@@ -8,7 +8,7 @@
 from twisted.enterprise import adbapi
 import pymysql
 
-from AmericanRealEstate.items import StateNameCountyNameItem,CountyNameZipCodeItem,RealtorHouseInfoJsonItem,RealtorDetailDomItem,TruliaHouseInfoItem,SearchCriteriaItem,StatisticRealtorHouseCountItem,RealtorPropertyIdItem
+from AmericanRealEstate.items import StateNameCountyNameItem,CountyNameZipCodeItem,RealtorHouseInfoJsonItem,RealtorDetailDomItem,TruliaHouseInfoItem,SearchCriteriaItem,StatisticRealtorHouseCountItem,RealtorPropertyIdItem,RealtorListPageJsonItem
 from crawl_tools.get_sql_con import get_sql_con
 from crawl_tools.test_file import post_url
 from AmericanRealEstate.settings import post_interface_url
@@ -106,6 +106,22 @@ class RealtorRealtorPropertyIdPipeline(object):
         self.conn.commit()
         return item
 
+
+class RealtorListPageJsonPipeline(object):
+    def __init__(self):
+        self.conn = get_sql_con()
+
+    def process_item(self, item, spider):
+        if isinstance(item,RealtorListPageJsonItem):
+            cursor = self.conn.cursor()
+            cursor.execute(
+                '''
+                insert into realtor_list_page_json(jsonData) values(%s)
+                ''', [item['jsonData']
+                      ]
+            )
+        self.conn.commit()
+        return item
 
 '''
 当item插入速度跟不上页面的解析速度的时候，普通的mysql插入方式并不好：

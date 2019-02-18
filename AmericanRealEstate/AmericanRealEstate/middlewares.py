@@ -414,6 +414,54 @@ class TestGetSpiderAttrMiddleware(object):
         return response
 
 
+# realtor list page middleware
+# mainly add time delay
+class RealtorListPageDelayAnd302Middleware(object):
+    def __init__(self):
+        super(RealtorListPageDelayAnd302Middleware,self).__init__()
+        self.stop_signal = 1
+        # self.user_agent_index = 0
+
+    def process_request(self,request,spider):
+        # # 第一次随机获取一个列表中的user-agen
+        # if self.is_first_get_user_agent:
+        #     random_index = random.randint(0, len(realtor_user_agent_list))
+        #     request.headers.setdefault('User-Agent', realtor_user_agent_list[random_index])
+        #     self.is_first_get_user_agent = False
+        #
+        # if self.change_user_agent:
+        #     random_index = random.randint(0, len(realtor_user_agent_list))
+        #     request.headers.setdefault('User-Agent', realtor_user_agent_list[random_index])
+        #     self.change_user_agent = False
+        choice_value = random.choice([0, 1])
+        if choice_value ==1:
+            time.sleep(5)
+
+
+    def process_response(self, request, response, spider):
+        print(response.status)
+        if response.status in [x for x in range(300,500)]:
+            print('当前的status code：', response.status)
+            # 设置暂停时间
+            import time
+            time.sleep(1)
+            self.stop_signal += 1
+            print(self.stop_signal)
+            #
+            if self.stop_signal > 100:
+                spider.crawler.engine.close_spider(spider, '爬虫已经被发现了')
+
+
+            # # 去掉该user-agent,同时将change_user_agent置为True
+            # print(request.headeres['user-agent'])
+            # realtor_user_agent_list.remove(request.headers['user-agent'])
+            # self.change_user_agent = True
+            # return request
+        return response
+
+
+
+
 # 使用代理ip进行抓取:
 class AlterProxyIPMiddleware(object):
 

@@ -28,4 +28,5 @@ if __name__ == '__main__':
         ''', [dict_test]
 
     )
+
     test_conn.commit()

@@ -447,7 +447,7 @@ class RealtorListPageDelayAnd302Middleware(object):
             time.sleep(1)
             self.stop_signal += 1
             print(self.stop_signal)
-            #
+
             if self.stop_signal > 100:
                 spider.crawler.engine.close_spider(spider, '爬虫已经被发现了')
 

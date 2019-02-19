@@ -10,6 +10,7 @@ import pymysql
 
 from AmericanRealEstate.items import StateNameCountyNameItem,CountyNameZipCodeItem,RealtorHouseInfoJsonItem,RealtorDetailDomItem,TruliaHouseInfoItem,SearchCriteriaItem,StatisticRealtorHouseCountItem,RealtorPropertyIdItem,RealtorListPageJsonItem
 from crawl_tools.get_sql_con import get_sql_con
+from crawl_tools.get_psql_con import get_psql_con
 from crawl_tools.test_file import post_url
 from AmericanRealEstate.settings import post_interface_url
 
@@ -109,14 +110,14 @@ class RealtorRealtorPropertyIdPipeline(object):
 
 class RealtorListPageJsonPipeline(object):
     def __init__(self):
-        self.conn = get_sql_con()
+        self.conn = get_psql_con()
 
     def process_item(self, item, spider):
         if isinstance(item,RealtorListPageJsonItem):
             cursor = self.conn.cursor()
             cursor.execute(
                 '''
-                insert into realtor_list_page_json(jsonData) values(%s)
+                insert into realtor_list_page_json("jsonData") values(%s)
                 ''', [item['jsonData']
                       ]
             )

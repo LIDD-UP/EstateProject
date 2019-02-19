@@ -590,6 +590,57 @@ https://www.realtor.com/property-overview/M7076150985
 
 
 
+最新抓取策略步骤：
+
+    整个流程的过程：
+        1：列表页的抓取（每天都要进行）（10小时内完成）
+        2：存入到数据库中形成表1：realtor_list_page_json_data
+        3:拆分realtor_list_page_json_data 形成表2：realtor_list_page_json_data_splite
+        4:如果是第一次，就直接将拆分的数据再存入到表3：judge_with_realtor_list_page_json_data_splite_to_decide_which_need_to_update
+            如果是第二次就需要跟表judge_with_realtor_list_page_json_data_splite_to_decide_which_need_to_update 对比property_id 字段，last_update字段，address字段
+                字段说明：
+                    1：property_id：对比判断当前id是否存在，若存在在进行判断last_update 字段和address字段是否相同，若不同则将详情页数据表：realtor_detail_page_json_data 中的is_dirty 字段设置为1
+                        若不存在则将该property_id 添加到judge_with_realtor_list_page_json_data_splite_to_decide_which_need_to_update，同时在将该property_id添加到realtor_detail_page_json_data的Property_id字段
+        5：realtor_detail_page_json_data
+            对于该表，如果是第一次，就将judge_with_realtor_list_page_json_data_splite_to_decide_which_need_to_update 表中的property_id 插入到该表中，其实第4步完成了该功能；
+
+        6：然后在详情页抓取策略：
+            判断realtor_detail_page_json_data 表中的is_dirty是否为1 和jsonData字段是否为空：如果是这两个其中一个条件满足，就将该字段的property_id 提出来之后作为爬取条件；
+        7：对于新爬取的数据就直接插入，应该是更新该字段，新字段的产生都通过列表页的抓取提供，更新字段包括，jsonData，is_dirty为0
+
+        整个流程就是这样，最后就是要解决开发问题：
+            1：最重要的就是爬虫爬取的限制问题解决方法；（通过代码的方式展示middleware中）
+                由于当前不知道接口有没有user-agent限制，所以不做user-agent的变化；
+                1：列表页的策略；
+                    速度：10小时内：
+                        1：单个并发，然后设置随机停止5秒，需要传入一个起始时间，再抓取了2个小时后，停止半个小时；
+                        2：4个并发，然后设置随机停止5秒，抓取了半个小时后停止10分钟
+
+                2：详情页的抓取：
+                    1：单个并发，然后设置随机停止5秒，需要传入一个起始时间，再抓取了2个小时后，停止半个小时；
+                        2：4个并发，然后设置随机停止5秒，抓取了半个小时后停止10分钟
+
+
+
+    1：利用列表页的抓取接口返回所有的property_id(大约1w~2w）（抓取的时候稳一点）
+
+
+        关于再抓取策略的问题：
+            1：首先先抓取列表页的数据
+            2：
+        抓取的数据的处理方式：
+            拆分字段：（可能需要用到存储过程）
+                关于列表页数据表的问题
+                    1：房屋的基本字段
+                    2：property_id  字段（用于作为详情页接口进行抓取数据）（数据接口包括两个）
+                    3：last_update 字段 ：（用于检测新抓取的数据和当前数据更新时间对比，如果时间变化，就将该数据作为脏数据，并将is_dirty 字段更新为1；
+                    4：新建一个is_dirty 字段：如果该字段为1，则表示当前为脏数据，需要重新抓取详情页的信息；抓取了详情页的信息之后将该字段设置为0；
+                关于详情页数据的数据表的问题：
+                    1：整体的json数据，
+                    2：
+
+    2:利用
+
 
 
 

@@ -49,17 +49,19 @@ class RealtorAppListPageSpider(scrapy.Spider):
 
     def parse(self, response):
         res_text = response.text
+        res_url = response.url
         realtor_list_page_item = RealtorListPageJsonItem()
         realtor_list_page_item['jsonData'] = res_text
-        yield realtor_list_page_item
+
 
         json_res_listings = json.loads(res_text)['listings']
-        offset_count = 1
-        county_name = re.findall(r'county=(.*)&state_code',res_text)[0]
-        state_code = re.findall(r'state_code=(.*)&sort=relevance',res_text)[0]
-        while len(json_res_listings) !=0:
-            next_url = 'https://mapi-ng.rdc.moveaws.com/api/v1/properties?offset={}&limit=200&county={}&state_code={}&sort=relevance&schema=mapsearch&client_id=rdc_mobile_native%2C9.4.2%2Candroid'.format(offset_count*200,county_name,state_code)
-            offset_count += 1
+
+        offset = int(re.findall(r'offset=(.*)&limit', res_url)[0])
+        county_name = re.findall(r'county=(.*)&state_code', res_url)[0]
+        state_code = re.findall(r'state_code=(.*)&sort=relevance', res_url)[0]
+        if len(json_res_listings) != 0:
+            yield realtor_list_page_item
+            next_url = 'https://mapi-ng.rdc.moveaws.com/api/v1/properties?offset={}&limit=200&county={}&state_code={}&sort=relevance&schema=mapsearch&client_id=rdc_mobile_native%2C9.4.2%2Candroid'.format(offset+200,county_name,state_code)
             yield scrapy.Request(url=next_url,callback=self.parse)
 
 

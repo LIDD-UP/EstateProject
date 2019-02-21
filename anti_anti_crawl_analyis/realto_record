@@ -646,6 +646,87 @@ https://www.realtor.com/property-overview/M7076150985
 
 
 
+realtor 新的流程：
+
+list——page页面的抓取：
+每次的搜索条件一样
+1：可以全部抓完之后再做后续的工作，也可以抓一条之后就进行处理，先弄边抓边处理的流程。
+
+2：detail 页面的数据抓取：
+    1：从psql数据库中读数据，然后传入spider中进行抓取，再抓取的过程中需要注意保存抓取了和为抓取的url（保存到txt文档中），这样方便处理；
+    2：从psql数据库中读取，然后放入到redis中，那么这样的话就需要做成scrapy-redis了，那么这个时候就可以将抓取过的放入redis中的一个key中，没抓取的放到一个key中，不用用txt保存；
+    3：对数据还需要进行修改，需要加入操作时间信息
+    4：对程序进行修改，可以利用web 和app两个接口进行抓取，提升速度，但是这里存在的问题是web端已经没有测试ip了，现在慢速情况下也会被封ip。
+
+
+
+
+
+sql 语句：
+-- INSERT INTO realtor_list_page_json_splite ( "propertyId", "lastUpdate", address ) SELECT
+-- json_array_elements ( "jsonData" -> 'listings' ) ->> 'property_id' AS "propertyId",
+-- json_array_elements ( "jsonData" -> 'listings' ) ->> 'last_update' AS "lastUpdate",
+-- json_array_elements ( "jsonData" -> 'listings' ) ->> 'address' AS address
+-- FROM
+-- 	realtor_list_page_json
+
+-- 找到有的propertyId
+-- SELECT
+-- 	rl."propertyId" AS "listPropertyId",
+-- 	rl."lastUpdate" AS "listLastUpdate",
+-- 	rl.address AS "listAddress",
+-- 	rd."propertyId" AS "detailPropertyId",
+-- 	rd."lastUpdate" AS "detailLastUpdate",
+-- 	rd.address AS "detailAddress"
+-- FROM
+-- 	realtor_list_page_json_splite rl
+-- 	INNER JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
+
+-- UPDATE realtor_detail_page_json set "isDirty"='1'
+-- WHERE "propertyId" ='6264702487'
+
+
+-- 找到没有的propertyId
+
+-- INSERT INTO realtor_detail_page_json( "propertyId", "lastUpdate", address,"isDirty")
+-- (SELECT
+-- 	rl."propertyId" AS "listPropertyId",
+-- 	rl."lastUpdate" AS "listLastUpdate",
+-- 	rl.address AS "listAddress",
+-- 	0
+--
+-- -- 	rd."propertyId" AS "detailPropertyId",
+-- -- 	rd."lastUpdate" AS "detailLastUpdate",
+-- -- 	rd.address AS "detailAddress"
+-- FROM
+-- 	realtor_list_page_json_splite rl
+-- 	left JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
+-- 	WHERE rd."propertyId" is NULL
+-- 	and rl."propertyId" is NOT null
+-- 	 and rl."lastUpdate" is NOT NULL
+-- 	 and rl.address is NOT NULL
+--
+-- 	)
+
+
+
+
+
+-- SELECT "propertyId" FROM realtor_detail_page_json
+-- WHERE "detailJson" is NOT NULL
+-- AND "isDirty" ='1'
+
+-- UPDATE realtor_detail_page_json set "detailJson"='{"aa":"11"}' ,"isDirty"='0'
+-- WHERE "propertyId" ='6264702487'
+--
+-- update realtor_detail_page_json set "optionDate"=now()
+
+
+
+app api :100kb 以内的网速，国内广东2vpn，10个并发，40分钟跑了14000条，没有被封ip，
+所以可以这样做：爬取1个小时之后停10分钟继续跑，就以之前的速度跑，
+
+
 
 
 

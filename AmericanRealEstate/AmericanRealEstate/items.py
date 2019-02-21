@@ -64,3 +64,9 @@ class RealtorListPageJsonItem(scrapy.Item):
     jsonData = scrapy.Field()
 
 
+class RealtorDetailPageJsonItem(scrapy.Item):
+    detailJson =scrapy.Field()
+    propertyId = scrapy.Field()
+
+
+

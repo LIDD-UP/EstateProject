@@ -8,7 +8,7 @@ from scrapy_redis.spiders import RedisSpider
 import pandas as pd
 import ast
 
-from AmericanRealEstate.items import RealtorHouseInfoJsonItem, RealtorDetailDomItem
+from AmericanRealEstate.items import RealtorHouseInfoJsonItem, RealtorDetailDomItem,RealtorDetailPageJsonItem
 from AmericanRealEstate.settings import realtor_search_criteria, realtor_domain_url
 
 
@@ -54,7 +54,7 @@ class RealtorWebAppMergeByPropertySpider(scrapy.Spider):
 
     custom_settings = {
         "ITEM_PIPELINES": {
-            'AmericanRealEstate.pipelines.RealtorHouseInfoPipeline': 301,
+            'AmericanRealEstate.pipelines.RealtordetailPagePsqlPipeline': 301,
             # 'AmericanRealEstate.pipelines.RealtorDetailDomPipeline': 302,
             # 'AmericanRealEstate.pipelines.RealtorHouseInfoTestPipeline': 302,
             # 'scrapy_redis.pipelines.RedisPipeline': 300
@@ -67,9 +67,10 @@ class RealtorWebAppMergeByPropertySpider(scrapy.Spider):
          #    'AmericanRealEstate.middlewares.TestGetSpiderAttrMiddleware':1,
             # 'AmericanRealEstate.middlewares.Process302Middleware' :544,
             # 'AmericanRealEstate.middlewares.AlertUserAgentWhenEncounter302Middleware': 545,
-            'AmericanRealEstate.middlewares.RealtorListPageDelayAnd302Middleware1': 545,
+            'AmericanRealEstate.middlewares.RealtorDetailPageMiddleware1': 545,
 
     },
+
         "DEFAULT_REQUEST_HEADERS": {
                 "Cache-Control": "public",
                 "Mapi-Bucket": "for_sale_v2:on,for_rent_ldp_v2:on,for_rent_srp_v2:on,recently_sold_ldp_v2:on,recently_sold_srp_v2:on,not_for_sale_ldp_v2:on,not_for_sale_srp_v2:on,search_reranking_srch_rerank1:variant1",
@@ -123,8 +124,9 @@ class RealtorWebAppMergeByPropertySpider(scrapy.Spider):
 
     def parse(self,response):
         # 接口的parse
-        realtor_house_info_item = RealtorHouseInfoJsonItem()
-        realtor_house_info_item['houseData'] = response.text
-        yield realtor_house_info_item
+        realtor_detail_pageJson_item = RealtorDetailPageJsonItem()
+        realtor_detail_pageJson_item['detailJson'] = response.text
+        realtor_detail_pageJson_item['propertyId'] = re.findall(r'api/v1/properties/(\d.*)\?client_id=',response.url)[0]
+        yield realtor_detail_pageJson_item
 
 

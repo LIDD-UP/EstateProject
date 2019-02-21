@@ -110,14 +110,14 @@ class RealtorRealtorPropertyIdPipeline(object):
 
 class RealtorListPageJsonPipeline(object):
     def __init__(self):
-        self.conn = get_psql_con()
+        self.conn = get_sql_con()
 
     def process_item(self, item, spider):
         if isinstance(item,RealtorListPageJsonItem):
             cursor = self.conn.cursor()
             cursor.execute(
                 '''
-                insert into realtor_list_page_json("jsonData") values(%s)
+                insert into realtor_list_page_json(jsonData) values(%s)
                 ''', [item['jsonData']
                       ]
             )
@@ -245,6 +245,16 @@ class StatisticRealtorHouseCountPipeline(object):
             )
         self.conn.commit()
         return item
+
+
+
+
+# realtor postgresql pipeline
+
+
+
+
+
 
 
 

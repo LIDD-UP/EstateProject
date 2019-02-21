@@ -21,7 +21,7 @@ realtor_header = {
     # 'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36',
     # 'User-Agent':'Mozilla/5.0 (Windows NT 6.1; ; x64; rv:0.0) Gecko/1 Fiox/5.0',
     # 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)',
-    # 'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:21.000101 Firefox/21.0'
+    # 'user-agent': 'Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.8.1.8) Gecko/20071022 Ubuntu/7.10 (gutsy) Firefox/2.0.0.8'
 
     # 'user-agent' : 'Opera/9.80 (X11; Linux x86_64; U; fr) Presto/2.9.168 Version/11.50',
     # 'User-Agent' : 'Mozilla/5.0 (Windows NT; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.17 Safari/537.36',
@@ -75,10 +75,10 @@ print(res.text)
 #
 # with open('./realtor_test.html','w',encoding='utf-8') as f:
 #     f.write(res.text)
-
-
-
-
+# Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.1) Gecko/20090716 Linux Mint/7 (Gloria) Firefox/3.5.1
+#
+# Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.8.1.8) Gecko/20071022 Ubuntu/7.10 (gutsy) Firefox/2.0.0.8
+# Mozilla/5.0 (Windows; U; Windows NT 6.0; sv-SE; rv:1.9.1b2) Gecko/20081201 Firefox/3.1b2
 
 
 

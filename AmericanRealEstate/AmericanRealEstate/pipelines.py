@@ -83,7 +83,7 @@ class RealtorHouseInfoPipeline(object):
             cursor = self.conn.cursor()
             cursor.execute(
                 '''
-                insert into realtor_house_json_data_new_2(houseData) values(%s)
+                insert into realtor_house_json_data_new_4(houseData) values(%s)
                 ''', [item['houseData']
                       ]
             )

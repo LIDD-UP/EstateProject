@@ -58,9 +58,10 @@ def execute_spider(num,start_urls,user_agent_list,scrapy_start_time,*args,**kwar
     # print('开启了第{}爬虫进程'.format(num))
     # print('realtor{}'.format(num))
     execute(['scrapy', 'crawl',
+             'realtor',
              # 'realtor_app',
              # 'realtor_property_web',
-             'realtor_app_api_test',
+             # 'realtor_app_api_test',
              "-a",
              "start_urls={}".format(start_urls),
              "-a",

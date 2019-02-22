@@ -9,7 +9,7 @@ import pandas as pd
 import ast
 
 from AmericanRealEstate.items import RealtorHouseInfoJsonItem, RealtorDetailDomItem,RealtorDetailPageJsonItem
-from AmericanRealEstate.settings import realtor_search_criteria, realtor_domain_url
+# from AmericanRealEstate.settings import realtor_search_criteria, realtor_domain_url
 
 
 
@@ -17,20 +17,21 @@ from AmericanRealEstate.settings import realtor_search_criteria, realtor_domain_
 class RealtorWebAppMergeByPropertySpider(scrapy.Spider):
     name = 'realtor_web_app_merge_by_property'
     allowed_domains = ['mapi-ng.rdc.moveaws.com']
-    start_urls = [x for x in realtor_search_criteria]
+    # start_urls = [x for x in realtor_search_criteria]
 
     def __init__(self,
-                 # start_urls=None, user_agent_list=None,
+                 start_urls=None,
+                 # user_agent_list=None,
                  scrapy_start_time=None,
                  *args, **kwargs):
         super(RealtorWebAppMergeByPropertySpider, self).__init__(*args, **kwargs)
-        # print(start_urls)
-        # # 传入start_request_list
-        # start_urls_list = None
-        # if start_urls is not None:
-        #     start_urls_list = start_urls.split(',')
-        #     print(start_urls_list)
-        # self.start_urls = start_urls_list
+        print(start_urls)
+        # 传入start_request_list
+        start_urls_list = None
+        if start_urls is not None:
+            start_urls_list = start_urls.split(',')
+            print(len(start_urls_list))
+        self.start_urls = start_urls_list
         #
         # # 传入user_agent_list
         #
@@ -98,7 +99,7 @@ class RealtorWebAppMergeByPropertySpider(scrapy.Spider):
         },
         "COOKIES_ENABLED": False,
         "REDIRECT_ENABLED": False,
-        "CONCURRENT_REQUESTS" :1,
+        "CONCURRENT_REQUESTS" :15,
         "REFERER_ENABLED": False,
         "RETRY_ENABLED": False,
 

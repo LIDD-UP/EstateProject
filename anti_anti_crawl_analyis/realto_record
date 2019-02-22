@@ -728,6 +728,201 @@ app api :100kb 以内的网速，国内广东2vpn，10个并发，40分钟跑了
 
 
 
+history_sql :
+UPDATE
+realtor_detail_page_json rj
+set
+"isDirty" = '0', "lastUpdate" = tmp."lastUpdate", address = tmp.address
+FROM(
+values
+('6610600259', '2019-01-22T09:03:06Z', '767 Pinehaven Cir in Pine Haven, Clover, 29710', '6610600259', '2019-01-22T09:03:06Z', '767 Pinehaven Cir in Pine Haven, Clover, 29710'),('7800210333', '2018-08-16T18:01:53Z', 'Spur Five Rd, Jump River, 54434', '7800210333', '2018-08-16T18:01:53Z', 'Spur Five Rd, Jump River, 54434'),('3357926695', '2019-01-31T15:01:13Z', '128 Cold Spring Point Rd in Tuckahoe, Southampton, 11968', '3357926695', '2019-01-31T15:01:13Z', '128 Cold Spring Point Rd in Tuckahoe, Southampton, 11968')
+ ) as tmp("propertyId", "lastUpdate",address,aa,bb,cc)
+ WHERE rj."propertyId" =tmp."propertyId"
+
+
+
+ -- INSERT INTO realtor_list_page_json_splite ( "propertyId", "lastUpdate", address ,"optionDate")
+-- SELECT
+-- json_array_elements ( "jsonData" -> 'listings' ) ->> 'property_id' AS "propertyId",
+-- json_array_elements ( "jsonData" -> 'listings' ) ->> 'last_update' AS "lastUpdate",
+-- json_array_elements ( "jsonData" -> 'listings' ) ->> 'address' AS address,
+-- now()
+-- FROM
+-- 	realtor_list_page_json
+
+-- 找到有的propertyId
+-- SELECT
+-- 	rl."propertyId" AS "listPropertyId",
+-- 	rl."lastUpdate" AS "listLastUpdate",
+-- 	rl.address AS "listAddress",
+-- 	rd."propertyId" AS "detailPropertyId",
+-- 	rd."lastUpdate" AS "detailLastUpdate",
+-- 	rd.address AS "detailAddress"
+-- FROM
+-- 	realtor_list_page_json_splite rl
+-- 	INNER JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
+
+
+-- SELECT
+-- 	rl."propertyId" AS "listPropertyId",
+-- 	rl."lastUpdate" AS "listLastUpdate",
+-- 	rl.address AS "listAddress",
+-- 	rd."propertyId" AS "detailPropertyId",
+-- 	rd."lastUpdate" AS "detailLastUpdate",
+-- 	rd.address AS "detailAddress"
+-- FROM
+-- 	realtor_list_page_json_splite rl
+-- 	INNER JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
+-- 	WHERE  rl."propertyId" is NOT null
+-- 	 and rl."lastUpdate" is NOT NULL
+-- 	 and rl.address is NOT NULL
+
+
+
+-- UPDATE realtor_detail_page_json set "isDirty"='1'
+-- WHERE "propertyId" ='6264702487'
+
+
+
+
+-- 找到没有的propertyId
+
+-- INSERT INTO realtor_detail_page_json( "propertyId", "lastUpdate", address,"isDirty")
+-- (SELECT
+-- 	rl."propertyId" AS "listPropertyId",
+-- 	rl."lastUpdate" AS "listLastUpdate",
+-- 	rl.address AS "listAddress",
+-- 	0
+-- -- -- -- -- 	rd."propertyId" AS "detailPropertyId",
+-- -- -- -- -- 	rd."lastUpdate" AS "detailLastUpdate",
+-- -- -- -- -- 	rd.address AS "detailAddress"
+-- FROM
+-- 	realtor_list_page_json_splite rl
+-- 	left JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
+-- 	WHERE rd."propertyId" is NULL
+-- 	and rl."propertyId" is NOT null
+-- 	 and rl."lastUpdate" is NOT NULL
+-- 	 and rl.address is NOT NULL
+-- 	)
+--
+
+
+
+
+-- SELECT "propertyId" FROM realtor_detail_page_json
+-- WHERE "detailJson" is NOT NULL
+-- AND "isDirty" ='1'
+
+-- UPDATE realtor_detail_page_json set "detailJson"='{"aa":"11"}' ,"isDirty"='0'
+-- WHERE "propertyId" ='6264702487'
+--
+-- update realtor_detail_page_json set "optionDate"=now()
+
+
+
+
+-- SELECT
+-- 	"propertyId"
+-- FROM
+-- 	realtor_detail_page_json
+-- WHERE
+-- 	"isDirty" = '1'
+-- 	OR "detailJson" IS NULL
+--
+
+
+
+
+--------------------------------------------------------:>>>>>>>>>>>>>>>>sql
+-- INSERT INTO realtor_list_page_json_splite ( "propertyId", "lastUpdate", address ,"optionDate")
+-- SELECT
+-- json_array_elements ( "jsonData" -> 'listings' ) ->> 'property_id' AS "propertyId",
+-- json_array_elements ( "jsonData" -> 'listings' ) ->> 'last_update' AS "lastUpdate",
+-- json_array_elements ( "jsonData" -> 'listings' ) ->> 'address' AS address,
+-- now()
+-- FROM
+-- 	realtor_list_page_json
+
+-- 找到有的propertyId
+-- SELECT
+-- 	rl."propertyId" AS "listPropertyId",
+-- 	rl."lastUpdate" AS "listLastUpdate",
+-- 	rl.address AS "listAddress",
+-- 	rd."propertyId" AS "detailPropertyId",
+-- 	rd."lastUpdate" AS "detailLastUpdate",
+-- 	rd.address AS "detailAddress"
+-- FROM
+-- 	realtor_list_page_json_splite rl
+-- 	INNER JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId" and rl."lastUpdate"=rd."lastUpdate"
+
+
+-- SELECT
+-- 	rl."propertyId" AS "listPropertyId",
+-- 	rl."lastUpdate" AS "listLastUpdate",
+-- 	rl.address AS "listAddress",
+-- 	rd."propertyId" AS "detailPropertyId",
+-- 	rd."lastUpdate" AS "detailLastUpdate",
+-- 	rd.address AS "detailAddress"
+-- FROM
+-- 	realtor_list_page_json_splite rl
+-- 	INNER JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
+-- 	WHERE  rl."propertyId" is NOT null
+-- 	 and rl."lastUpdate" is NOT NULL
+-- 	 and rl.address is NOT NULL
+
+
+
+-- UPDATE realtor_detail_page_json set "isDirty"='1'
+-- WHERE "propertyId" ='6264702487'
+
+
+
+
+-- 找到没有的propertyId
+
+-- INSERT INTO realtor_detail_page_json( "propertyId", "lastUpdate", address,"isDirty")
+-- (SELECT
+-- 	rl."propertyId" AS "listPropertyId",
+-- 	rl."lastUpdate" AS "listLastUpdate",
+-- 	rl.address AS "listAddress",
+-- 	0
+-- -- -- -- -- 	rd."propertyId" AS "detailPropertyId",
+-- -- -- -- -- 	rd."lastUpdate" AS "detailLastUpdate",
+-- -- -- -- -- 	rd.address AS "detailAddress"
+-- FROM
+-- 	realtor_list_page_json_splite rl
+-- 	left JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
+-- 	WHERE rd."propertyId" is NULL
+-- 	and rl."propertyId" is NOT null
+-- 	 and rl."lastUpdate" is NOT NULL
+-- 	 and rl.address is NOT NULL
+-- 	)
+--
+
+
+
+
+-- SELECT "propertyId" FROM realtor_detail_page_json
+-- WHERE "detailJson" is NOT NULL
+-- AND "isDirty" ='1'
+
+-- UPDATE realtor_detail_page_json set "detailJson"='{"aa":"11"}' ,"isDirty"='0'
+-- WHERE "propertyId" ='6264702487'
+--
+-- update realtor_detail_page_json set "optionDate"=now()
+
+
+
+
+-- SELECT
+-- 	"propertyId"
+-- FROM
+-- 	realtor_detail_page_json
+-- WHERE
+-- 	"isDirty" = '1'
+-- 	OR "detailJson" IS NULL
+--
+
 
 
 

@@ -15,7 +15,7 @@ class RealtorAppListPageSpider(scrapy.Spider):
 
     custom_settings = {
         "ITEM_PIPELINES": {
-            'AmericanRealEstate.pipelines.RealtorListPageJsonPipeline': 301,
+            'AmericanRealEstate.pipelines.RealtorListPagePsqlPipeline': 301,
             # 'AmericanRealEstate.pipelines.RealtorDetailDomPipeline': 302,
             # 'AmericanRealEstate.pipelines.RealtorHouseInfoTestPipeline': 302,
             # 'scrapy_redis.pipelines.RedisPipeline': 300
@@ -29,7 +29,7 @@ class RealtorAppListPageSpider(scrapy.Spider):
             # 'AmericanRealEstate.middlewares.TestGetSpiderAttrMiddleware': 1,
             # 'AmericanRealEstate.middlewares.Process302Middleware' :544,
             # 'AmericanRealEstate.middlewares.AlertUserAgentWhenEncounter302Middleware': 545,
-            'AmericanRealEstate.middlewares.RealtorListPageDelayAnd302Middleware': 545,
+            # 'AmericanRealEstate.middlewares.RealtorListPageDelayAnd302Middleware': 545,
 
         },
         "DEFAULT_REQUEST_HEADERS": {
@@ -44,7 +44,7 @@ class RealtorAppListPageSpider(scrapy.Spider):
         "REDIRECT_ENABLED": False,
         "REFERER_ENABLED": False,
         "RETRY_ENABLED": False,
-        "CONCURRENT_REQUESTS":  1,
+        "CONCURRENT_REQUESTS":  15,
     }
 
     def parse(self, response):

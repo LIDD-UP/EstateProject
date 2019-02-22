@@ -13,7 +13,7 @@ from scrapy import signals
 from fake_useragent import UserAgent
 from scrapy import Request
 from AmericanRealEstate.settings import realtor_user_agent_list, trulia_cookies_list
-# from AmericanRealEstate.crawl_tools import get_psql_con
+from crawl_tools import get_psql_con
 
 
 
@@ -72,12 +72,14 @@ class AmericanrealestateSpiderMiddleware(object):
         # spider.logger.info('Spider closed: %s', spider.name)
         conn = get_psql_con.get_psql_con()
         cursor = conn.cursor()
-        sql_string_splite = '''
-            INSERT INTO realtor_list_page_json_splite ( "propertyId", "lastUpdate", address ) SELECT
+        splite_list_json_sql_str = '''
+            INSERT INTO realtor_list_page_json_splite ( "propertyId", "lastUpdate", address,"optionDate" ) SELECT
                 json_array_elements ( "jsonData" -> 'listings' ) ->> 'property_id' AS "propertyId",
                 json_array_elements ( "jsonData" -> 'listings' ) ->> 'last_update' AS "lastUpdate",
-                json_array_elements ( "jsonData" -> 'listings' ) ->> 'address' AS address 
-                FROM realtor_list_page_json
+                json_array_elements ( "jsonData" -> 'listings' ) ->> 'address' AS address,
+                now()
+            FROM
+	          realtor_list_page_json
         '''
         sql_string_update = '''
         SELECT
@@ -769,6 +771,75 @@ class RealtorListPageMiddleware(object):
         return response
 
 
+class RealtorListPageSpiderMiddleware(object):
+    # Not all methods need to be defined. If a method is not defined,
+    # scrapy acts as if the spider middleware does not modify the
+    # passed objects.
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        # This method is used by Scrapy to create your spiders.
+        s = cls()
+        crawler.signals.connect(s.spider_closed, signal=signals.spider_closed)
+
+        return s
+
+    def spider_closed(self, spider):
+        # spider.logger.info('Spider closed: %s', spider.name)
+        conn = get_psql_con.get_psql_con()
+        cursor = conn.cursor()
+        sql_string_splite = '''
+            INSERT INTO realtor_list_page_json_splite ( "propertyId", "lastUpdate", address,"optionDate" ) SELECT
+                json_array_elements ( "jsonData" -> 'listings' ) ->> 'property_id' AS "propertyId",
+                json_array_elements ( "jsonData" -> 'listings' ) ->> 'last_update' AS "lastUpdate",
+                json_array_elements ( "jsonData" -> 'listings' ) ->> 'address' AS address ,
+                now()
+                FROM realtor_list_page_json
+        '''
+        cursor.execute(sql_string_splite)
+        conn.commit()
+        find_exit_data = '''
+        SELECT
+            rl."propertyId" AS "listPropertyId",
+            rl."lastUpdate" AS "listLastUpdate",
+            rl.address AS "listAddress",
+            rd."propertyId" AS "detailPropertyId",
+            rd."lastUpdate" AS "detailLastUpdate",
+            rd.address AS "detailAddress" 
+        FROM
+            realtor_list_page_json_splite rl
+            INNER JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
+        '''
+        cursor.execute(find_exit_data)
+
+
+        sql_string_update2 = '''
+            UPDATE realtor_detail_page_json set "isDirty"='1'
+            WHERE "propertyId" ='6264702487'
+        '''
+
+        sql_string_update3 = '''
+            INSERT INTO realtor_detail_page_json( "propertyId", "lastUpdate", address,"isDirty")
+        (SELECT
+            rl."propertyId" AS "listPropertyId",
+            rl."lastUpdate" AS "listLastUpdate",
+            rl.address AS "listAddress",
+            0
+
+        FROM
+            realtor_list_page_json_splite rl
+            left JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
+            WHERE rd."propertyId" is NULL 
+            and rl."propertyId" is NOT null
+             and rl."lastUpdate" is NOT NULL
+             and rl.address is NOT NULL
+
+            )
+        '''
+
+
+
+
 class RealtorDetailPageMiddleware1(object):
     def __init__(self):
         super(RealtorDetailPageMiddleware1,self).__init__()
@@ -776,12 +847,12 @@ class RealtorDetailPageMiddleware1(object):
         # self.user_agent_index = 0
     def process_request(self, request, spider):
         # # 随机停顿
-        random_seed = [0, 1]
-        from random import choice
-        a = choice(random_seed)
-        print('a:-----------------', a)
-        if a == 1:
-            time.sleep(5)
+        # random_seed = [0, 1]
+        # from random import choice
+        # a = choice(random_seed)
+        # print('a:-----------------', a)
+        # if a == 1:
+        #     time.sleep(5)
 
         # 爬虫爬取3个小时后停止31分钟
         spider_scrapy_start_time = spider.scrapy_start_time
@@ -797,16 +868,18 @@ class RealtorDetailPageMiddleware1(object):
             print('时间间隔：', time_seconds_subtract)
             if time_seconds_subtract % 3600 == 0 and time_seconds_subtract !=0:
                 print('sleep中')
-                time.sleep(600)
+                time.sleep(900)
 
 
     def process_response(self, request, response, spider):
         print(response.status)
         if response.status in [x for x in range(300,500)]:
             print('当前的status code：', response.status)
+            with open('./url.text','w')as f:
+                f.write(response.url+'\n')
             # 设置暂停时间
             import time
-            time.sleep(1)
+            time.sleep(300)
             self.stop_signal += 1
             print(self.stop_signal)
 

@@ -274,22 +274,25 @@ class RealtorListPagePsqlPipeline(object):
 #  WHERE "propertyId" =%s
 
 class RealtordetailPagePsqlPipeline(object):
-    def __init__(self):
-        self.conn = get_psql_con()
+    # def __init__(self):
+    #     self.conn = get_psql_con()
 
 
 
     def process_item(self, item, spider):
         if isinstance(item,RealtorDetailPageJsonItem):
-            cursor = self.conn.cursor()
+            conn = get_psql_con()
+            cursor = conn.cursor()
             cursor.execute(
                 '''
-               insert into realtor_detail_page_json("detailJson","optionDate","propertyId") values(%s,now(),%s)
+                  UPDATE realtor_detail_page_json set "detailJson"=%s ,"isDirty"='0',"optionDate"=now()
+                  WHERE "propertyId" =%s
                 ''', [item['detailJson'], item['propertyId']
                       ]
 
             )
-        self.conn.commit()
+        conn.commit()
+
         return item
 
 

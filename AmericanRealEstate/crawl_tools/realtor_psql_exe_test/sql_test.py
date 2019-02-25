@@ -1,4 +1,5 @@
 from AmericanRealEstate.crawl_tools import get_psql_con
+import re
 
 
 conn = get_psql_con.get_psql_con()
@@ -18,6 +19,9 @@ SELECT
 FROM
 	realtor_list_page_json_splite rl
 	INNER JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
+'''
+
+'''
 	WHERE  rl."propertyId" is NOT null
 	 and rl."lastUpdate" is NOT NULL
 	 and rl.address is NOT NULL
@@ -40,14 +44,41 @@ values
 
 
 sql_string2 = '''
- ) as tmp("propertyId", "lastUpdate")
+ ) as tmp("propertyId", "lastUpdate",address)
  WHERE rj."propertyId" =tmp."propertyId"
 '''
 
-sql_string3 = ','.join([str(x) for x in cursor2.fetchall()])
+# sql_string3 = ','.join([str(x) for x in cursor2.fetchall() if len(re.findall(r"'",x[2])) >0 x[2] = "''".join(x[2].split("'"))])
+
+sql_string3_list= []
+
+for i in cursor2.fetchall():
+    if len(re.findall(r"'",i[2])) >0:
+        # print(i[2])
+        i = list(i)
+        i[2] = i[2].replace("'","''")
+        i = tuple(i)
+        i = str(i)
+        i = i.replace('"',"'")
+    i = str(i)
+    sql_string3_list.append(i)
+
+sql_string3 = ','.join(sql_string3_list)
+
+
+
+
+
+
+
+
 
 final_string = sql_string1+sql_string3+sql_string2
-print(final_string)
+#
+# with open('./sql.txt','w',encoding='utf-8') as f:
+#     print('写入文件。。。')
+#     f.write(final_string)
+# print(final_string)
 
 cursor1.execute(final_string)
 conn.commit()
@@ -61,7 +92,7 @@ conn.commit()
 #     sql_string3 += str(i)
 #     print(sql_string3)
 
-print(sql_string3)
+# print(sql_string3)
 
     # print(realtor_split_property_id_sql_str)
     # print(j)

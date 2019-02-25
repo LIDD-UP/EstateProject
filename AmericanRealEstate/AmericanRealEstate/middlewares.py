@@ -800,6 +800,17 @@ class RealtorListPageSpiderMiddleware(object):
         cursor.execute(sql_string_splite)
         conn.commit()
 
+        # 将拆分出来有空的情况删除
+        sql_delete_splite_null_string='''
+                        DELETE 
+            FROM
+                realotr_list_page_json_splite 
+            WHERE
+                rl."propertyId" IS NULL 
+                OR rl."lastUpdate" IS NULL 
+                OR rl.address IS NULL
+        '''
+
         # 找到有的propertyId 并且lastUpate和address字段改变了的，这里应该使用批量更新
         find_exit_data = '''
                 SELECT
@@ -814,8 +825,24 @@ class RealtorListPageSpiderMiddleware(object):
             INNER JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
             WHERE rl."lastUpdate"!=rd."lastUpdate"
             OR rl.address!=rd.address
+            and rl."propertyId" is NOT null
+            and rl."lastUpdate" is NOT NULL
+            and rl.address is NOT NULL
         '''
         cursor.execute(find_exit_data)
+        update_string1 = '''
+                UPDATE
+                realtor_detail_page_json rj
+                set
+                "isDirty" = '0', "lastUpdate" = tmp."lastUpdate", address = tmp.address
+                FROM(
+                values
+        '''
+        update_string2 = '''
+             ) as tmp("propertyId", "lastUpdate"，address)
+             WHERE rj."propertyId" =tmp."propertyId"
+        '''
+        update_string3 =
         for result in cursor.fetchall():
             '''
                        UPDATE realtor_detail_page_json set "isDirty"='1'
@@ -828,7 +855,7 @@ class RealtorListPageSpiderMiddleware(object):
             UPDATE realtor_detail_page_json set "isDirty"='1'
             WHERE "propertyId" ='6264702487'
         '''
-
+        #
         # 找到detail_page_json 表中没有的propertyId，并将它插入到该表中；
         sql_string_update3 = '''
             INSERT INTO realtor_detail_page_json( "propertyId", "lastUpdate", address,"isDirty","optionDate")

@@ -788,6 +788,7 @@ class RealtorListPageSpiderMiddleware(object):
         # spider.logger.info('Spider closed: %s', spider.name)
         conn = get_psql_con.get_psql_con()
         cursor = conn.cursor()
+        # 将realtor_list_json表中的数据拆分开
         sql_string_splite = '''
             INSERT INTO realtor_list_page_json_splite ( "propertyId", "lastUpdate", address,"optionDate" ) SELECT
                 json_array_elements ( "jsonData" -> 'listings' ) ->> 'property_id' AS "propertyId",
@@ -798,8 +799,10 @@ class RealtorListPageSpiderMiddleware(object):
         '''
         cursor.execute(sql_string_splite)
         conn.commit()
+
+        # 找到有的propertyId 并且lastUpate和address字段改变了的，这里应该使用批量更新
         find_exit_data = '''
-        SELECT
+                SELECT
             rl."propertyId" AS "listPropertyId",
             rl."lastUpdate" AS "listLastUpdate",
             rl.address AS "listAddress",
@@ -809,31 +812,40 @@ class RealtorListPageSpiderMiddleware(object):
         FROM
             realtor_list_page_json_splite rl
             INNER JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
+            WHERE rl."lastUpdate"!=rd."lastUpdate"
+            OR rl.address!=rd.address
         '''
         cursor.execute(find_exit_data)
+        for result in cursor.fetchall():
+            '''
+                       UPDATE realtor_detail_page_json set "isDirty"='1'
+                        WHERE "propertyId" ='6264702487'
+                    '''
 
 
+        #发现有需要更新的propertyId执行更新
         sql_string_update2 = '''
             UPDATE realtor_detail_page_json set "isDirty"='1'
             WHERE "propertyId" ='6264702487'
         '''
 
+        # 找到detail_page_json 表中没有的propertyId，并将它插入到该表中；
         sql_string_update3 = '''
-            INSERT INTO realtor_detail_page_json( "propertyId", "lastUpdate", address,"isDirty")
+            INSERT INTO realtor_detail_page_json( "propertyId", "lastUpdate", address,"isDirty","optionDate")
         (SELECT
             rl."propertyId" AS "listPropertyId",
             rl."lastUpdate" AS "listLastUpdate",
             rl.address AS "listAddress",
-            0
-
+            0,
+            now()
         FROM
             realtor_list_page_json_splite rl
             left JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
-            WHERE rd."propertyId" is NULL 
+            WHERE 
+            rd."propertyId" is NULL 
             and rl."propertyId" is NOT null
              and rl."lastUpdate" is NOT NULL
              and rl.address is NOT NULL
-
             )
         '''
 

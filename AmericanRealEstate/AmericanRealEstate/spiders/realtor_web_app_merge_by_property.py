@@ -25,7 +25,7 @@ class RealtorWebAppMergeByPropertySpider(scrapy.Spider):
                  scrapy_start_time=None,
                  *args, **kwargs):
         super(RealtorWebAppMergeByPropertySpider, self).__init__(*args, **kwargs)
-        print(start_urls)
+        # print(start_urls)
         # 传入start_request_list
         start_urls_list = None
         if start_urls is not None:

@@ -784,80 +784,96 @@ class RealtorListPageSpiderMiddleware(object):
 
         return s
 
-    def spider_closed(self, spider):
-        # spider.logger.info('Spider closed: %s', spider.name)
-        conn = get_psql_con.get_psql_con()
+    def update_detail_data(self,conn, time):
+        cursor1 = conn.cursor()
+        cursor2 = conn.cursor()
+        realtor_update_property_id_sql_str = '''
+        SELECT
+        	rl."propertyId" AS "listPropertyId",
+        	rl."lastUpdate" AS "listLastUpdate",
+        	rl.address AS "listAddress"
+        FROM
+        	realtor_list_page_json_splite rl
+        	INNER JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
+        	WHERE rl."lastUpdate"!=rd."lastUpdate"
+        	OR rl.address!=rd.address
+        '''
+
+        # 获取需要更新的数据
+        results2 = cursor2.execute(realtor_update_property_id_sql_str)
+
+        # 批量更新数据
+        sql_string1 = '''
+        UPDATE
+        realtor_detail_page_json rj
+        set
+        "isDirty" = '0', "lastUpdate" = tmp."lastUpdate", address = tmp.address
+        FROM(
+        values
+        '''
+
+        sql_string2 = '''
+         ) as tmp("propertyId", "lastUpdate",address)
+         WHERE rj."propertyId" =tmp."propertyId"
+        '''
+        sql_string3_list = []
+        j = 1
+        if time == 1:
+            batch_size = 100
+        if time == 2:
+            batch_size = cursor2.rowcount
+
+        for i in cursor2.fetchall():
+            # print("跟新"+str(i))
+            if len(re.findall(r"'", i[2])) > 0:
+                # print(i[2])
+                i = list(i)
+                i[2] = i[2].replace("'", "''")
+                i = tuple(i)
+                i = str(i)
+                i = i.replace('"', "'")
+            i = str(i)
+            print(i)
+            sql_string3_list.append(i)
+            if len(sql_string3_list) == batch_size:
+                sql_string3 = ','.join(sql_string3_list)
+                final_string = sql_string1 + sql_string3 + sql_string2
+                print(final_string)
+                cursor1.execute(final_string)
+                conn.commit()
+                sql_string3_list = []
+
+    def splite_list_data(self,conn):
         cursor = conn.cursor()
-        # 将realtor_list_json表中的数据拆分开
         sql_string_splite = '''
-            INSERT INTO realtor_list_page_json_splite ( "propertyId", "lastUpdate", address,"optionDate" ) SELECT
-                json_array_elements ( "jsonData" -> 'listings' ) ->> 'property_id' AS "propertyId",
-                json_array_elements ( "jsonData" -> 'listings' ) ->> 'last_update' AS "lastUpdate",
-                json_array_elements ( "jsonData" -> 'listings' ) ->> 'address' AS address ,
-                now()
-                FROM realtor_list_page_json
+            INSERT INTO realtor_list_page_json_splite ( "propertyId", "lastUpdate", address, "optionDate" ) (
+            SELECT DISTINCT ON
+                ( n_table."propertyId" ) n_table."propertyId",
+                n_table."lastUpdate",
+                n_table.address,
+                n_table."optionDate" 
+            FROM
+                (
+                SELECT
+                    to_number( json_array_elements ( "jsonData" -> 'listings' ) ->> 'property_id', '9999999999' ) AS "propertyId",
+                    json_array_elements ( "jsonData" -> 'listings' ) ->> 'last_update' AS "lastUpdate",
+                    json_array_elements ( "jsonData" -> 'listings' ) ->> 'address' AS address,
+                    now() AS "optionDate" 
+                FROM
+                    realtor_list_page_json 
+                ) n_table 
+            WHERE
+                n_table."propertyId" IS NOT NULL 
+                AND n_table."lastUpdate" IS NOT NULL 
+            AND n_table.address IS NOT NULL 
+            )
         '''
         cursor.execute(sql_string_splite)
         conn.commit()
 
-        # 将拆分出来有空的情况删除
-        sql_delete_splite_null_string='''
-                        DELETE 
-            FROM
-                realotr_list_page_json_splite 
-            WHERE
-                rl."propertyId" IS NULL 
-                OR rl."lastUpdate" IS NULL 
-                OR rl.address IS NULL
-        '''
-
-        # 找到有的propertyId 并且lastUpate和address字段改变了的，这里应该使用批量更新
-        find_exit_data = '''
-                SELECT
-            rl."propertyId" AS "listPropertyId",
-            rl."lastUpdate" AS "listLastUpdate",
-            rl.address AS "listAddress",
-            rd."propertyId" AS "detailPropertyId",
-            rd."lastUpdate" AS "detailLastUpdate",
-            rd.address AS "detailAddress" 
-        FROM
-            realtor_list_page_json_splite rl
-            INNER JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
-            WHERE rl."lastUpdate"!=rd."lastUpdate"
-            OR rl.address!=rd.address
-            and rl."propertyId" is NOT null
-            and rl."lastUpdate" is NOT NULL
-            and rl.address is NOT NULL
-        '''
-        cursor.execute(find_exit_data)
-        update_string1 = '''
-                UPDATE
-                realtor_detail_page_json rj
-                set
-                "isDirty" = '0', "lastUpdate" = tmp."lastUpdate", address = tmp.address
-                FROM(
-                values
-        '''
-        update_string2 = '''
-             ) as tmp("propertyId", "lastUpdate"，address)
-             WHERE rj."propertyId" =tmp."propertyId"
-        '''
-        update_string3 =
-        for result in cursor.fetchall():
-            '''
-                       UPDATE realtor_detail_page_json set "isDirty"='1'
-                        WHERE "propertyId" ='6264702487'
-                    '''
-
-
-        #发现有需要更新的propertyId执行更新
-        sql_string_update2 = '''
-            UPDATE realtor_detail_page_json set "isDirty"='1'
-            WHERE "propertyId" ='6264702487'
-        '''
-        #
-        # 找到detail_page_json 表中没有的propertyId，并将它插入到该表中；
-        sql_string_update3 = '''
+    def insert_detail_data(self,conn):
+        cursor = conn.cursor()
+        sql_string_insert= '''
             INSERT INTO realtor_detail_page_json( "propertyId", "lastUpdate", address,"isDirty","optionDate")
         (SELECT
             rl."propertyId" AS "listPropertyId",
@@ -875,6 +891,22 @@ class RealtorListPageSpiderMiddleware(object):
              and rl.address is NOT NULL
             )
         '''
+        cursor.execute(sql_string_insert)
+        conn.commit()
+
+    def spider_closed(self, spider):
+        # spider.logger.info('Spider closed: %s', spider.name)
+        conn = get_psql_con.get_psql_con()
+        # 将realtor_list_json表中的数据拆分开,并删除空的情况
+        self.splite_list_data(conn)
+        # 找到有的propertyId 并且lastUpate和address字段改变了的，这里应该使用批量更新
+        self.update_detail_data(conn,1)
+        self.update_detail_data(conn,2)
+        # 找到detail_page_json 表中没有的propertyId，并将它插入到该表中；
+        self.insert_detail_data(conn)
+        conn.close()
+        print('完成sql插入---------------------------------------------')
+
 
 
 

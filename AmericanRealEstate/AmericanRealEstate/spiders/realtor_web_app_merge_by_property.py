@@ -99,9 +99,12 @@ class RealtorWebAppMergeByPropertySpider(scrapy.Spider):
         },
         "COOKIES_ENABLED": False,
         "REDIRECT_ENABLED": False,
-        "CONCURRENT_REQUESTS" :15,
+        "CONCURRENT_REQUESTS" :16,
         "REFERER_ENABLED": False,
         "RETRY_ENABLED": False,
+        "REACTOR_THREADPOOL_MAXSIZE":100,
+        "CONCURRENT_REQUESTS_PER_DOMAIN" : 10,
+        # "CONCURRENT_REQUESTS_PER_IP" : 100,
 
         # "RETRY_HTTP_CODES": [500, 502, 503, 504, 400, 408]
 

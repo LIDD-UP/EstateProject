@@ -32,6 +32,9 @@ class RealtorAppListPageSpider(scrapy.Spider):
             # 'AmericanRealEstate.middlewares.RealtorListPageDelayAnd302Middleware': 545,
 
         },
+        "SPIDER_MIDDLEWARES":{
+           'AmericanRealEstate.middlewares.RealtorListPageSpiderMiddleware': 543,
+        },
         "DEFAULT_REQUEST_HEADERS": {
             "Cache-Control": "public",
             "Mapi-Bucket": "for_sale_v2:on,for_rent_ldp_v2:on,for_rent_srp_v2:on,recently_sold_ldp_v2:on,recently_sold_srp_v2:on,not_for_sale_ldp_v2:on,not_for_sale_srp_v2:on,search_reranking_srch_rerank1:variant1",

@@ -1,7 +1,7 @@
 import psycopg2
 import json
 
-from AmericanRealEstate.AmericanRealEstate import settings
+from AmericanRealEstate import settings
 
 
 def get_psql_con():

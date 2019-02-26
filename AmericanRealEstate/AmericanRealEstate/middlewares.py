@@ -785,6 +785,7 @@ class RealtorListPageSpiderMiddleware(object):
         return s
 
     def update_detail_data(self,conn, time):
+        print("更新detail数据")
         cursor1 = conn.cursor()
         cursor2 = conn.cursor()
         realtor_update_property_id_sql_str = '''
@@ -819,9 +820,11 @@ class RealtorListPageSpiderMiddleware(object):
         sql_string3_list = []
         j = 1
         if time == 1:
+            print('第一次更新跟新了{}'.format(cursor2.rowcount))
             batch_size = 100
         if time == 2:
             batch_size = cursor2.rowcount
+            print('第2次更新跟新了{}'.format(cursor2.rowcount))
 
         for i in cursor2.fetchall():
             # print("跟新"+str(i))
@@ -833,17 +836,18 @@ class RealtorListPageSpiderMiddleware(object):
                 i = str(i)
                 i = i.replace('"', "'")
             i = str(i)
-            print(i)
+            # print(i)
             sql_string3_list.append(i)
             if len(sql_string3_list) == batch_size:
                 sql_string3 = ','.join(sql_string3_list)
                 final_string = sql_string1 + sql_string3 + sql_string2
-                print(final_string)
+                # print(final_string)
                 cursor1.execute(final_string)
                 conn.commit()
                 sql_string3_list = []
 
     def splite_list_data(self,conn):
+        print("拆分数据")
         cursor = conn.cursor()
         sql_string_splite = '''
             INSERT INTO realtor_list_page_json_splite ( "propertyId", "lastUpdate", address, "optionDate" ) (
@@ -872,6 +876,7 @@ class RealtorListPageSpiderMiddleware(object):
         conn.commit()
 
     def insert_detail_data(self,conn):
+        print('插入detail没有的propertyId')
         cursor = conn.cursor()
         sql_string_insert= '''
             INSERT INTO realtor_detail_page_json( "propertyId", "lastUpdate", address,"isDirty","optionDate")

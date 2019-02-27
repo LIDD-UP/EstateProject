@@ -69,54 +69,8 @@ class AmericanrealestateSpiderMiddleware(object):
 
 
     def spider_closed(self, spider):
-        # spider.logger.info('Spider closed: %s', spider.name)
-        conn = get_psql_con.get_psql_con()
-        cursor = conn.cursor()
-        splite_list_json_sql_str = '''
-            INSERT INTO realtor_list_page_json_splite ( "propertyId", "lastUpdate", address,"optionDate" ) SELECT
-                json_array_elements ( "jsonData" -> 'listings' ) ->> 'property_id' AS "propertyId",
-                json_array_elements ( "jsonData" -> 'listings' ) ->> 'last_update' AS "lastUpdate",
-                json_array_elements ( "jsonData" -> 'listings' ) ->> 'address' AS address,
-                now()
-            FROM
-	          realtor_list_page_json
-        '''
-        sql_string_update = '''
-        SELECT
-            rl."propertyId" AS "listPropertyId",
-            rl."lastUpdate" AS "listLastUpdate",
-            rl.address AS "listAddress",
-            rd."propertyId" AS "detailPropertyId",
-            rd."lastUpdate" AS "detailLastUpdate",
-            rd.address AS "detailAddress" 
-        FROM
-            realtor_list_page_json_splite rl
-            INNER JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
-        '''
+        spider.logger.info('Spider closed: %s', spider.name)
 
-        sql_string_update2 = '''
-            UPDATE realtor_detail_page_json set "isDirty"='1'
-            WHERE "propertyId" ='6264702487'
-        '''
-
-        sql_string_update3 = '''
-            INSERT INTO realtor_detail_page_json( "propertyId", "lastUpdate", address,"isDirty")
-        (SELECT
-            rl."propertyId" AS "listPropertyId",
-            rl."lastUpdate" AS "listLastUpdate",
-            rl.address AS "listAddress",
-            0
-        
-        FROM
-            realtor_list_page_json_splite rl
-            left JOIN realtor_detail_page_json rd ON rl."propertyId" = rd."propertyId"
-            WHERE rd."propertyId" is NULL 
-            and rl."propertyId" is NOT null
-             and rl."lastUpdate" is NOT NULL
-             and rl.address is NOT NULL
-        
-            )
-        '''
 
 
 
@@ -899,6 +853,30 @@ class RealtorListPageSpiderMiddleware(object):
         cursor.execute(sql_string_insert)
         conn.commit()
 
+    def get_detail_url(self,conn):
+        import redis
+        pool = redis.ConnectionPool(host='127.0.0.1',
+                                    # password='123456'
+                                    )
+        redis_pool = redis.Redis(connection_pool=pool)
+        redis_pool.flushdb()
+        conn = get_psql_con()
+        cursor = conn.cursor()
+        sql_string = '''
+            SELECT
+        	"propertyId" 
+        FROM
+        	realtor_detail_page_json 
+        WHERE
+        	"isDirty" = '1' 
+        	OR "detailJson" IS NULL
+        '''
+        cursor.execute(sql_string)
+        for result in cursor.fetchall():
+            redis_pool.lpush('realtor:property_id', 'http://{}'.format(result[0]))
+        conn.commit()
+
+
     def spider_closed(self, spider):
         # spider.logger.info('Spider closed: %s', spider.name)
         conn = get_psql_con.get_psql_con()
@@ -909,6 +887,7 @@ class RealtorListPageSpiderMiddleware(object):
         self.update_detail_data(conn,2)
         # 找到detail_page_json 表中没有的propertyId，并将它插入到该表中；
         self.insert_detail_data(conn)
+        self.get_detail_url(conn)
         conn.close()
         print('完成sql插入---------------------------------------------')
 
@@ -916,9 +895,9 @@ class RealtorListPageSpiderMiddleware(object):
 
 
 
-class RealtorDetailPageMiddleware1(object):
+class RealtorDetailPageAMiddleware(object):
     def __init__(self):
-        super(RealtorDetailPageMiddleware1,self).__init__()
+        super(RealtorDetailPageAMiddleware,self).__init__()
         self.stop_signal = 1
         # self.user_agent_index = 0
     def process_request(self, request, spider):
@@ -970,6 +949,110 @@ class RealtorDetailPageMiddleware1(object):
             # return request
         return response
 
+
+class RealtorDetailPageWMiddleware(object):
+
+    def process_request(self, request, spider):
+        # # 随机停顿
+        random_seed = [0,1]
+        from random import choice
+        a = choice(random_seed)
+        print('a:-----------------',a)
+        if a == 1:
+            time.sleep(3)
+
+        # 爬虫爬取3个小时后停止31分钟
+        spider_scrapy_start_time = spider.scrapy_start_time
+        if spider_scrapy_start_time is not None:
+            scrapy_time_now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            true_scrapy_time_now = datetime.datetime.strptime(scrapy_time_now, '%Y-%m-%d %H:%M:%S')
+            time_seconds_subtract = true_scrapy_time_now - spider_scrapy_start_time
+            print(time_seconds_subtract.seconds)
+            time_seconds_subtract = int(time_seconds_subtract.seconds)
+
+
+            print('时间间隔：', time_seconds_subtract)
+            if time_seconds_subtract % 3600 == 0 and time_seconds_subtract !=0:
+                print('sleep中')
+                time.sleep(900)
+        if getattr(spider, 'user_agent_list', None) is not None :
+            print(spider.user_agent_list)
+            spider_user_agent_list = spider.user_agent_list
+            print(len(spider_user_agent_list))
+            if len(spider_user_agent_list) != 0:
+                # 每次固定取第零个
+                # 每次随机获取一个：
+                print('设置的user-agent',spider_user_agent_list[0])
+                request.headers.setdefault('User-Agent',spider_user_agent_list[0])
+
+                agent_random_seed = [0, 1,2,3,4,5,6,7,8,9]
+                from random import choice
+                a = choice(agent_random_seed)
+                if a == 1:
+                    user_agent_random_index = choice(
+                        [random_seed for random_seed in range(len(spider_user_agent_list))])
+                    print('设置的user-agent', spider_user_agent_list[user_agent_random_index])
+                    request.headers.setdefault('User-Agent', spider_user_agent_list[user_agent_random_index])
+
+                # request.headers.setdefault('User-Agent', spider_user_agent_list[0])
+                print('设置固定随机的user-agent')
+
+    def process_response(self,request,response,spider):
+        response_url = response.url
+        if len(re.findall('property-overview',response_url))==0 and response.status == 200:
+            with open('./has_already_crawl_url.txt','a+') as f:
+                f.write(response_url+'\n')
+        if response.status == 302:
+            time.sleep(1890)
+            print('被发现了，沉睡30分钟切换user-agent')
+            print('byte user agent',request.headers['User-Agent'])
+            invalidation_user_agent = request.headers['User-Agent'].decode()
+            print(invalidation_user_agent)
+
+            with open('./invalidation_user_agent_file.txt', 'a+') as f:
+                f.write('\n'+invalidation_user_agent)
+
+            spider.user_agent_list.remove(invalidation_user_agent)
+
+            if len(spider.user_agent_list) == 0:
+                print('user-agent没有了')
+                spider.crawler.engine.close_spider(spider, 'user-agent 更换完了，已经没有了')
+
+            if len(spider.user_agent_list) > 0:
+                request.headers['User-Agent'] = spider.user_agent_list[0]
+
+            return request
+        return response
+
+
+class RealtorDetailPageAProcessUrlMiddleware(object):
+    def __init__(self):
+        super(RealtorDetailPageAProcessUrlMiddleware, self).__init__()
+
+    def process_request(self, request, spider):
+        print(request.url)
+        property_id = re.search(r'\d+',request.url).group()
+        request._url='https://mapi-ng.rdc.moveaws.com/api/v1/properties/{}?client_id=rdc_mobile_native%2C9.3.7%2Candroid'.format(property_id)
+        print(request.url)
+
+    def process_response(self, request, response, spider):
+
+        return response
+
+
+class RealtorDetailPageWProcessUrlMiddleware(object):
+    def __init__(self):
+        super(RealtorDetailPageWProcessUrlMiddleware, self).__init__()
+
+    def process_request(self, request, spider):
+        print(request.url)
+        property_id = re.search(r'\d+',request.url).group()
+        request._url = 'https://www.realtor.com/property-overview/M{}'.format(property_id)
+        print(request.url)
+
+    def process_response(self, request, response, spider):
+
+        return response
 
 
 

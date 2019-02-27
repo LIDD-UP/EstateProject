@@ -9,7 +9,7 @@ from twisted.enterprise import adbapi
 import pymysql
 
 from AmericanRealEstate.items import StateNameCountyNameItem,CountyNameZipCodeItem,RealtorHouseInfoJsonItem,RealtorDetailDomItem,TruliaHouseInfoItem,SearchCriteriaItem,StatisticRealtorHouseCountItem,RealtorPropertyIdItem,RealtorListPageJsonItem
-from AmericanRealEstate.items import RealtorListPageJsonItem,RealtorDetailPageJsonItem
+from AmericanRealEstate.items import RealtorListPageJsonItem,RealtorDetailPageJsonItem,RealtorDetailPageJsonWebItem
 from crawl_tools.get_sql_con import get_sql_con
 from crawl_tools.get_psql_con import get_psql_con
 from crawl_tools.test_file import post_url
@@ -291,23 +291,27 @@ class RealtordetailPagePsqlPipeline(object):
     def __init__(self):
         self.conn = get_psql_con()
 
-
-
     def process_item(self, item, spider):
         if isinstance(item,RealtorDetailPageJsonItem):
             cursor = self.conn.cursor()
-
-
             cursor.execute(
                 '''
-                  UPDATE realtor_detail_page_json set "detailJson"=%s ,"isDirty"='0',"optionDate"=now()
+                  UPDATE realtor_detail_page_json set "detailJson"=%s ,"isDirty"='0',"optionDate"=now(),"dataInterface"='1'
                   WHERE "propertyId" =%s
                 ''', [item['detailJson'], item['propertyId']
                       ]
 
             )
+            if isinstance(item, RealtorDetailPageJsonWebItem):
+                cursor = self.conn.cursor()
+                cursor.execute(
+                    '''
+                      UPDATE realtor_detail_page_json set "detailJson"=%s ,"isDirty"='0',"optionDate"=now(),"dataInterface"='2'
+                      WHERE "propertyId" =%s
+                    ''', [item['detailJson'], item['propertyId']
+                          ]
+                )
         self.conn.commit()
-
         return item
 
 

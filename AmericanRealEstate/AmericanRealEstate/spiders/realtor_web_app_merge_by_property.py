@@ -68,7 +68,7 @@ class RealtorWebAppMergeByPropertySpider(scrapy.Spider):
          #    'AmericanRealEstate.middlewares.TestGetSpiderAttrMiddleware':1,
             # 'AmericanRealEstate.middlewares.Process302Middleware' :544,
             # 'AmericanRealEstate.middlewares.AlertUserAgentWhenEncounter302Middleware': 545,
-            'AmericanRealEstate.middlewares.RealtorDetailPageMiddleware1': 545,
+            'AmericanRealEstate.middlewares.RealtorDetailPageAMiddleware': 545,
 
     },
 

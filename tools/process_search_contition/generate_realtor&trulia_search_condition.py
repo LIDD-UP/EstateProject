@@ -35,7 +35,7 @@ url_sample = 'https://mapi-ng.rdc.moveaws.com/api/v1/properties?offset=0&limit=2
 new_data['countyStateJoin'] = ['https://mapi-ng.rdc.moveaws.com/api/v1/properties?offset=0&limit=200&county='+'+'.join(x.split(' '))+'&state_code='+y+'&sort=relevance&schema=mapsearch&client_id=rdc_mobile_native%2C9.4.2%2Candroid' for i,x in enumerate(data['countyName']) for j,y in enumerate(data['stateAbbreviation']) if i==j]
 new_data = new_data.drop_duplicates()
 print(new_data)
-new_data.to_csv('./realtor_app_list_page_search_criteria.csv',index=False)
+new_data.to_csv('./realtor_app_list_page_search_criteria_test.csv',index=False)
 
 
 # print(new_data)

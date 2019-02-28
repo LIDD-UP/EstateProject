@@ -827,6 +827,7 @@ class RealtorListPageSpiderMiddleware(object):
             )
         '''
         cursor.execute(sql_string_splite)
+        print("拆分了{}条数据".format(cursor.rowcount))
         conn.commit()
 
     def insert_detail_data(self,conn):
@@ -851,6 +852,7 @@ class RealtorListPageSpiderMiddleware(object):
             )
         '''
         cursor.execute(sql_string_insert)
+        print("插入detail 表没有的数据：{}条".format(cursor.rowcount))
         conn.commit()
 
     def get_detail_url(self,conn):
@@ -872,6 +874,7 @@ class RealtorListPageSpiderMiddleware(object):
         	OR "detailJson" IS NULL
         '''
         cursor.execute(sql_string)
+        print("将{}条properyId 插入redis".format(cursor.rowcount))
         for result in cursor.fetchall():
             redis_pool.lpush('realtor:property_id', 'http://{}'.format(result[0]))
         conn.commit()

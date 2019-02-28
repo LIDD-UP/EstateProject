@@ -762,7 +762,7 @@ class RealtorListPageSpiderMiddleware(object):
         UPDATE
         realtor_detail_page_json rj
         set
-        "isDirty" = '0', "lastUpdate" = tmp."lastUpdate", address = tmp.address
+        "isDirty" = '1', "lastUpdate" = tmp."lastUpdate", address = tmp.address，"optionDate"=now()
         FROM(
         values
         '''
@@ -856,13 +856,13 @@ class RealtorListPageSpiderMiddleware(object):
         conn.commit()
 
     def get_detail_url(self,conn):
+        print("将数据插入redis")
         import redis
         pool = redis.ConnectionPool(host='127.0.0.1',
                                     # password='123456'
                                     )
         redis_pool = redis.Redis(connection_pool=pool)
         redis_pool.flushdb()
-        conn = get_psql_con()
         cursor = conn.cursor()
         sql_string = '''
             SELECT

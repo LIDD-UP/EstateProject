@@ -55,8 +55,8 @@ class RealtorWebAppMergeByPropertySpider(scrapy.Spider):
 
     custom_settings = {
         "ITEM_PIPELINES": {
-            # 'AmericanRealEstate.pipelines.RealtordetailPagePsqlPipeline': 301,
-            'AmericanRealEstate.pipelines.RealtordetailPageMysqlPipeline':302
+            'AmericanRealEstate.pipelines.RealtordetailPagePsqlPipeline': 301,
+            # 'AmericanRealEstate.pipelines.RealtordetailPageMysqlPipeline':302
             # 'AmericanRealEstate.pipelines.RealtorDetailDomPipeline': 302,
             # 'AmericanRealEstate.pipelines.RealtorHouseInfoTestPipeline': 302,
             # 'scrapy_redis.pipelines.RedisPipeline': 300

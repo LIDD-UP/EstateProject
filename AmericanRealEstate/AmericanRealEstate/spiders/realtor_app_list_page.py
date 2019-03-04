@@ -15,8 +15,8 @@ class RealtorAppListPageSpider(scrapy.Spider):
 
     custom_settings = {
         "ITEM_PIPELINES": {
-            # 'AmericanRealEstate.pipelines.RealtorListPagePsqlPipeline': 301,
-            'AmericanRealEstate.pipelines.RealtorListPageMysqlsqlPipeline':302
+            'AmericanRealEstate.pipelines.RealtorListPagePsqlPipeline': 301,
+            # 'AmericanRealEstate.pipelines.RealtorListPageMysqlsqlPipeline':302
 
             # 'AmericanRealEstate.pipelines.RealtorDetailDomPipeline': 302,
             # 'AmericanRealEstate.pipelines.RealtorHouseInfoTestPipeline': 302,

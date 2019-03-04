@@ -1,6 +1,6 @@
 import datetime
 from scrapy.cmdline import execute
-from crawl_tools.get_psql_con import get_psql_con
+from crawl_tools.get_sql_con import get_sql_con
 
 
 truncate_realtor_list_str = '''
@@ -10,13 +10,14 @@ truncate_realtor_list_str = '''
 truncate_realtor_list_splite_str = '''
     TRUNCATE realtor_list_page_json_splite
 '''
-conn = get_psql_con()
+conn = get_sql_con()
 cursor = conn.cursor()
 cursor.execute(truncate_realtor_list_str)
 conn.commit()
 cursor.execute(truncate_realtor_list_splite_str)
 conn.commit()
 conn.close()
+print('清空realtor_list_page_json 表和清空清空realtor_list_page_json_splite 表成功')
 
 
 scrapy_start_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')

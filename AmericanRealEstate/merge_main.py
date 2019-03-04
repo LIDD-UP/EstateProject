@@ -5,20 +5,20 @@ import sys
 
 import datetime
 from scrapy.cmdline import execute
-from crawl_tools.get_psql_con import get_psql_con
+from crawl_tools.get_sql_con import get_sql_con
 
 
 def get_detail_url():
-    conn = get_psql_con()
+    conn = get_sql_con()
     cursor = conn.cursor()
     sql_string = '''
         SELECT
-    	"propertyId" 
+    	propertyId 
     FROM
-    	realtor_detail_page_json 
+    	realtor_detail_json 
     WHERE
-    	"isDirty" = '1' 
-    	OR "detailJson" IS NULL
+    	isDirty = '1' 
+    	OR detailJson IS NULL
     '''
     url_lists=[]
     cursor.execute(sql_string)

@@ -15,7 +15,9 @@ class RealtorAppListPageSpider(scrapy.Spider):
 
     custom_settings = {
         "ITEM_PIPELINES": {
-            'AmericanRealEstate.pipelines.RealtorListPagePsqlPipeline': 301,
+            # 'AmericanRealEstate.pipelines.RealtorListPagePsqlPipeline': 301,
+            'AmericanRealEstate.pipelines.RealtorListPageMysqlsqlPipeline':302
+
             # 'AmericanRealEstate.pipelines.RealtorDetailDomPipeline': 302,
             # 'AmericanRealEstate.pipelines.RealtorHouseInfoTestPipeline': 302,
             # 'scrapy_redis.pipelines.RedisPipeline': 300
@@ -32,8 +34,9 @@ class RealtorAppListPageSpider(scrapy.Spider):
             # 'AmericanRealEstate.middlewares.RealtorListPageDelayAnd302Middleware': 545,
 
         },
-        "SPIDER_MIDDLEWARES":{
-           'AmericanRealEstate.middlewares.RealtorListPageSpiderMiddleware': 543,
+        "SPIDER_MIDDLEWARES": {
+           # 'AmericanRealEstate.middlewares.RealtorListPageSpiderMiddleware': 543,
+            'AmericanRealEstate.middlewares.RealtorListPageMysqlSpiderMiddleware':544
         },
         "DEFAULT_REQUEST_HEADERS": {
             "Cache-Control": "public",

@@ -14,6 +14,7 @@ from fake_useragent import UserAgent
 from scrapy import Request
 from AmericanRealEstate.settings import realtor_user_agent_list, trulia_cookies_list
 from crawl_tools import get_psql_con
+from crawl_tools.get_sql_con import get_sql_con
 
 
 
@@ -894,6 +895,158 @@ class RealtorListPageSpiderMiddleware(object):
         conn.close()
         print('完成sql插入---------------------------------------------')
 
+
+class RealtorListPageMysqlSpiderMiddleware(object):
+    # Not all methods need to be defined. If a method is not defined,
+    # scrapy acts as if the spider middleware does not modify the
+    # passed objects.
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        # This method is used by Scrapy to create your spiders.
+        s = cls()
+        crawler.signals.connect(s.spider_closed, signal=signals.spider_closed)
+
+        return s
+
+    def update_detail_data(self,conn, update_time, batch_size):
+        print("更新detail数据")
+        cursor1 = conn.cursor()
+        cursor2 = conn.cursor()
+        realtor_update_property_id_sql_str = '''
+            SELECT
+                rl.propertyId AS listPropertyId,
+                rl.lastUpdate AS listLastUpdate,
+                rl.address AS listAddress 
+            FROM
+                realtor_list_page_json_splite rl
+                INNER JOIN realtor_detail_json rd ON rl.propertyId = rd.propertyId
+            WHERE
+                rl.lastUpdate != rd.lastUpdate
+                OR rl.address != rd.address
+        '''
+
+        # 获取需要更新的数据
+        results2 = cursor2.execute(realtor_update_property_id_sql_str)
+
+        # 批量更新数据
+        sql_string1 = '''
+            UPDATE
+              realtor_detail_json rj
+            set
+              isDirty = '1', lastUpdate = %s, address = %s,optionDate=now()
+            WHERE rj.propertyId =%s
+        '''
+        sql_string3_list = []
+        if update_time == 1:
+            print('第一次更新跟新了{}'.format(cursor2.rowcount))
+            batch_size = batch_size
+        if update_time == 2:
+            batch_size = cursor2.rowcount
+            print('第2次更新跟新了{}'.format(cursor2.rowcount))
+
+        for i in cursor2.fetchall():
+            # print(i)
+            sql_string3_list.append([i[1], i[2], i[0]])
+            if len(sql_string3_list) == batch_size:
+                cursor1.executemany(sql_string1, sql_string3_list)
+                conn.commit()
+                sql_string3_list = []
+
+    def splite_list_data(self,conn):
+        print("拆分数据")
+        cursor = conn.cursor()
+        sql_string_splite = '''
+            INSERT INTO realtor_list_page_json_splite ( propertyId, lastUpdate, address, optionDate ) (
+                SELECT 
+                    n_table.propertyId,
+                    n_table.lastUpdate,
+                    n_table.address,
+                    n_table.optionDate
+                FROM
+                    (
+                    SELECT
+                        cast(JSON_EXTRACT( rj.jsonData, '$.property_id') as SIGNED) as propertyId ,
+                        JSON_EXTRACT( rj.jsonData, '$.last_update') as lastUpdate,
+                        JSON_EXTRACT( rj.jsonData, '$.address') as address,
+                        now( ) AS optionDate
+                    FROM
+                        realtor_list_page_json rj
+                    ) n_table 
+                    
+                WHERE
+                    n_table.propertyId IS NOT NULL 
+                    AND n_table.lastUpdate IS NOT NULL 
+                AND n_table.address IS NOT NULL 
+                    GROUP BY n_table.propertyId
+                )
+
+        '''
+        cursor.execute(sql_string_splite)
+        print("拆分了{}条数据".format(cursor.rowcount))
+        conn.commit()
+
+    def insert_detail_data(self,conn):
+        print('插入detail没有的propertyId')
+        cursor = conn.cursor()
+        sql_string_insert= '''
+            INSERT INTO realtor_detail_json ( propertyId, lastUpdate, address, isDirty, optionDate ) (
+                SELECT
+                    rl.propertyId AS listPropertyId,
+                    rl.lastUpdate AS listLastUpdate,
+                    rl.address AS listAddress,
+                    0,
+                    now( ) 
+                FROM
+                    realtor_list_page_json_splite rl
+                    LEFT JOIN realtor_detail_json rd ON rl.propertyId = rd.propertyId
+                WHERE
+                    rd.propertyId IS NULL 
+                    AND rl.propertyId IS NOT NULL 
+                    AND rl.lastUpdate IS NOT NULL 
+                    AND rl.address IS NOT NULL 
+                )
+        '''
+        cursor.execute(sql_string_insert)
+        print("插入detail 表没有的数据：{}条".format(cursor.rowcount))
+        conn.commit()
+
+    def get_detail_url(self,conn):
+        import redis
+        pool = redis.ConnectionPool(host='127.0.0.1',
+                                    # password='123456'
+                                    )
+        redis_pool = redis.Redis(connection_pool=pool)
+        redis_pool.flushdb()
+        cursor = conn.cursor()
+        sql_string = '''
+            SELECT
+        	 propertyId
+        FROM
+        	 realtor_detail_json 
+        WHERE
+        	 isDirty = '1' 
+        	 OR detailJson IS NULL
+        '''
+        cursor.execute(sql_string)
+        print("将{}条properyId 插入redis".format(cursor.rowcount))
+        for result in cursor.fetchall():
+            redis_pool.lpush('realtor:property_id', 'http://{}'.format(result[0]))
+        conn.commit()
+
+    def spider_closed(self, spider):
+        # spider.logger.info('Spider closed: %s', spider.name)
+        conn = get_sql_con()
+        # 将realtor_list_json表中的数据拆分开,并删除空的情况
+        self.splite_list_data(conn)
+        # 找到有的propertyId 并且lastUpate和address字段改变了的，这里应该使用批量更新
+        self.update_detail_data(conn, 1, 100)
+        self.update_detail_data(conn, 2, 100)
+        # 找到detail_page_json 表中没有的propertyId，并将它插入到该表中；
+        self.insert_detail_data(conn)
+        self.get_detail_url(conn)
+        conn.close()
+        print('完成sql插入---------------------------------------------')
 
 
 

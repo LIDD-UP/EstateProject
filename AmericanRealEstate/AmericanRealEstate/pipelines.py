@@ -5,6 +5,7 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
+import json
 from twisted.enterprise import adbapi
 import pymysql
 
@@ -270,8 +271,46 @@ class RealtorListPagePsqlPipeline(object):
         return item
 
 
+class RealtorListPageMysqlsqlPipeline(object):
+    houses = []
+
+    def __init__(self):
+        self.conn = get_sql_con()
+        self.cursor = self.conn.cursor()
+        self.sql = '''
+            insert into realtor_list_page_json(jsonData,optionDate) values(%s,now())
+        '''
+        self.sql2 = '''
+            INSERT INTO realtor_list_page_json_splite (propertyId, lastUpdate, address, optionDate)
+            values(%s,%s,%s,now())
+        '''
+
+    def json_process(self,item_data):
+        json_dict = json.loads(item_data)
+        json_dict_houses = json_dict['listings']
+        # self.houses = [[json.dumps(house['property_id']),json.dumps(house['last_update']),json.dumps(house['address'])] for house in json_dict_houses]
+        self.houses = [json.dumps(house) for house in json_dict_houses]
+
+    def bulk_insert_to_mysql(self, bulkdata):
+        print("插入长度", len(bulkdata))
+        # sql = "insert into realtor_list_page_json(jsonData,optionDate) values(%s,now())"
+        self.cursor.executemany(self.sql, bulkdata)
+        print("执行插入完毕")
+        self.conn.commit()
+        del self.houses[:]
+
+
+    def process_item(self, item, spider):
+        if isinstance(item, RealtorListPageJsonItem):
+            self.json_process(item['jsonData'])
+            self.bulk_insert_to_mysql(self.houses)
+
+        return item
+
+
 # UPDATE realtor_detail_page_json set "detailJson"=%s ,"isDirty"='0',optionDate=now()
 #  WHERE "propertyId" =%s
+
 
 class RealtordetailPagePsqlPipeline(object):
     sql_string1 = '''
@@ -282,6 +321,7 @@ class RealtordetailPagePsqlPipeline(object):
     FROM(
     values
     '''
+
 
     sql_string2 = '''
      ) as tmp("propertyId", "detailJson")
@@ -300,17 +340,46 @@ class RealtordetailPagePsqlPipeline(object):
                   WHERE "propertyId" =%s
                 ''', [item['detailJson'], item['propertyId']
                       ]
-
             )
-            if isinstance(item, RealtorDetailPageJsonWebItem):
-                cursor = self.conn.cursor()
-                cursor.execute(
-                    '''
-                      UPDATE realtor_detail_page_json set "detailJson"=%s ,"isDirty"='0',"optionDate"=now(),"dataInterface"='2'
-                      WHERE "propertyId" =%s
-                    ''', [item['detailJson'], item['propertyId']
-                          ]
-                )
+        if isinstance(item, RealtorDetailPageJsonWebItem):
+            cursor = self.conn.cursor()
+
+            cursor.execute(
+                '''
+                  UPDATE realtor_detail_page_json set "detailJson"=%s ,"isDirty"='0',"optionDate"=now(),"dataInterface"='2'
+                  WHERE "propertyId" =%s
+                ''', [item['detailJson'], item['propertyId']
+                      ]
+            )
+        self.conn.commit()
+        return item
+
+
+
+class RealtordetailPageMysqlPipeline(object):
+    def __init__(self):
+        self.conn = get_sql_con()
+
+    def process_item(self, item, spider):
+        if isinstance(item,RealtorDetailPageJsonItem):
+            cursor = self.conn.cursor()
+            cursor.execute(
+                '''
+                  UPDATE realtor_detail_json set detailJson=%s ,isDirty='0',optionDate=now(),dataInterface='1'
+                  WHERE propertyId =%s
+                ''', [item['detailJson'], item['propertyId']
+                      ]
+            )
+        if isinstance(item, RealtorDetailPageJsonWebItem):
+            cursor = self.conn.cursor()
+
+            cursor.execute(
+                '''
+                  UPDATE realtor_detail_json set detailJson=%s ,isDirty='0',optionDate=now(),dataInterface='2'
+                  WHERE "propertyId" =%s
+                ''', [item['detailJson'], item['propertyId']
+                      ]
+            )
         self.conn.commit()
         return item
 

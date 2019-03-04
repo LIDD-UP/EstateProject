@@ -32,12 +32,12 @@ def get_detail_url():
     conn.close()
 
 
-# get_detail_url()
+get_detail_url()
 
-from crawl_tools.get_psql_con import get_psql_con
-import redis
-pool = redis.ConnectionPool(host='127.0.0.1',
-                            # password='123456'
-                            )
-redis_pool = redis.Redis(connection_pool=pool)
-redis_pool.flushdb()
+# from crawl_tools.get_psql_con import get_psql_con
+# import redis
+# pool = redis.ConnectionPool(host='127.0.0.1',
+#                             # password='123456'
+#                             )
+# redis_pool = redis.Redis(connection_pool=pool)
+# redis_pool.flushdb()

@@ -280,6 +280,84 @@ class NewAlertUserAgentWhenEncounter302Middleware(object):
         return response
 
 
+# 被发现之后换一个固定得user-agent
+
+class AlterUserAgentWhenEncounter302Middleware(object):
+    def __init__(self):
+        super(AlterUserAgentWhenEncounter302Middleware,self).__init__()
+        self.stop_signal = 1
+        self.user_agent_index = 0
+
+    def process_request(self,request,spider):
+        # 第一次从一个列表中的顺序取一个user-agent
+        request.headers.setdefault('User-Agent', realtor_user_agent_list[self.user_agent_index])
+
+    def process_response(self, request, response, spider):
+        print(response.status)
+        if response.status == 302:
+
+            print('被发现了,更换user-agent')
+            # 设置暂停时间
+            import time
+            time.sleep(60)
+            self.stop_signal += 1
+            print(self.stop_signal)
+            #
+            if self.stop_signal > 50:
+                spider.crawler.engine.close_spider(spider, '更换了60次user-agent了,爬虫已经被发现了')
+
+            # 去掉该user-agent,同时将change_user_agent置为True
+            print(request.headeres['user-agent'])
+            realtor_user_agent_list.remove(request.headers['user-agent'])
+            request.headers['User-Agent'] = spider.user_agent_list[self.user_agent_index]
+
+            return request
+        return response
+
+
+# 将爬取过的url 和爬取失败的url 以及未爬取的url进行分开，还有user-agent
+class SaveCrawledAndNotCrawledUrlMiddleware(object):
+    def __init__(self):
+        super(SaveCrawledAndNotCrawledUrlMiddleware,self).__init__()
+        self.stop_signal = 1
+        self.user_agent_index = 0
+
+    def process_request(self,request,spider):
+        pass
+
+    def process_response(self, request, response, spider):
+        print(response.status)
+
+        if response.status == 200:
+            with open('./success_crawled_url.txt', 'a+') as f:
+                f.write(response.url + '\n')
+
+        if response.status == 302:
+            with open('./failed_url.txt', 'a+') as f:
+                f.write(response.url + '\n')
+
+            with open('./failed_user_agent.txt', 'a+') as f:
+                f.write(request.headeres['user-agent'] + '\n')
+
+            print('被发现了,更换user-agent')
+            # 设置暂停时间
+            import time
+            time.sleep(60)
+            self.stop_signal += 1
+            print(self.stop_signal)
+            #
+            if self.stop_signal > 50:
+                spider.crawler.engine.close_spider(spider, '更换了60次user-agent了,爬虫已经被发现了')
+
+            # 去掉该user-agent,同时将change_user_agent置为True
+            print(request.headeres['user-agent'])
+            realtor_user_agent_list.remove(request.headers['user-agent'])
+            request.headers['User-Agent'] = spider.user_agent_list[self.user_agent_index]
+
+            return request
+        return response
+
+
 
 
 class Process302MetaMiddleware(object):

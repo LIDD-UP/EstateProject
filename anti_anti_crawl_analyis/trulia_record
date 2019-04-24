@@ -88,6 +88,161 @@ trulia网站中的问题：
 
 
 
+通过app分析trulia网站：
+
+app所要的
+headers参数信息：
+
+POST https://origin-api.trulia.com/app/v9/search HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Accept-Encoding: gzip
+User-Agent: Dalvik/2.1.0 (Linux; U; Android 5.1.1; LGM-V300K Build/N2G47H) trulia-source/AndroidApp trulia-version/10.7.0 trulia-osVersion/5.1.1
+            Dalvik/2.1.0 (Linux; U; Android 5.1.1; LGM-V300K Build/N2G47H) trulia-source/AndroidApp trulia-version/10.7.0 trulia-osVersion/5.1.1
+
+trulia-mpid: GfPMg7uM2ql5Mj9pAZO6iw
+             GfPMg7uM2ql5Mj9pAZO6iw
+             这个在返回的json中是属于：mobileProfileId=GfPMg7uM2ql5Mj9pAZO6iw  # 这个可能更token做了某一些结合验证了；
+
+X-PX-AUTHORIZATION: 2
+
+X-PX-ORIGINAL-TOKEN: 3:edc79b85f235c302d7cfc5088609503749a2c05cdb48068f0c17abb2694ff95c:f5a6qmnth14igWk9741mQ5plGr9kAkAkVFPJz3GVx3BngwpugxOyuOryZ4iIT3w/+1Il/LZsk9iws6zfFCoFPw==:1000:g/ikoJb5/qL8WckxEt530kTzhOsBqH13I329njP0+dnDt+Hoi6oDzysDOPFPofbThPeJyhIm4IKQmV95Ap12+y4caD0uh7zLd2vSNdd9wwmsXdlALLZ215fY7n/ontpYRNqEmnMNjd6WXprdUB4Aa1uiR/HSkJisQI0cAB/bXWg=
+X-PX-ORIGINAL-TOKEN: 3:edc79b85f235c302d7cfc5088609503749a2c05cdb48068f0c17abb2694ff95c:f5a6qmnth14igWk9741mQ5plGr9kAkAkVFPJz3GVx3BngwpugxOyuOryZ4iIT3w/+1Il/LZsk9iws6zfFCoFPw==:1000:g/ikoJb5/qL8WckxEt530kTzhOsBqH13I329njP0+dnDt+Hoi6oDzysDOPFPofbThPeJyhIm4IKQmV95Ap12+y4caD0uh7zLd2vSNdd9wwmsXdlALLZ215fY7n/ontpYRNqEmnMNjd6WXprdUB4Aa1uiR/HSkJisQI0cAB/bXWg=
+
+
+Connection: Keep-Alive
+Host: origin-api.trulia.com
+cache-control: no-cache
+
+
+Postman-Token: c2eb006b-e84d-4d7b-935b-6d3f21fc9ecb
+Accept: */*
+content-length: 685
+
+{
+    "enableHoodsInBBoxSearches": true,
+    "enableSchools": true,
+    "freeText": "Appling County,GA",
+    "includeEstimates": true,
+    "searchJson": {
+        "filters": {
+            "foreclosureTypes": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "limit": 80,
+            "listingTypes": [
+                "resale",
+                "fsbo",
+                "new_homes"
+            ],
+            "offset": 0,
+            "sort": {
+                "ascending": true,
+                "type": "best"
+            },
+            "view": "map"
+        },
+        "location": {},
+        "searchType": "for_sale"
+    }
+}
+
+可以看出这是一个post请求，并且请求体是一个json格式的。
+没有cookie，但是有一个特殊的user-agent，不知道有没有这方面的检验
+    但是跟之前请求过的user-agent一致，如果有这方面的限制，可以考虑换一个系统装上进行变更user-agent进行处理
+
+
+trulia-mpid：这个应该和设备经过某种编码形成的。相同的设备这个值一样，这个可能作为识别的一种方式。
+X-PX-ORIGINAL-TOKEN 这个token在一定时间类不变，至少请求不同的地址，这个token是不会变化的。
+
+
+在返回的json中有一个tl的key，他就是总的数据量，可以理解成total list
+
+其他就是一些常见的信息。
+
+关于请求json中分析：
+    有两个关系到了我们的请求，其余可以考虑不变：
+    1："freeText": "Appling County,GA", 这个就是我们请求的条件
+    2：            "limit": 80,
+                    "offset": 0,
+                    limit和offset关系到我们的翻页和一页能够显示多少数据
+
+    这个先确定一页最多返回多少数据，以及怎样进行翻页；
+        1：在返回的json中有一个tl的key，他就是总的数据量，可以理解成total list
+        2：通过测试发现最多能够返回300条数据
+        3：数据中有一个id号，murl 这个是web网页中对应的房屋信息地址，
+            这个id号就是详情页json数据的地址
+            https://origin-api.trulia.com/app/v9/detail?id=5055000362&idt=for%20sale&cy=Anniston&st=AL&supportedLayouts=singleContact,exclusiveAgent,agentList,formOnly,buttonOnly,noLeadForm&module=(features|taxesAndAssessments|records|provider_2|scoop|comps|agents|district|foreclosure)
+
+
+
+
+
+
+        "_request": {
+            "source": "AndroidApp",
+            "version": "10.7.0",
+            "osVersion": "5.1.1",
+            "mobileProfileId": "GfPMg7uM2ql5Mj9pAZO6iw"
+        } 根据这个json可以推断这个mapid是根据这几个参数加密算出来的，
+
+
+在返回的json中有一个这个：
+    /for_sale/01015_c/foreclosure,fsbo,new_homes,resale_lt/
+
+    它的真实地址是：
+        https://www.trulia.com/for_sale/01015_c/foreclosure,fsbo,new_homes,resale_lt/
+
+
+        "location": {
+            "ty": "county",
+            "bbox": {
+                "maxx": -85.529432,
+                "minx": -86.145182,
+                "maxy": 33.96846,
+                "miny": 33.55593
+            },
+            "lat": 33.762577172009,
+            "lon": -85.838047928097,
+            "id": "01015",
+            "name": "Calhoun County",
+            "cy": "Reads Mill",
+            "st": "AL",
+            "freeText": "Calhoun County,AL"
+        },
+        "title": "Calhoun County, For Sale",
+
+        这是返回的search json里面的数据：
+        01015 就是这个搜索条件的一个id号，通过这个id号就可以找到对应的网页的地址
+
+
+# 对于详情页headers的分析
+
+GET https://origin-api.trulia.com/app/v9/detail?id=5055000362&idt=for%20sale&cy=Anniston&st=AL&supportedLayouts=singleContact,exclusiveAgent,agentList,formOnly,buttonOnly,noLeadForm&module=(features|taxesAndAssessments|records|provider_2|scoop|comps|agents|district|foreclosure) HTTP/1.1
+Accept: application/json
+User-Agent: Dalvik/2.1.0 (Linux; U; Android 5.1.1; LGM-V300K Build/N2G47H) trulia-source/AndroidApp trulia-version/10.7.0 trulia-osVersion/5.1.1
+trulia-mpid: GfPMg7uM2ql5Mj9pAZO6iw
+
+X-PX-AUTHORIZATION: 3:df0153bd98f2a1d5bc4767b00e37593b3281a964adb709f8e9ea096bd6b4c123:Ve5YpZX4KOu7O1Zm1q/MdkOxBsKOcuMgJRX5eebMEJz2GmLlDauRjjLPEjV0D65r6EiDgesqWeXyluArAggI1w==:1000:GO7bLcYBRga+ILpPaV9Er1oE0NKxu6hMDWoUhfWZRo9KOzVNCsxMTzNtM0NyFYDsupgIv+bMKt1tnCFXN96K0E2wS1o2b/6U/O4TXfOCEfstAaTXDSBG0+e1J2Uh37kWnoc920/xrfFuUnKprr89KjzS4V5+GQZy6QX/yC4Louc=
+X-PX-AUTHORIZATION: 3:623aee92139f3d793313504d6f50c787a942293841610c7f003ed6540b383057:fPcDZsZzAJ+N5IgH5P8nYgS4FCwApvM/naN/86w34L+N2fRPGtwdyestvZ0kxXkzc7W9fDXSt2NOu/uKHKFIDw==:1000:ApoCgTSP/HYUK/NjEGiTa0nTtIZkfIpOEsPiosGaI+P90wK32MG4QB7EEWP/NARN6DxZ7lUbGdbal8U71XYPtaHJ+psReUeqcU8m9XIZFcYYD5o4LjdGU4BbDv/rIGkOrstTJ3OdKUFES9jwwn4UqwXKWbxGVN0FFkN+dduhwzw=
+
+X-PX-ORIGINAL-TOKEN: 3:edc79b85f235c302d7cfc5088609503749a2c05cdb48068f0c17abb2694ff95c:f5a6qmnth14igWk9741mQ5plGr9kAkAkVFPJz3GVx3BngwpugxOyuOryZ4iIT3w/+1Il/LZsk9iws6zfFCoFPw==:1000:g/ikoJb5/qL8WckxEt530kTzhOsBqH13I329njP0+dnDt+Hoi6oDzysDOPFPofbThPeJyhIm4IKQmV95Ap12+y4caD0uh7zLd2vSNdd9wwmsXdlALLZ215fY7n/ontpYRNqEmnMNjd6WXprdUB4Aa1uiR/HSkJisQI0cAB/bXWg=
+
+
+Host: origin-api.trulia.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+
+
+对比一下列表页得trulis-mpid 和X-PX-ORIGINAL-TOKEN ，但是详情页不是叫做那个了，而是叫做X-PX-AUTHORIZATION
+    并且详情页的X-PX-AUTHORIZATION 不同的是要变化的；
+
+    现在看一下这个用假的会不会有影响；
+
+
+
 
 
 

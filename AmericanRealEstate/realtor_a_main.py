@@ -1,11 +1,13 @@
 import os
 import sys
+
 # print(os.path.abspath(__file__))
 # sys.path.append(os.path.abspath(__file__))
 
 import datetime
 from scrapy.cmdline import execute
 # from crawl_tools.get_psql_con import get_psql_con
+
 
 execute(['scrapy', 'crawl',
          # 'realtor',
@@ -19,3 +21,13 @@ execute(['scrapy', 'crawl',
          # "-s",
          # "JOBDIR=crawls/realtor{}".format(num),
          ])
+
+
+
+
+
+
+
+
+
+
